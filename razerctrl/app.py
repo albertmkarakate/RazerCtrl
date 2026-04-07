@@ -1,11 +1,14 @@
 import sys
 import logging
+import os
 from PyQt6.QtWidgets import QApplication
+from PyQt6.QtGui import QIcon
 from .ui.main_window import MainWindow
 from .ui.dependency_check import DependencyCheckDialog
 from .core.device_manager import DeviceManager
 from .core.profile_manager import ProfileManager
 from .core.input_manager import InputManager
+from .core.macro_manager import MacroManager
 from .core.config import setup_logging, load_config
 
 class RazerCtrlApp(QApplication):
@@ -18,6 +21,14 @@ class RazerCtrlApp(QApplication):
         self.setApplicationVersion("0.1.0")
         self.setOrganizationName("RazerCtrl")
         
+        # Set application icon
+        icon_path = os.path.join(os.path.dirname(__file__), "assets", "icons", "razerctrl.svg")
+        if os.path.exists(icon_path):
+            self.setWindowIcon(QIcon(icon_path))
+        
+        # Set desktop file name for taskbar grouping (Linux)
+        self.setDesktopFileName("razerctrl.desktop")
+        
         # Setup logging
         setup_logging()
         logging.info("Starting RazerCtrl...")
@@ -26,6 +37,7 @@ class RazerCtrlApp(QApplication):
         self.device_manager = DeviceManager()
         self.profile_manager = ProfileManager(self.device_manager)
         self.input_manager = InputManager()
+        self.macro_manager = MacroManager()
         
         # Load configuration
         self.config = load_config()
@@ -38,7 +50,8 @@ class RazerCtrlApp(QApplication):
         self.main_window = MainWindow(
             self.device_manager,
             self.profile_manager,
-            self.input_manager
+            self.input_manager,
+            self.macro_manager
         )
 
     def show_dependency_check(self):

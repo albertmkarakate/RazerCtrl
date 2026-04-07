@@ -1,17 +1,29 @@
 from PyQt6.QtWidgets import (QWidget, QVBoxLayout, QHBoxLayout, QLabel, 
                              QTabWidget, QSlider, QComboBox, QPushButton, 
-                             QColorDialog, QFrame, QGroupBox, QFormLayout)
-from PyQt6.QtCore import Qt, QTimer
+                             QColorDialog, QFrame, QGroupBox, QFormLayout,
+                             QTableWidget, QTableWidgetItem, QHeaderView,
+                             QListWidget, QInputDialog, QMessageBox)
+from PyQt6.QtCore import Qt, QTimer, pyqtSignal, QObject
 from PyQt6.QtSvgWidgets import QSvgWidget
 import os
+
+class MacroSignal(QObject):
+    """Signal for macro recording updates."""
+    event_captured = pyqtSignal(dict)
 
 class DevicePage(QWidget):
     """
     Configuration page for a specific Razer device.
     """
-    def __init__(self, device, parent=None):
+    def __init__(self, device, profile_manager, input_manager, macro_manager, parent=None):
         super().__init__(parent)
         self.device = device
+        self.profile_manager = profile_manager
+        self.input_manager = input_manager
+        self.macro_manager = macro_manager
+        self.macro_signals = MacroSignal()
+        self.macro_signals.event_captured.connect(self.on_macro_event)
+        self.recorded_macro = []
         self.init_ui()
         
         # Timer for battery updates
@@ -57,6 +69,7 @@ class DevicePage(QWidget):
         if hasattr(self.device, 'battery_level'):
             self.tabs.addTab(self.create_power_tab(), "Power")
             
+        self.tabs.addTab(self.create_keybinds_tab(), "Keybinds")
         self.tabs.addTab(self.create_macro_tab(), "Macros")
         
         layout.addWidget(self.tabs)
@@ -129,12 +142,126 @@ class DevicePage(QWidget):
         layout.addStretch()
         return tab
 
+    def create_keybinds_tab(self):
+        tab = QWidget()
+        layout = QVBoxLayout(tab)
+        
+        header = QHBoxLayout()
+        header.addWidget(QLabel("Custom Keybinds"))
+        header.addStretch()
+        btn_add = QPushButton("Add New Bind")
+        btn_add.clicked.connect(self.add_keybind)
+        header.addWidget(btn_add)
+        layout.addLayout(header)
+        
+        self.keybinds_table = QTableWidget(0, 3)
+        self.keybinds_table.setHorizontalHeaderLabels(["Button", "Action", "Enabled"])
+        self.keybinds_table.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch)
+        self.keybinds_table.setStyleSheet("background-color: #1e1e1e; color: #d4d4d4;")
+        layout.addWidget(self.keybinds_table)
+        
+        # Placeholder for existing binds
+        self.refresh_keybinds()
+        
+        return tab
+
+    def add_keybind(self):
+        # In a real app, this would open a dialog to record a key and select an action
+        row = self.keybinds_table.rowCount()
+        self.keybinds_table.insertRow(row)
+        self.keybinds_table.setItem(row, 0, QTableWidgetItem("New Button"))
+        self.keybinds_table.setItem(row, 1, QTableWidgetItem("None"))
+        self.keybinds_table.setItem(row, 2, QTableWidgetItem("Yes"))
+
+    def refresh_keybinds(self):
+        # This would load binds from the profile manager for this specific device
+        pass
+
     def create_macro_tab(self):
         tab = QWidget()
         layout = QVBoxLayout(tab)
-        layout.addWidget(QLabel("Macro configuration coming soon..."))
-        layout.addStretch()
+        
+        header = QHBoxLayout()
+        header.addWidget(QLabel("Macro Recorder"))
+        header.addStretch()
+        
+        self.btn_record = QPushButton("Record")
+        self.btn_record.clicked.connect(self.toggle_recording)
+        self.btn_record.setStyleSheet("background-color: #238636; color: white;")
+        header.addWidget(self.btn_record)
+        
+        self.btn_clear = QPushButton("Clear")
+        self.btn_clear.clicked.connect(self.clear_macro)
+        header.addWidget(self.btn_clear)
+        
+        layout.addLayout(header)
+        
+        self.macro_list = QListWidget()
+        self.macro_list.setStyleSheet("background-color: #1e1e1e; color: #d4d4d4; font-family: monospace;")
+        layout.addWidget(self.macro_list)
+        
+        footer = QHBoxLayout()
+        self.btn_save_macro = QPushButton("Save Macro")
+        self.btn_save_macro.clicked.connect(self.save_macro)
+        self.btn_save_macro.setEnabled(False)
+        footer.addWidget(self.btn_save_macro)
+        
+        layout.addLayout(footer)
         return tab
+
+    def toggle_recording(self):
+        if self.btn_record.text() == "Record":
+            # Start recording
+            # We need to find the evdev path for this device
+            # For now, we'll ask the user to select or use a heuristic
+            devices = self.input_manager.list_devices()
+            # Heuristic: find device with name containing Razer and device.name
+            target_path = None
+            for dev in devices:
+                if self.device.name.lower() in dev['name'].lower():
+                    target_path = dev['path']
+                    break
+            
+            if not target_path:
+                # Fallback: show selection dialog
+                items = [f"{d['name']} ({d['path']})" for d in devices]
+                item, ok = QInputDialog.getItem(self, "Select Input Device", 
+                                              "Could not auto-detect input device. Select one:", 
+                                              items, 0, False)
+                if ok and item:
+                    target_path = devices[items.index(item)]['path']
+            
+            if target_path:
+                self.recorded_macro = []
+                self.macro_list.clear()
+                self.input_manager.start_recording(target_path, self.macro_signals.event_captured.emit)
+                self.btn_record.setText("Stop")
+                self.btn_record.setStyleSheet("background-color: #da3633; color: white;")
+                self.btn_save_macro.setEnabled(False)
+        else:
+            # Stop recording
+            self.input_manager.stop_recording()
+            self.btn_record.setText("Record")
+            self.btn_record.setStyleSheet("background-color: #238636; color: white;")
+            if self.recorded_macro:
+                self.btn_save_macro.setEnabled(True)
+
+    def on_macro_event(self, event):
+        self.recorded_macro.append(event)
+        action = "Down" if event['value'] == 1 else ("Up" if event['value'] == 0 else "Hold")
+        self.macro_list.addItem(f"[{event['delay']}ms] {event['key']} {action}")
+        self.macro_list.scrollToBottom()
+
+    def clear_macro(self):
+        self.recorded_macro = []
+        self.macro_list.clear()
+        self.btn_save_macro.setEnabled(False)
+
+    def save_macro(self):
+        name, ok = QInputDialog.getText(self, "Save Macro", "Enter macro name:")
+        if ok and name:
+            self.macro_manager.add_macro(name, self.recorded_macro)
+            QMessageBox.information(self, "Success", f"Macro '{name}' saved successfully.")
 
     def pick_color(self):
         color = QColorDialog.getColor()

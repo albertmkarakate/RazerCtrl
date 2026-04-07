@@ -15,11 +15,12 @@ class MainWindow(QMainWindow):
     """
     Main application window with sidebar navigation.
     """
-    def __init__(self, device_manager, profile_manager, input_manager):
+    def __init__(self, device_manager, profile_manager, input_manager, macro_manager):
         super().__init__()
         self.device_manager = device_manager
         self.profile_manager = profile_manager
         self.input_manager = input_manager
+        self.macro_manager = macro_manager
         
         self.setWindowTitle("RazerCtrl")
         self.setMinimumSize(1000, 700)
@@ -171,7 +172,7 @@ class MainWindow(QMainWindow):
         # Check if page already exists
         page_key = f"device_{device.serial}"
         if page_key not in self.pages:
-            self.pages[page_key] = DevicePage(device)
+            self.pages[page_key] = DevicePage(device, self.profile_manager, self.input_manager, self.macro_manager)
             self.stack.addWidget(self.pages[page_key])
         
         self.stack.setCurrentWidget(self.pages[page_key])

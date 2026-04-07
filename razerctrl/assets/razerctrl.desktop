@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=RazerCtrl
+Comment=Unified Razer device manager and input mapper
+Exec=razerctrl
+Icon=razerctrl
+Terminal=false
+Type=Application
+Categories=Settings;HardwareSettings;
+Keywords=razer;mouse;keyboard;lighting;
+StartupNotify=true
