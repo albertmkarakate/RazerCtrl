@@ -8,8 +8,14 @@ from razerctrl.app import RazerCtrlApp
 
 def main():
     """Application entry point."""
-    app = RazerCtrlApp(sys.argv)
-    sys.exit(app.run())
+    try:
+        app = RazerCtrlApp(sys.argv)
+        sys.exit(app.run())
+    except Exception as e:
+        print(f"[RazerCtrl] FATAL ERROR during startup: {e}")
+        import traceback
+        traceback.print_exc()
+        sys.exit(1)
 
 if __name__ == "__main__":
     main()

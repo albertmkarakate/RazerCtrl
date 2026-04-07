@@ -13,12 +13,12 @@ export default function App() {
       {/* Header */}
       <header className="border-bottom border-[#30363d] bg-[#161b22] px-6 py-4 flex items-center justify-between sticky top-0 z-10">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-[#238636] rounded-lg flex items-center justify-center shadow-lg shadow-[#238636]/20">
-            <Terminal className="text-white w-6 h-6" />
+          <div className="w-10 h-10 bg-[#44d62c] rounded-lg flex items-center justify-center shadow-lg shadow-[#44d62c]/20">
+            <Terminal className="text-black w-6 h-6" />
           </div>
           <div>
             <h1 className="text-xl font-bold text-white tracking-tight">RazerCtrl</h1>
-            <p className="text-xs text-[#8b949e] font-medium uppercase tracking-widest">Linux Device Manager</p>
+            <p className="text-xs text-[#44d62c] font-medium uppercase tracking-widest">C.T.R.L Edition</p>
           </div>
         </div>
         <div className="flex items-center gap-4">
@@ -47,11 +47,11 @@ export default function App() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">
-            The Ultimate Razer Manager for <span className="text-[#238636]">Linux</span>
+            The Ultimate <span className="text-[#44d62c]">C.T.R.L</span> Manager for Linux
           </h2>
           <p className="text-lg text-[#8b949e] max-w-2xl mx-auto leading-relaxed">
             A production-ready Python application built with PyQt6, OpenRazer, and evdev. 
-            Manage lighting, performance, and input mapping with ease.
+            Manage lighting, performance, and input mapping with the new Razer-inspired branding.
           </p>
         </motion.div>
 
@@ -74,23 +74,46 @@ export default function App() {
           <FeatureCard 
             title="Device Management" 
             description="Full control over lighting effects, DPI stages, and power settings via openrazer-daemon."
-            icon={<CheckCircle2 className="text-[#238636]" />}
+            icon={<CheckCircle2 className="text-[#44d62c]" />}
           />
           <FeatureCard 
             title="Input Mapping" 
             description="Advanced key remapping and macro support using evdev and virtual uinput devices."
-            icon={<CheckCircle2 className="text-[#238636]" />}
+            icon={<CheckCircle2 className="text-[#44d62c]" />}
           />
           <FeatureCard 
             title="Profile System" 
             description="Save and switch between multiple configurations automatically based on active applications."
-            icon={<CheckCircle2 className="text-[#238636]" />}
+            icon={<CheckCircle2 className="text-[#44d62c]" />}
           />
           <FeatureCard 
             title="Universal Installer" 
             description="Distro-aware installer supporting Arch, Fedora, and Debian-based distributions."
-            icon={<CheckCircle2 className="text-[#238636]" />}
+            icon={<CheckCircle2 className="text-[#44d62c]" />}
           />
+        </div>
+
+        {/* Installation Section */}
+        <div className="mb-16">
+          <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+            <Terminal className="text-[#44d62c] w-6 h-6" />
+            Installation
+          </h3>
+          <div className="bg-[#0d1117] rounded-xl border border-[#30363d] p-6 font-mono text-sm">
+            <div className="flex items-center justify-between mb-4">
+              <span className="text-[#8b949e]"># One-line installation</span>
+              <button className="text-[#44d62c] hover:underline">Copy</button>
+            </div>
+            <div className="text-white">
+              <span className="text-[#44d62c]">$</span> git clone https://github.com/user/razerctrl.git<br/>
+              <span className="text-[#44d62c]">$</span> cd razerctrl<br/>
+              <span className="text-[#44d62c]">$</span> bash install.sh
+            </div>
+            <div className="mt-6 pt-6 border-t border-[#30363d] text-[#8b949e]">
+              <p>The installer automatically detects your distro, installs system dependencies, 
+                 sets up the 'plugdev' group, and enables the openrazer-daemon.</p>
+            </div>
+          </div>
         </div>
 
         {/* Tech Stack */}
