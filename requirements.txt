@@ -1,0 +1,5 @@
+PyQt6>=6.4
+openrazer>=3.0
+evdev>=1.6
+distro>=1.8
+python-uinput>=0.11

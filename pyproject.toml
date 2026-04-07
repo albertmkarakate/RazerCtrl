@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "razerctrl"
+version = "0.1.0"
+description = "Razer device manager and input mapper for Linux"
+readme = "README.md"
+authors = [{name = "RazerCtrl Contributors"}]
+license = {text = "MIT"}
+requires-python = ">=3.10"
+dependencies = [
+    "PyQt6>=6.4",
+    "openrazer>=3.0",
+    "evdev>=1.6",
+    "distro>=1.8",
+]
+
+[project.scripts]
+razerctrl = "razerctrl.main:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["razerctrl*"]

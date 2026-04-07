@@ -1,0 +1,5 @@
+{
+  "name": "RazerCtrl",
+  "description": "Unified Razer device manager and input mapper for Linux",
+  "requestFramePermissions": []
+}
