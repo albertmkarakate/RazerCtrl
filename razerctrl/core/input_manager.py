@@ -2,6 +2,8 @@ import logging
 import shlex
 import threading
 import time
+import subprocess
+import shutil
 from typing import Dict, List, Optional, Callable
 try:
     import evdev
@@ -188,6 +190,75 @@ class InputManager:
     def __init__(self):
         self.active_mappers: Dict[str, InputMapperThread] = {}
         self.active_recorder: Optional[MacroRecorderThread] = None
+
+    def has_input_remapper(self) -> bool:
+        """Returns True when input-remapper CLI and GTK frontend are installed."""
+        return bool(shutil.which("input-remapper-control")) and bool(shutil.which("input-remapper-gtk"))
+
+    def open_input_remapper_ui(self, debug: bool = False):
+        """Launches the upstream input-remapper GTK UI."""
+        cmd = ["input-remapper-gtk"]
+        if debug:
+            cmd.append("-d")
+        subprocess.Popen(cmd)
+
+    def list_input_remapper_devices(self) -> List[str]:
+        """Returns user-facing device names from input-remapper-control."""
+        if not shutil.which("input-remapper-control"):
+            return []
+        try:
+            result = subprocess.run(
+                ["input-remapper-control", "--list-devices"],
+                capture_output=True,
+                text=True,
+                check=True,
+            )
+            devices = []
+            for line in result.stdout.splitlines():
+                line = line.strip()
+                if line.startswith("Found "):
+                    devices.append(line.replace("Found ", "", 1).strip().strip('"'))
+            return devices
+        except subprocess.CalledProcessError as exc:
+            logging.warning("Failed to list input-remapper devices: %s", exc)
+            return []
+
+    def apply_input_remapper_preset(self, device_name: str, preset_name: str) -> tuple[bool, str]:
+        """Starts preset injection for a device via input-remapper-control."""
+        if not shutil.which("input-remapper-control"):
+            return False, "input-remapper-control is not installed."
+
+        if not device_name or not preset_name:
+            return False, "Please select a device and preset."
+
+        cmd = [
+            "input-remapper-control",
+            "--command",
+            "start",
+            "--device",
+            device_name,
+            "--preset",
+            preset_name,
+        ]
+        result = subprocess.run(cmd, capture_output=True, text=True)
+        if result.returncode == 0:
+            return True, (result.stdout.strip() or "Preset applied.")
+        return False, (result.stderr.strip() or result.stdout.strip() or "Failed to apply preset.")
+
+    def stop_input_remapper(self, device_name: str) -> tuple[bool, str]:
+        """Stops active injection for the selected input-remapper device."""
+        if not shutil.which("input-remapper-control"):
+            return False, "input-remapper-control is not installed."
+        if not device_name:
+            return False, "Please select a device."
+        result = subprocess.run(
+            ["input-remapper-control", "--command", "stop", "--device", device_name],
+            capture_output=True,
+            text=True,
+        )
+        if result.returncode == 0:
+            return True, (result.stdout.strip() or "Injection stopped.")
+        return False, (result.stderr.strip() or result.stdout.strip() or "Failed to stop injection.")
 
     def list_devices(self) -> List[dict]:
         """Lists all available input devices."""
