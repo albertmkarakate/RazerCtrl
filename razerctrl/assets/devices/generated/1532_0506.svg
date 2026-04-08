@@ -1,7 +1,0 @@
-<!-- Auto-generated for Razer Kraken 7.1 (1532:0506) using headset_generic.svg. -->
-<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <path d="M20,50 C20,20 80,20 80,50" fill="none" stroke="#44d62c" stroke-width="4" stroke-linecap="round"/>
-  <rect x="15" y="50" width="15" height="25" rx="5" fill="#44d62c" opacity="0.8"/>
-  <rect x="70" y="50" width="15" height="25" rx="5" fill="#44d62c" opacity="0.8"/>
-  <path d="M30,70 Q50,85 70,70" fill="none" stroke="#44d62c" stroke-width="2" opacity="0.4"/>
-</svg>

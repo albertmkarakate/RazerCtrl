@@ -1,8 +1,0 @@
-<!-- Auto-generated for Razer Mouse Dock Pro (1532:00A4) using accessory_generic.svg. -->
-<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <path d="M50,20 L50,80" stroke="#44d62c" stroke-width="4" stroke-linecap="round"/>
-  <rect x="30" y="75" width="40" height="10" rx="2" fill="#44d62c" opacity="0.8"/>
-  <circle cx="50" cy="20" r="5" fill="#44d62c"/>
-  <path d="M50,30 L70,50" stroke="#44d62c" stroke-width="2" opacity="0.4"/>
-  <path d="M50,30 L30,50" stroke="#44d62c" stroke-width="2" opacity="0.4"/>
-</svg>

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=RazerCtrl
+Comment=Unbreakable Razer Device Controller
+Exec=npm run dev
+Icon=razerctrl
+Terminal=false
+Type=Application
+Categories=Utility;Settings;
+Keywords=razer;rgb;chroma;mouse;keyboard;
+StartupNotify=true
