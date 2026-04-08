@@ -184,8 +184,7 @@ export default function App() {
 
   // Check if running in Tauri and scan for devices
   useEffect(() => {
-    // @ts-ignore
-    if (window.__TAURI__) {
+    if ('__TAURI__' in window) {
       setIsTauri(true);
       
       // Initial scan

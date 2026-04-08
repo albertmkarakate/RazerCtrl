@@ -65,4 +65,12 @@ class DeviceManager:
 
     def is_daemon_running(self) -> bool:
         """Checks if the openrazer-daemon is responsive."""
-        return self.connected
+        if not self.connected or self.manager is None:
+            return False
+        try:
+            # Perform a lightweight live check by querying the daemon
+            _ = self.manager.devices
+            return True
+        except Exception:
+            self.connected = False
+            return False

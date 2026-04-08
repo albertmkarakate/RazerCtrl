@@ -49,6 +49,5 @@ class ProfilesPage(QWidget):
             reply = QMessageBox.question(self, "Delete Profile", f"Are you sure you want to delete '{name}'?",
                                        QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No)
             if reply == QMessageBox.StandardButton.Yes:
-                # Actual file deletion logic would go here
-                del self.profile_manager.profiles[name]
+                self.profile_manager.delete_profile(name)
                 self.refresh_profile_list()

@@ -98,9 +98,9 @@ class DependencyCheckDialog(QDialog):
         """Checks if dependencies are installed."""
         # Check openrazer-daemon
         try:
-            subprocess.run(["systemctl", "status", "openrazer-daemon"], capture_output=True)
-            self.deps["openrazer-daemon"]["status"] = True
-        except:
+            result = subprocess.run(["systemctl", "status", "openrazer-daemon"], capture_output=True)
+            self.deps["openrazer-daemon"]["status"] = (result.returncode == 0)
+        except FileNotFoundError:
             self.deps["openrazer-daemon"]["status"] = False
 
         # Check python modules

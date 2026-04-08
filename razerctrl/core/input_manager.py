@@ -1,4 +1,5 @@
 import logging
+import shlex
 import threading
 import time
 from typing import Dict, List, Optional, Callable
@@ -40,6 +41,9 @@ class MacroRecorderThread(threading.Thread):
                     last_time = current_time
                     
                     key_name = evdev.categorize(event).keycode
+                    # keycode can be a list when multiple names share a scancode
+                    if isinstance(key_name, list):
+                        key_name = key_name[0]
                     # event.value: 1 for down, 0 for up, 2 for hold
                     self.callback({
                         "key": key_name,
@@ -48,12 +52,27 @@ class MacroRecorderThread(threading.Thread):
                     })
 
         except Exception as e:
-            logging.error(f"Macro recorder error: {e}")
+            if self.running:
+                logging.error(f"Macro recorder error: {e}")
         finally:
-            self.stop()
+            self._cleanup()
 
     def stop(self):
         self.running = False
+        # Close device to interrupt blocking read_loop()
+        if self.device:
+            try:
+                self.device.close()
+            except OSError:
+                pass
+
+    def _cleanup(self):
+        self.running = False
+        if self.device:
+            try:
+                self.device.close()
+            except OSError:
+                pass
 
 class InputMapperThread(threading.Thread):
     """
@@ -95,13 +114,17 @@ class InputMapperThread(threading.Thread):
                     self.uinput.syn()
 
         except Exception as e:
-            logging.error(f"Input mapper error: {e}")
+            if self.running:
+                logging.error(f"Input mapper error: {e}")
         finally:
-            self.stop()
+            self._cleanup()
 
     def handle_key_event(self, event):
         """Handles a key event and applies remapping rules."""
         key_name = evdev.categorize(event).keycode
+        # keycode can be a list when multiple names share a scancode
+        if isinstance(key_name, list):
+            key_name = key_name[0]
         # Check if any rule matches this key
         matched = False
         for rule in self.rules:
@@ -127,17 +150,36 @@ class InputMapperThread(threading.Thread):
             self.uinput.syn()
         elif action_type == "command":
             import subprocess
-            subprocess.Popen(value, shell=True)
+            try:
+                subprocess.Popen(shlex.split(value))
+            except (ValueError, OSError) as e:
+                logging.error(f"Failed to execute command action: {e}")
 
     def stop(self):
+        self.running = False
+        # Close device to interrupt blocking read_loop()
+        if self.device:
+            try:
+                self.device.close()
+            except OSError:
+                pass
+
+    def _cleanup(self):
         self.running = False
         if self.device:
             try:
                 self.device.ungrab()
-            except:
+            except OSError:
+                pass
+            try:
+                self.device.close()
+            except OSError:
                 pass
         if self.uinput:
-            self.uinput.close()
+            try:
+                self.uinput.close()
+            except OSError:
+                pass
 
 class InputManager:
     """
@@ -155,11 +197,14 @@ class InputManager:
         devices = []
         for path in evdev.list_devices():
             dev = evdev.InputDevice(path)
-            devices.append({
-                "path": path,
-                "name": dev.name,
-                "phys": dev.phys
-            })
+            try:
+                devices.append({
+                    "path": path,
+                    "name": dev.name,
+                    "phys": dev.phys
+                })
+            finally:
+                dev.close()
         return devices
 
     def start_mapper(self, device_path: str, rules: List[dict]):
