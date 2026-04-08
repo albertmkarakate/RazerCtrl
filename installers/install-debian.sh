@@ -4,7 +4,7 @@ echo "[RazerCtrl] Installing dependencies for Debian/Ubuntu..."
 
 # 1. Install official repo packages
 sudo apt update
-sudo apt install -y python3 python3-pip python3-pyqt6 python3-evdev python3-distro software-properties-common input-remapper
+sudo apt install -y python3 python3-pip python3-pyqt6 python3-evdev python3-distro software-properties-common
 
 # 2. Handle OpenRazer via PPA
 sudo add-apt-repository -y ppa:openrazer/stable

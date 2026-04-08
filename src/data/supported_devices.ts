@@ -1,7 +1,7 @@
 export interface SupportedDevice {
   name: string;
   id: string;
-  category: 'Keyboard' | 'Mouse' | 'Mousemat' | 'Headset' | 'Misc';
+  category: 'Keyboard' | 'Mouse' | 'Mousemat' | 'Headset' | 'Keypad' | 'Misc';
 }
 
 export const SUPPORTED_DEVICES: SupportedDevice[] = [
@@ -118,6 +118,10 @@ export const SUPPORTED_DEVICES: SupportedDevice[] = [
   { name: "Razer BlackWidow V4 Tenkeyless HyperSpeed (Wireless)", id: "1532:02D5", category: "Keyboard" },
   { name: "Razer BlackWidow V4 Tenkeyless HyperSpeed (Wired)", id: "1532:02D7", category: "Keyboard" },
   { name: "Razer BlackWidow V3 Tenkeyless", id: "1532:0A24", category: "Keyboard" },
+  { name: "Razer BlackWidow V4 Pro (Wireless)", id: "1532:028E", category: "Keyboard" },
+  { name: "Razer Huntsman V3 Pro (Wireless)", id: "1532:02A8", category: "Keyboard" },
+  { name: "Razer DeathStalker V2 Pro TKL (Wireless)", id: "1532:0297", category: "Keyboard" },
+  { name: "Razer BlackWidow V4 75% (Wireless)", id: "1532:02A9", category: "Keyboard" },
 
   // Mice
   { name: "Razer Orochi 2011", id: "1532:0013", category: "Mouse" },
@@ -254,17 +258,17 @@ export const SUPPORTED_DEVICES: SupportedDevice[] = [
   { name: "Razer Kraken Kitty Edition V2", id: "1532:0560", category: "Headset" },
   { name: "Razer Kraken Kitty Edition", id: "1532:0F19", category: "Headset" },
 
+  // Keypads
+  { name: "Razer Nostromo", id: "1532:0111", category: "Keypad" },
+  { name: "Razer Orbweaver", id: "1532:0113", category: "Keypad" },
+  { name: "Razer Tartarus", id: "1532:0201", category: "Keypad" },
+  { name: "Razer Orbweaver Chroma", id: "1532:0207", category: "Keypad" },
+  { name: "Razer Tartarus Chroma", id: "1532:0208", category: "Keypad" },
+  { name: "Razer Tartarus V2", id: "1532:022B", category: "Keypad" },
+  { name: "Razer Tartarus Pro", id: "1532:0244", category: "Keypad" },
+
   // Misc
   { name: "Razer Mouse Dock", id: "1532:007E", category: "Misc" },
-  { name: "Razer Mouse Dock Pro", id: "1532:00A4", category: "Misc" },
-  { name: "Razer Nostromo", id: "1532:0111", category: "Misc" },
-  { name: "Razer Orbweaver", id: "1532:0113", category: "Misc" },
-  { name: "Razer Tartarus", id: "1532:0201", category: "Misc" },
-  { name: "Razer Orbweaver Chroma", id: "1532:0207", category: "Misc" },
-  { name: "Razer Tartarus Chroma", id: "1532:0208", category: "Misc" },
-  { name: "Razer Core", id: "1532:0215", category: "Misc" },
-  { name: "Razer Tartarus V2", id: "1532:022B", category: "Misc" },
-  { name: "Razer Tartarus Pro", id: "1532:0244", category: "Misc" },
   { name: "Razer Nommo Chroma", id: "1532:0517", category: "Misc" },
   { name: "Razer Nommo Pro", id: "1532:0518", category: "Misc" },
   { name: "Razer Chroma Mug Holder", id: "1532:0F07", category: "Misc" },

@@ -5,10 +5,7 @@
 
 mod openrazer;
 
-use openrazer::{
-    get_connected_devices, set_device_brightness, set_device_lighting, set_device_poll_rate,
-    DeviceInfo,
-};
+use openrazer::{get_connected_devices, DeviceInfo, set_device_lighting, set_device_brightness, set_device_poll_rate};
 
 #[tauri::command]
 async fn get_devices() -> Result<Vec<DeviceInfo>, String> {
@@ -33,9 +30,9 @@ async fn set_poll_rate(serial: String, rate: i32) -> Result<(), String> {
 fn main() {
     tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![
-            get_devices,
-            set_lighting,
-            set_brightness,
+            get_devices, 
+            set_lighting, 
+            set_brightness, 
             set_poll_rate
         ])
         .run(tauri::generate_context!())

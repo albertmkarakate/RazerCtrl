@@ -3,7 +3,7 @@ set -e
 echo "[RazerCtrl] Installing dependencies for Fedora..."
 
 # 1. Install official repo packages
-sudo dnf install -y python3 python3-pip python3-qt6 python3-evdev python3-distro input-remapper
+sudo dnf install -y python3 python3-pip python3-qt6 python3-evdev python3-distro
 
 # 2. Handle OpenRazer via COPR
 sudo dnf install -y 'dnf-command(copr)'

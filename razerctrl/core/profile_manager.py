@@ -1,28 +1,9 @@
 import logging
 import json
 import os
-import re
 from typing import Dict, List, Optional
 from pathlib import Path
-from .config import PROFILES_DIR, ensure_dirs
-
-
-def _safe_filename(name: str) -> str:
-    """Sanitize a profile name so it is safe as a filename component.
-
-    Only alphanumeric characters, hyphens, underscores, and spaces are
-    allowed.  Everything else is stripped.  The result is also verified to
-    resolve inside PROFILES_DIR to prevent path traversal.
-    """
-    sanitized = re.sub(r'[^a-zA-Z0-9 _\-]', '', name).strip()
-    if not sanitized:
-        raise ValueError(f"Invalid profile name: {name!r}")
-    # Double-check that the resolved path stays inside PROFILES_DIR
-    resolved = (PROFILES_DIR / f"{sanitized}.json").resolve()
-    if not str(resolved).startswith(str(PROFILES_DIR.resolve())):
-        raise ValueError(f"Profile name would escape the profiles directory: {name!r}")
-    return sanitized
-
+from .config import PROFILES_DIR
 
 class ProfileManager:
     """
@@ -50,29 +31,15 @@ class ProfileManager:
 
     def save_profile(self, name: str, data: dict):
         """Saves a profile to a JSON file."""
-        ensure_dirs()
-        safe_name = _safe_filename(name)
-        data["name"] = safe_name
-        self.profiles[safe_name] = data
+        data["name"] = name
+        self.profiles[name] = data
         
-        file_path = PROFILES_DIR / f"{safe_name}.json"
+        file_path = PROFILES_DIR / f"{name}.json"
         try:
             with open(file_path, 'w') as f:
                 json.dump(data, f, indent=4)
         except Exception as e:
-            logging.error(f"Failed to save profile {safe_name}: {e}")
-
-    def delete_profile(self, name: str):
-        """Deletes a profile from memory and from disk."""
-        if name in self.profiles:
-            del self.profiles[name]
-        try:
-            safe_name = _safe_filename(name)
-            file_path = PROFILES_DIR / f"{safe_name}.json"
-            if file_path.exists():
-                file_path.unlink()
-        except (ValueError, OSError) as e:
-            logging.error(f"Failed to delete profile file for {name}: {e}")
+            logging.error(f"Failed to save profile {name}: {e}")
 
     def apply_profile(self, name: str):
         """Applies a profile's settings to the connected devices."""

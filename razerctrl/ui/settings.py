@@ -1,19 +1,14 @@
-from PyQt6.QtWidgets import (QWidget, QVBoxLayout, QHBoxLayout, QLabel, QPushButton, 
+from PyQt6.QtWidgets import (QWidget, QVBoxLayout, QLabel, QPushButton, 
                              QGroupBox, QFormLayout, QCheckBox, QComboBox)
-from PyQt6.QtCore import Qt, pyqtSignal
-
-from ..core.config import save_config
+from PyQt6.QtCore import Qt
 
 class SettingsPage(QWidget):
     """
     Application settings page.
     """
-    theme_changed = pyqtSignal(str)
-
-    def __init__(self, device_manager, config: dict, parent=None):
+    def __init__(self, device_manager, parent=None):
         super().__init__(parent)
         self.device_manager = device_manager
-        self.config = config
         self.init_ui()
 
     def init_ui(self):
@@ -44,9 +39,6 @@ class SettingsPage(QWidget):
         
         self.theme_combo = QComboBox()
         self.theme_combo.addItems(["System", "Dark", "Light"])
-        saved_theme = str(self.config.get("theme", "System")).capitalize()
-        if saved_theme in ("System", "Dark", "Light"):
-            self.theme_combo.setCurrentText(saved_theme)
         app_form.addRow("Theme:", self.theme_combo)
         
         self.check_tray = QCheckBox("Minimize to tray")
@@ -64,13 +56,7 @@ class SettingsPage(QWidget):
 
         layout.addStretch()
         self.update_daemon_status()
-        self.theme_combo.currentTextChanged.connect(self.on_theme_changed)
 
     def update_daemon_status(self):
         status = "Connected" if self.device_manager.is_daemon_running() else "Disconnected"
         self.status_label.setText(f"Status: {status}")
-
-    def on_theme_changed(self, value: str):
-        self.config["theme"] = value.lower()
-        save_config(self.config)
-        self.theme_changed.emit(value.lower())

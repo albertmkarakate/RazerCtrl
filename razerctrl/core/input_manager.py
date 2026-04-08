@@ -1,9 +1,6 @@
 import logging
-import shlex
 import threading
 import time
-import subprocess
-import shutil
 from typing import Dict, List, Optional, Callable
 try:
     import evdev
@@ -43,9 +40,6 @@ class MacroRecorderThread(threading.Thread):
                     last_time = current_time
                     
                     key_name = evdev.categorize(event).keycode
-                    # keycode can be a list when multiple names share a scancode
-                    if isinstance(key_name, list):
-                        key_name = key_name[0]
                     # event.value: 1 for down, 0 for up, 2 for hold
                     self.callback({
                         "key": key_name,
@@ -54,27 +48,12 @@ class MacroRecorderThread(threading.Thread):
                     })
 
         except Exception as e:
-            if self.running:
-                logging.error(f"Macro recorder error: {e}")
+            logging.error(f"Macro recorder error: {e}")
         finally:
-            self._cleanup()
+            self.stop()
 
     def stop(self):
         self.running = False
-        # Close device to interrupt blocking read_loop()
-        if self.device:
-            try:
-                self.device.close()
-            except OSError:
-                pass
-
-    def _cleanup(self):
-        self.running = False
-        if self.device:
-            try:
-                self.device.close()
-            except OSError:
-                pass
 
 class InputMapperThread(threading.Thread):
     """
@@ -116,17 +95,13 @@ class InputMapperThread(threading.Thread):
                     self.uinput.syn()
 
         except Exception as e:
-            if self.running:
-                logging.error(f"Input mapper error: {e}")
+            logging.error(f"Input mapper error: {e}")
         finally:
-            self._cleanup()
+            self.stop()
 
     def handle_key_event(self, event):
         """Handles a key event and applies remapping rules."""
         key_name = evdev.categorize(event).keycode
-        # keycode can be a list when multiple names share a scancode
-        if isinstance(key_name, list):
-            key_name = key_name[0]
         # Check if any rule matches this key
         matched = False
         for rule in self.rules:
@@ -152,36 +127,17 @@ class InputMapperThread(threading.Thread):
             self.uinput.syn()
         elif action_type == "command":
             import subprocess
-            try:
-                subprocess.Popen(shlex.split(value))
-            except (ValueError, OSError) as e:
-                logging.error(f"Failed to execute command action: {e}")
+            subprocess.Popen(value, shell=True)
 
     def stop(self):
-        self.running = False
-        # Close device to interrupt blocking read_loop()
-        if self.device:
-            try:
-                self.device.close()
-            except OSError:
-                pass
-
-    def _cleanup(self):
         self.running = False
         if self.device:
             try:
                 self.device.ungrab()
-            except OSError:
-                pass
-            try:
-                self.device.close()
-            except OSError:
+            except:
                 pass
         if self.uinput:
-            try:
-                self.uinput.close()
-            except OSError:
-                pass
+            self.uinput.close()
 
 class InputManager:
     """
@@ -191,75 +147,6 @@ class InputManager:
         self.active_mappers: Dict[str, InputMapperThread] = {}
         self.active_recorder: Optional[MacroRecorderThread] = None
 
-    def has_input_remapper(self) -> bool:
-        """Returns True when input-remapper CLI and GTK frontend are installed."""
-        return bool(shutil.which("input-remapper-control")) and bool(shutil.which("input-remapper-gtk"))
-
-    def open_input_remapper_ui(self, debug: bool = False):
-        """Launches the upstream input-remapper GTK UI."""
-        cmd = ["input-remapper-gtk"]
-        if debug:
-            cmd.append("-d")
-        subprocess.Popen(cmd)
-
-    def list_input_remapper_devices(self) -> List[str]:
-        """Returns user-facing device names from input-remapper-control."""
-        if not shutil.which("input-remapper-control"):
-            return []
-        try:
-            result = subprocess.run(
-                ["input-remapper-control", "--list-devices"],
-                capture_output=True,
-                text=True,
-                check=True,
-            )
-            devices = []
-            for line in result.stdout.splitlines():
-                line = line.strip()
-                if line.startswith("Found "):
-                    devices.append(line.replace("Found ", "", 1).strip().strip('"'))
-            return devices
-        except subprocess.CalledProcessError as exc:
-            logging.warning("Failed to list input-remapper devices: %s", exc)
-            return []
-
-    def apply_input_remapper_preset(self, device_name: str, preset_name: str) -> tuple[bool, str]:
-        """Starts preset injection for a device via input-remapper-control."""
-        if not shutil.which("input-remapper-control"):
-            return False, "input-remapper-control is not installed."
-
-        if not device_name or not preset_name:
-            return False, "Please select a device and preset."
-
-        cmd = [
-            "input-remapper-control",
-            "--command",
-            "start",
-            "--device",
-            device_name,
-            "--preset",
-            preset_name,
-        ]
-        result = subprocess.run(cmd, capture_output=True, text=True)
-        if result.returncode == 0:
-            return True, (result.stdout.strip() or "Preset applied.")
-        return False, (result.stderr.strip() or result.stdout.strip() or "Failed to apply preset.")
-
-    def stop_input_remapper(self, device_name: str) -> tuple[bool, str]:
-        """Stops active injection for the selected input-remapper device."""
-        if not shutil.which("input-remapper-control"):
-            return False, "input-remapper-control is not installed."
-        if not device_name:
-            return False, "Please select a device."
-        result = subprocess.run(
-            ["input-remapper-control", "--command", "stop", "--device", device_name],
-            capture_output=True,
-            text=True,
-        )
-        if result.returncode == 0:
-            return True, (result.stdout.strip() or "Injection stopped.")
-        return False, (result.stderr.strip() or result.stdout.strip() or "Failed to stop injection.")
-
     def list_devices(self) -> List[dict]:
         """Lists all available input devices."""
         if evdev is None:
@@ -268,14 +155,11 @@ class InputManager:
         devices = []
         for path in evdev.list_devices():
             dev = evdev.InputDevice(path)
-            try:
-                devices.append({
-                    "path": path,
-                    "name": dev.name,
-                    "phys": dev.phys
-                })
-            finally:
-                dev.close()
+            devices.append({
+                "path": path,
+                "name": dev.name,
+                "phys": dev.phys
+            })
         return devices
 
     def start_mapper(self, device_path: str, rules: List[dict]):

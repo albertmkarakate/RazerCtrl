@@ -7,9 +7,6 @@ except ImportError:
     openrazer = None
     RazerDeviceManager = None
 
-from .hardware_info import hardware_info, is_razer_device
-
-
 class DeviceManager:
     """
     Handles interaction with the openrazer-daemon.
@@ -40,10 +37,9 @@ class DeviceManager:
         """Refreshes the list of connected Razer devices."""
         if not self.connected:
             return
-
+        
         try:
-            discovered = self.manager.devices
-            self.devices = [device for device in discovered if self.is_razer_hardware(device)]
+            self.devices = self.manager.devices
         except Exception as e:
             logging.error(f"Error refreshing devices: {e}")
             self.devices = []
@@ -55,22 +51,6 @@ class DeviceManager:
                 return device
         return None
 
-    def get_device_hardware_info(self, device) -> dict:
-        """Read hardware info fields from a device for diagnostics/verification."""
-        return hardware_info(device)
-
-    def is_razer_hardware(self, device) -> bool:
-        """Verify whether a detected device belongs to Razer vendor IDs."""
-        return is_razer_device(device)
-
     def is_daemon_running(self) -> bool:
         """Checks if the openrazer-daemon is responsive."""
-        if not self.connected or self.manager is None:
-            return False
-        try:
-            # Perform a lightweight live check by querying the daemon
-            _ = self.manager.devices
-            return True
-        except Exception:
-            self.connected = False
-            return False
+        return self.connected

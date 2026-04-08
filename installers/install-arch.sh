@@ -3,7 +3,7 @@ set -e
 echo "[RazerCtrl] Installing dependencies for Arch Linux / CachyOS..."
 
 # 1. Install official repo packages
-sudo pacman -S --needed python python-pip python-pyqt6 python-evdev openrazer-daemon python-distro input-remapper
+sudo pacman -S --needed python python-pip python-pyqt6 python-evdev openrazer-daemon python-distro
 
 # 2. Handle AUR packages
 # Check for AUR helpers (yay, paru, or cachyos-specific ones)
