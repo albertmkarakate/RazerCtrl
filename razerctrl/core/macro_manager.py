@@ -1,9 +1,19 @@
 import json
 import logging
+import re
 from typing import Dict, List
-from .config import CONFIG_DIR
+from .config import CONFIG_DIR, ensure_dirs
 
 MACROS_FILE = CONFIG_DIR / "macros.json"
+
+
+def _sanitize_macro_name(name: str) -> str:
+    """Validate and sanitize a macro name."""
+    sanitized = re.sub(r'[^a-zA-Z0-9 _\-]', '', name).strip()
+    if not sanitized:
+        raise ValueError(f"Invalid macro name: {name!r}")
+    return sanitized
+
 
 class MacroManager:
     """
@@ -24,6 +34,7 @@ class MacroManager:
 
     def save_macros(self):
         """Saves macros to the macros JSON file."""
+        ensure_dirs()
         try:
             with open(MACROS_FILE, 'w') as f:
                 json.dump(self.macros, f, indent=4)
@@ -32,7 +43,8 @@ class MacroManager:
 
     def add_macro(self, name: str, events: List[dict]):
         """Adds a new macro or updates an existing one."""
-        self.macros[name] = events
+        safe_name = _sanitize_macro_name(name)
+        self.macros[safe_name] = events
         self.save_macros()
 
     def delete_macro(self, name: str):

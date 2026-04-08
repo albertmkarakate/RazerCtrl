@@ -6,6 +6,7 @@ from PyQt6.QtWidgets import (QWidget, QVBoxLayout, QHBoxLayout, QLabel,
 from PyQt6.QtCore import Qt, QTimer, pyqtSignal, QObject
 from PyQt6.QtSvgWidgets import QSvgWidget
 import os
+import logging
 
 class MacroSignal(QObject):
     """Signal for macro recording updates."""
@@ -24,6 +25,7 @@ class DevicePage(QWidget):
         self.macro_signals = MacroSignal()
         self.macro_signals.event_captured.connect(self.on_macro_event)
         self.recorded_macro = []
+        self.current_color = (0, 255, 0)  # Default green
         self.init_ui()
         
         # Timer for battery updates
@@ -134,6 +136,10 @@ class DevicePage(QWidget):
         form.addRow("Polling Rate:", self.polling_combo)
         
         layout.addLayout(form)
+        
+        btn_apply_perf = QPushButton("Apply Performance")
+        btn_apply_perf.clicked.connect(self.apply_performance)
+        layout.addWidget(btn_apply_perf)
         layout.addStretch()
         return tab
 
@@ -292,9 +298,42 @@ class DevicePage(QWidget):
                 self.device.fx.static(*self.current_color)
             elif effect == "none":
                 self.device.fx.none()
-            # ... other effects
+            elif effect == "breathing":
+                r, g, b = self.current_color
+                self.device.fx.breath_single(r, g, b)
+            elif effect == "spectrum cycle":
+                self.device.fx.spectrum()
+            elif effect == "wave":
+                self.device.fx.wave(1)
+            elif effect == "reactive":
+                r, g, b = self.current_color
+                speed = self.speed_slider.value()
+                self.device.fx.reactive(r, g, b, speed)
+            elif effect == "ripple":
+                r, g, b = self.current_color
+                self.device.fx.ripple(r, g, b)
+            elif effect == "starlight":
+                r, g, b = self.current_color
+                speed = self.speed_slider.value()
+                self.device.fx.starlight_single(r, g, b, speed)
         except Exception as e:
-            print(f"Error applying lighting: {e}")
+            logging.error(f"Error applying lighting effect '{effect}': {e}")
+
+    def apply_performance(self):
+        """Applies DPI and polling rate settings to the device."""
+        try:
+            dpi = self.dpi_slider.value()
+            if hasattr(self.device, 'dpi'):
+                self.device.dpi = (dpi, dpi)
+        except Exception as e:
+            logging.error(f"Error setting DPI: {e}")
+        try:
+            rate_text = self.polling_combo.currentText().replace("Hz", "")
+            poll_rate = int(rate_text)
+            if hasattr(self.device, 'poll_rate'):
+                self.device.poll_rate = poll_rate
+        except Exception as e:
+            logging.error(f"Error setting poll rate: {e}")
 
     def update_battery(self):
         try:

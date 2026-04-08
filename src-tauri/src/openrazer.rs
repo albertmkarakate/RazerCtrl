@@ -1,6 +1,17 @@
 use serde::{Deserialize, Serialize};
 use zbus::{dbus_proxy, Connection};
 
+/// Regex-like validation: serial must be alphanumeric, hyphens, or underscores only.
+fn validate_serial(serial: &str) -> Result<(), String> {
+    if serial.is_empty() {
+        return Err("Serial must not be empty".to_string());
+    }
+    if !serial.chars().all(|c| c.is_alphanumeric() || c == '-' || c == '_') {
+        return Err(format!("Invalid serial: {}", serial));
+    }
+    Ok(())
+}
+
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct DeviceInfo {
     pub name: String,
@@ -52,8 +63,32 @@ trait RazerDevice {
     fn set_poll_rate(&self, rate: i32) -> zbus::Result<()>;
 }
 
-pub async fn set_device_lighting(serial: String, r: u8, g: u8, b: u8) -> Result<(), String> {
-    let connection = Connection::session().await.map_err(|e| e.to_string())?;
+/// Shared D-Bus connection wrapper for use as Tauri managed state.
+pub struct DbusState {
+    pub connection: tokio::sync::Mutex<Option<Connection>>,
+}
+
+impl DbusState {
+    pub fn new() -> Self {
+        Self {
+            connection: tokio::sync::Mutex::new(None),
+        }
+    }
+
+    pub async fn get_connection(&self) -> Result<Connection, String> {
+        let mut guard = self.connection.lock().await;
+        if let Some(ref conn) = *guard {
+            return Ok(conn.clone());
+        }
+        let conn = Connection::session().await.map_err(|e| e.to_string())?;
+        *guard = Some(conn.clone());
+        Ok(conn)
+    }
+}
+
+pub async fn set_device_lighting(state: &DbusState, serial: String, r: u8, g: u8, b: u8) -> Result<(), String> {
+    validate_serial(&serial)?;
+    let connection = state.get_connection().await?;
     let path = format!("/org/razer/device/{}", serial);
     let device = RazerDeviceProxy::builder(&connection)
         .path(path)
@@ -66,8 +101,9 @@ pub async fn set_device_lighting(serial: String, r: u8, g: u8, b: u8) -> Result<
     Ok(())
 }
 
-pub async fn set_device_brightness(serial: String, brightness: f64) -> Result<(), String> {
-    let connection = Connection::session().await.map_err(|e| e.to_string())?;
+pub async fn set_device_brightness(state: &DbusState, serial: String, brightness: f64) -> Result<(), String> {
+    validate_serial(&serial)?;
+    let connection = state.get_connection().await?;
     let path = format!("/org/razer/device/{}", serial);
     let device = RazerDeviceProxy::builder(&connection)
         .path(path)
@@ -80,8 +116,9 @@ pub async fn set_device_brightness(serial: String, brightness: f64) -> Result<()
     Ok(())
 }
 
-pub async fn set_device_poll_rate(serial: String, rate: i32) -> Result<(), String> {
-    let connection = Connection::session().await.map_err(|e| e.to_string())?;
+pub async fn set_device_poll_rate(state: &DbusState, serial: String, rate: i32) -> Result<(), String> {
+    validate_serial(&serial)?;
+    let connection = state.get_connection().await?;
     let path = format!("/org/razer/device/{}", serial);
     let device = RazerDeviceProxy::builder(&connection)
         .path(path)
@@ -94,14 +131,17 @@ pub async fn set_device_poll_rate(serial: String, rate: i32) -> Result<(), Strin
     Ok(())
 }
 
-pub async fn get_connected_devices() -> Result<Vec<DeviceInfo>, String> {
-    let connection = Connection::session().await.map_err(|e| e.to_string())?;
+pub async fn get_connected_devices(state: &DbusState) -> Result<Vec<DeviceInfo>, String> {
+    let connection = state.get_connection().await?;
     let manager = RazerManagerProxy::new(&connection).await.map_err(|e| e.to_string())?;
     
     let device_serials = manager.devices().await.map_err(|e| e.to_string())?;
     let mut devices = Vec::new();
     
     for serial in device_serials {
+        if validate_serial(&serial).is_err() {
+            continue;
+        }
         let path = format!("/org/razer/device/{}", serial);
         let device = RazerDeviceProxy::builder(&connection)
             .path(path)
@@ -113,7 +153,6 @@ pub async fn get_connected_devices() -> Result<Vec<DeviceInfo>, String> {
         let name = device.device_name().await.unwrap_or_else(|_| "Unknown Device".to_string());
         let device_type = device.device_type().await.unwrap_or_else(|_| "unknown".to_string());
         
-        // Rust's Option and Result types force us to handle missing battery levels safely
         let battery_level = device.battery_level().await.ok();
         let is_charging = device.is_charging().await.unwrap_or(false);
         let pid = device.device_id().await.unwrap_or_else(|_| "1532:0000".to_string());
