@@ -32,7 +32,8 @@ import {
   Command,
   Type,
   MousePointer,
-  Share
+  Share,
+  LayoutGrid
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { invoke } from '@tauri-apps/api/core';
@@ -46,6 +47,8 @@ interface Device {
   battery_level?: number | null;
   is_charging: boolean;
   pid: string;
+  programmableKeys?: number;
+  imageUrl?: string;
 }
 
 interface DeviceConfig {
@@ -58,10 +61,10 @@ interface DeviceConfig {
 
 // --- Mock Data (for preview) ---
 const MOCK_DEVICES: Device[] = [
-  { name: "Razer Basilisk V3", serial: "BSLK-001", device_type: "mouse", battery_level: 85, is_charging: false, pid: "1532:0099" },
-  { name: "Razer BlackWidow V4", serial: "BW-002", device_type: "keyboard", battery_level: null, is_charging: false, pid: "1532:0287" },
-  { name: "Razer Tartarus Pro", serial: "TT-004", device_type: "keypad", battery_level: null, is_charging: false, pid: "1532:0244" },
-  { name: "Razer BlackShark V2 Pro", serial: "BS-003", device_type: "headset", battery_level: 42, is_charging: true, pid: "1532:0527" },
+  { name: "Razer Basilisk V3", serial: "BSLK-001", device_type: "mouse", battery_level: 85, is_charging: false, pid: "1532:0099", programmableKeys: 11, imageUrl: "https://picsum.photos/seed/RazerBasiliskV3Topo/800/600?grayscale&blur=2" },
+  { name: "Razer BlackWidow V4", serial: "BW-002", device_type: "keyboard", battery_level: null, is_charging: false, pid: "1532:0287", programmableKeys: 104, imageUrl: "https://picsum.photos/seed/RazerBlackWidowV4Topo/800/600?grayscale&blur=2" },
+  { name: "Razer Tartarus Pro", serial: "TT-004", device_type: "keypad", battery_level: null, is_charging: false, pid: "1532:0244", programmableKeys: 32, imageUrl: "https://picsum.photos/seed/RazerTartarusProTopo/800/600?grayscale&blur=2" },
+  { name: "Razer BlackShark V2 Pro", serial: "BS-003", device_type: "headset", battery_level: 42, is_charging: true, pid: "1532:0527", programmableKeys: 3, imageUrl: "https://picsum.photos/seed/RazerBlackSharkV2ProTopo/800/600?grayscale&blur=2" },
 ];
 
 export default function App() {
@@ -232,15 +235,15 @@ export default function App() {
     });
   };
 
-  const getDeviceIcon = (type: string) => {
+  const getDeviceIcon = (type: string, className: string = "w-4 h-4") => {
     const t = type.toLowerCase();
-    if (t.includes('mousemat')) return <Palette className="w-4 h-4" />;
-    if (t.includes('mouse')) return <MousePointer2 className="w-4 h-4" />;
-    if (t.includes('keyboard')) return <Keyboard className="w-4 h-4" />;
-    if (t.includes('headset')) return <Headphones className="w-4 h-4" />;
-    if (t.includes('keypad')) return <Command className="w-4 h-4" />;
-    if (t.includes('misc')) return <Settings className="w-4 h-4" />;
-    return <Zap className="w-4 h-4" />;
+    if (t.includes('mousemat')) return <Palette className={className} />;
+    if (t.includes('mouse')) return <MousePointer2 className={className} />;
+    if (t.includes('keyboard')) return <Keyboard className={className} />;
+    if (t.includes('headset')) return <Headphones className={className} />;
+    if (t.includes('keypad')) return <Command className={className} />;
+    if (t.includes('misc')) return <Settings className={className} />;
+    return <Zap className={className} />;
   };
 
   return (
@@ -308,34 +311,58 @@ export default function App() {
         </div>
       </header>
 
+      {/* Device Image Selector Bar */}
+      <div className={`border-b ${isDark ? 'border-[#30363d] bg-[#0d1117]' : 'border-[#d0d7de] bg-[#f6f8fa]'} px-6 py-4 flex items-center justify-center gap-6 z-10 shadow-sm`}>
+        {devices.map(device => (
+          <div
+            key={device.serial}
+            onClick={() => { 
+              setSelectedDevice(device); 
+              if (activeTab === 'dashboard' || activeTab === 'assets' || activeTab === 'compatibility') {
+                setActiveTab('customize');
+              }
+            }}
+            className="relative group flex flex-col items-center"
+          >
+            <div
+              className={`relative cursor-pointer rounded-xl border-2 transition-all duration-300 w-32 h-32 flex flex-col items-center justify-center overflow-hidden ${
+                selectedDevice?.serial === device.serial 
+                  ? 'border-[#44d62c] shadow-[0_0_15px_rgba(68,214,44,0.15)] bg-[#161b22]' 
+                  : 'border-transparent hover:border-[#30363d] bg-[#161b22] opacity-70 hover:opacity-100'
+              }`}
+            >
+              {device.imageUrl && (
+                <div className="absolute inset-0 opacity-40 group-hover:opacity-60 transition-opacity" style={{ backgroundImage: `url(${device.imageUrl})`, backgroundSize: 'cover', backgroundPosition: 'center', mixBlendMode: 'luminosity' }} />
+              )}
+              <div className="relative z-10 flex flex-col items-center gap-3">
+                <div className={`p-2 rounded-lg ${selectedDevice?.serial === device.serial ? 'text-[#44d62c]' : 'text-[#8b949e] group-hover:text-white'}`}>
+                  {getDeviceIcon(device.device_type, "w-10 h-10")}
+                </div>
+                <span className={`text-[10px] font-black uppercase tracking-widest text-center px-2 ${selectedDevice?.serial === device.serial ? 'text-white' : 'text-[#8b949e] group-hover:text-white'}`}>
+                  {device.device_type}
+                </span>
+              </div>
+              {selectedDevice?.serial === device.serial && (
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#44d62c]" />
+              )}
+            </div>
+            
+            {/* Tooltip */}
+            <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 px-2 py-1 bg-[#30363d] text-white text-[10px] font-bold rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-50">
+              {device.name}
+            </div>
+          </div>
+        ))}
+      </div>
+
       <div className="flex flex-1 overflow-hidden">
         {/* Sidebar */}
         <aside className={`w-64 border-r ${isDark ? 'border-[#30363d] bg-[#0d1117]' : 'border-[#d0d7de] bg-[#f6f8fa]'} flex flex-col`}>
-          <div className="p-4 border-b border-[#30363d]">
+          <div className="flex-1 overflow-y-auto p-4">
             <div className="flex items-center justify-between mb-4">
-              <h3 className="text-[10px] font-black uppercase tracking-widest text-[#8b949e]">Devices</h3>
+              <h3 className="text-[10px] font-black uppercase tracking-widest text-[#8b949e]">Profiles</h3>
               {isScanning && <RefreshCw className="w-3 h-3 animate-spin text-[#44d62c]" />}
             </div>
-            <div className="space-y-1">
-              {devices.map((device) => (
-                <button
-                  key={device.serial}
-                  onClick={() => setSelectedDevice(device)}
-                  className={`w-full flex items-center gap-3 px-3 py-2 rounded transition-all text-[11px] font-bold ${
-                    selectedDevice?.serial === device.serial 
-                      ? `bg-[#44d62c]/10 text-[#44d62c] border border-[#44d62c]/20` 
-                      : `hover:bg-[#44d62c]/5 ${isDark ? 'text-[#8b949e] hover:text-[#c9d1d9]' : 'text-[#57606a] hover:text-[#24292f]'}`
-                  }`}
-                >
-                  {getDeviceIcon(device.device_type)}
-                  <span className="truncate">{device.name}</span>
-                </button>
-              ))}
-            </div>
-          </div>
-          
-          <div className="flex-1 overflow-y-auto p-4">
-            <h3 className="text-[10px] font-black uppercase tracking-widest text-[#8b949e] mb-4">Profiles</h3>
             <div className="space-y-2">
               {['Default', 'Gaming', 'Productivity', 'Streaming'].map(profile => (
                 <button 
@@ -381,12 +408,22 @@ export default function App() {
                         onClick={() => { setSelectedDevice(device); setActiveTab('customize'); }}
                         className="group relative bg-[#161b22] border border-[#30363d] rounded-lg p-6 hover:border-[#44d62c] transition-all cursor-pointer overflow-hidden"
                       >
+                        {device.imageUrl && (
+                          <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity" style={{ backgroundImage: `url(${device.imageUrl})`, backgroundSize: 'cover', backgroundPosition: 'center', mixBlendMode: 'luminosity' }} />
+                        )}
                         <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-30 transition-opacity">
                           {getDeviceIcon(device.device_type)}
                         </div>
                         <div className="relative z-10">
                           <h3 className="text-lg font-black text-white mb-1 group-hover:text-[#44d62c] transition-colors">{device.name}</h3>
-                          <p className="text-[10px] font-mono text-[#8b949e] uppercase tracking-widest mb-6">{device.device_type}</p>
+                          <div className="flex items-center gap-2 mb-6">
+                            <p className="text-[10px] font-mono text-[#8b949e] uppercase tracking-widest">{device.device_type}</p>
+                            {device.programmableKeys && (
+                              <span className="bg-[#44d62c]/10 text-[#44d62c] px-2 py-0.5 rounded text-[8px] font-black uppercase tracking-widest border border-[#44d62c]/30">
+                                {device.programmableKeys} Keys
+                              </span>
+                            )}
+                          </div>
                           
                           <div className="flex items-center justify-between">
                             <div className="flex items-center gap-2">
@@ -579,8 +616,11 @@ export default function App() {
 
                       <div className="flex-1 flex flex-col gap-6">
                         <div className="flex-1 relative bg-[#0d1117] rounded border border-[#30363d] overflow-hidden flex items-center justify-center">
+                          {selectedDevice.imageUrl && (
+                            <div className="absolute inset-0 opacity-20 pointer-events-none" style={{ backgroundImage: `url(${selectedDevice.imageUrl})`, backgroundSize: 'cover', backgroundPosition: 'center', mixBlendMode: 'luminosity' }} />
+                          )}
                           {/* Device Silhouette Concept */}
-                          <div className="relative w-96 h-96 flex items-center justify-center">
+                          <div className="relative w-96 h-96 flex items-center justify-center z-10">
                             <div className={`absolute inset-0 blur-3xl opacity-20 transition-colors duration-500`} style={{ backgroundColor: currentConfig?.accentColor }} />
                             {selectedDevice.device_type === 'mouse' ? (
                               <MousePointer2 className="w-64 h-64 text-white/10" strokeWidth={0.5} />
@@ -672,14 +712,42 @@ export default function App() {
                       </div>
 
                       <div className="flex-1 flex flex-col gap-6">
-                        <div className="flex-1 relative bg-[#0d1117] rounded border border-[#30363d] flex items-center justify-center">
+                        <div className="flex-1 relative bg-[#0d1117] rounded border border-[#30363d] flex items-center justify-center overflow-hidden">
+                          {selectedDevice.imageUrl && (
+                            <div className="absolute inset-0 opacity-20 pointer-events-none" style={{ backgroundImage: `url(${selectedDevice.imageUrl})`, backgroundSize: 'cover', backgroundPosition: 'center', mixBlendMode: 'luminosity' }} />
+                          )}
+                          
+                          {selectedDevice.programmableKeys && (
+                            <div className="absolute top-4 right-4 bg-[#161b22]/80 backdrop-blur border border-[#44d62c] px-3 py-1.5 rounded text-[10px] font-black text-[#44d62c] uppercase tracking-widest shadow-[0_0_10px_rgba(68,214,44,0.2)] z-20">
+                              {selectedDevice.programmableKeys} Programmable Keys
+                            </div>
+                          )}
+
                           {/* Device Map Concept */}
-                          <div className="relative w-full h-full flex items-center justify-center p-12">
+                          <div className="relative w-full h-full flex items-center justify-center p-12 z-10">
                              <div className="relative">
                                 {selectedDevice.device_type === 'mouse' ? (
-                                  <MousePointer2 className="w-48 h-48 text-[#30363d]" strokeWidth={1} />
+                                  <div className="relative">
+                                    <MousePointer2 className="w-48 h-48 text-[#30363d]" strokeWidth={1} />
+                                    {/* Highlight dots for mouse */}
+                                    {Array.from({ length: Math.min(selectedDevice.programmableKeys || 6, 15) }).map((_, i) => (
+                                      <div key={i} className="absolute w-2 h-2 bg-[#44d62c] rounded-full shadow-[0_0_8px_rgba(68,214,44,0.8)] animate-pulse" style={{
+                                        top: `${20 + (i * 15) % 60}%`,
+                                        left: `${30 + (i * 25) % 40}%`,
+                                        animationDelay: `${i * 0.2}s`
+                                      }} />
+                                    ))}
+                                  </div>
                                 ) : (
-                                  <Keyboard className="w-64 h-64 text-[#30363d]" strokeWidth={1} />
+                                  <div className="relative">
+                                    <Keyboard className="w-64 h-64 text-[#30363d]" strokeWidth={1} />
+                                    {/* Highlight dots for keyboard (simplified grid) */}
+                                    <div className="absolute inset-0 top-1/4 left-1/4 right-1/4 bottom-1/4 grid grid-cols-8 gap-2 opacity-50">
+                                      {Array.from({ length: Math.min(selectedDevice.programmableKeys || 104, 32) }).map((_, i) => (
+                                        <div key={i} className="w-1.5 h-1.5 bg-[#44d62c] rounded-full shadow-[0_0_5px_rgba(68,214,44,0.8)]" style={{ animation: `pulse 2s infinite ${i * 0.05}s` }} />
+                                      ))}
+                                    </div>
+                                  </div>
                                 )}
                                 
                                 {/* Mapping Points */}
@@ -737,7 +805,8 @@ export default function App() {
                               <div className="absolute right-0.5 top-0.5 w-3 h-3 bg-[#44d62c] rounded-full" />
                             </div>
                           </div>
-                             {['Bass Boost', 'Sound Normalization', 'Voice Clarity'].map(enhancement => (
+                          <div className="space-y-6">
+                            {['Bass Boost', 'Sound Normalization', 'Voice Clarity'].map(enhancement => (
                               <div key={enhancement} className="space-y-2">
                                 <div className="flex justify-between">
                                   <span className="text-[11px] font-bold text-white">{enhancement}</span>
@@ -848,10 +917,6 @@ export default function App() {
                           </div>
                         )}
 
-                        <div className="space-y-6">
-
-
-
                       {/* Polling Rate & Info */}
                       <div className="space-y-6">
                         <div className={`p-6 rounded-2xl border ${isDark ? 'border-[#30363d] bg-[#161b22]' : 'border-[#d0d7de] bg-white'} shadow-sm`}>
@@ -885,8 +950,9 @@ export default function App() {
                           </div>
                         </div>
                       </div>
+                      </div>
                     </motion.div>
-                  )}
+                  ) : null}
                 </div>
 
                 {/* Footer Info */}
@@ -970,6 +1036,7 @@ export default function App() {
               </div>
             )}
           </AnimatePresence>
+          </div>
         </main>
       </div>
     </div>
