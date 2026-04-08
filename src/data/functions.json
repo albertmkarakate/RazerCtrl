@@ -1,0 +1,37 @@
+{
+  "categories": [
+    {
+      "name": "Mouse Functions",
+      "functions": ["Left Click", "Right Click", "Middle Click", "Scroll Up", "Scroll Down", "Scroll Left", "Scroll Right", "Mouse Button 4", "Mouse Button 5", "DPI Up", "DPI Down", "DPI Cycle", "Sensitivity Stage 1", "Sensitivity Stage 2", "Sensitivity Stage 3", "Sensitivity Stage 4", "Sensitivity Stage 5", "Profile Cycle", "Profile 1", "Profile 2", "Profile 3", "Profile 4", "Profile 5", "Smart Reel Toggle"]
+    },
+    {
+      "name": "Keyboard Keys",
+      "functions": ["Any Standard Key", "Shift", "Ctrl", "Alt", "Meta/Win", "AltGr", "Modifier + Key Combo", "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10", "F11", "F12", "F13", "F14", "F15", "F16", "F17", "F18", "F19", "F20", "F21", "F22", "F23", "F24"]
+    },
+    {
+      "name": "Macros",
+      "functions": ["Run Macro", "Record New Macro", "Delay Entry (ms)", "Repeat: Play Once", "Repeat: Hold", "Repeat: Toggle", "Repeat: While Held"]
+    },
+    {
+      "name": "Media & System",
+      "functions": ["Play / Pause", "Stop", "Next Track", "Previous Track", "Mute / Unmute", "Volume Up (+1)", "Volume Up (+5)", "Volume Up (+10)", "Volume Down (+1)", "Volume Down (+5)", "Volume Down (+10)", "Brightness Up", "Brightness Down", "Screenshot", "Open File / URL", "Launch Application", "Switch Window", "Virtual Desktop Left", "Virtual Desktop Right", "Task View / Mission Control"]
+    },
+    {
+      "name": "Lighting Controls",
+      "functions": ["Lighting Profile Cycle", "Toggle Lighting On/Off", "Brightness Up (Device)", "Brightness Down (Device)"]
+    },
+    {
+      "name": "Text & Clipboard",
+      "functions": ["Type Text", "Paste Clipboard", "Copy Selection"]
+    },
+    {
+      "name": "Gamepad / Controller",
+      "functions": ["Gamepad Button A", "Gamepad Button B", "Gamepad Button X", "Gamepad Button Y", "Gamepad Button LB", "Gamepad Button RB", "Gamepad Button LT", "Gamepad Button RT", "Gamepad Button LS", "Gamepad Button RS", "Gamepad Button Start", "Gamepad Button Select", "Left Stick X Axis", "Left Stick Y Axis", "Right Stick X Axis", "Right Stick Y Axis", "D-Pad Up", "D-Pad Down", "D-Pad Left", "D-Pad Right", "Analog Trigger Axis"]
+    },
+    {
+      "name": "Accessibility & Toggles",
+      "functions": ["Caps Lock Toggle", "Num Lock Toggle", "Scroll Lock Toggle", "Game Mode Toggle", "Hyper-Shift", "No Action", "Passthrough"]
+    }
+  ],
+  "lightingEffects": ["Static", "Breathing", "Spectrum Cycling", "Wave", "Reactive", "Ripple", "Starlight", "Fire", "Rain", "Audio Visualizer", "Custom", "Off"]
+}

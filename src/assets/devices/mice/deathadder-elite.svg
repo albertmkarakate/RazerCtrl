@@ -1,0 +1,12 @@
+<svg viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Deathadder Elite"><style>
+.outline{stroke:#00FF41;stroke-opacity:.22;stroke-width:1.5;fill:none}
+.detail{stroke:#00FF41;stroke-opacity:.18;stroke-width:.75;fill:none}
+.button{stroke:#00FF41;stroke-opacity:.28;stroke-width:2;fill:none}
+.hotspot{stroke:#00FF41;stroke-width:1.2;fill:none;pointer-events:all}
+</style>
+<rect x="110" y="85" width="780" height="430" rx="210" class="outline"/>
+<path d="M500 90v415" class="detail"/><path d="M445 170h110v120H445z" class="button"/>
+<path d="M300 300h120" class="detail"/><path d="M580 300h120" class="detail"/>
+<circle cx="420" cy="200" r="10" class="hotspot" data-button="left-click"/><circle cx="580" cy="200" r="10" class="hotspot" data-button="right-click"/>
+<circle cx="500" cy="210" r="10" class="hotspot" data-button="scroll-click"/><circle cx="360" cy="320" r="10" class="hotspot" data-button="side-btn-1"/>
+<circle cx="360" cy="355" r="10" class="hotspot" data-button="side-btn-2"/></svg>

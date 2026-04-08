@@ -1,0 +1,4356 @@
+{
+  "defaultDeviceId": "deathadder-v3-pro",
+  "devices": [
+    {
+      "id": "deathadder-v3-pro",
+      "name": "Razer DeathAdder V3 Pro",
+      "category": "Mouse",
+      "asset": "mice/deathadder-v3.svg",
+      "lightingZones": [
+        "scroll-wheel",
+        "logo",
+        "underglow-strip",
+        "dpi-indicator"
+      ],
+      "buttons": [
+        "left-click",
+        "right-click",
+        "scroll-click",
+        "scroll-up",
+        "scroll-down",
+        "side-btn-1",
+        "side-btn-2",
+        "dpi-up",
+        "dpi-down"
+      ],
+      "hotspots": [
+        {
+          "id": "left-click",
+          "x": 8,
+          "y": 15
+        },
+        {
+          "id": "right-click",
+          "x": 19,
+          "y": 15
+        },
+        {
+          "id": "scroll-click",
+          "x": 30,
+          "y": 15
+        },
+        {
+          "id": "scroll-up",
+          "x": 41,
+          "y": 15
+        },
+        {
+          "id": "scroll-down",
+          "x": 52,
+          "y": 15
+        },
+        {
+          "id": "side-btn-1",
+          "x": 63,
+          "y": 15
+        },
+        {
+          "id": "side-btn-2",
+          "x": 74,
+          "y": 15
+        },
+        {
+          "id": "dpi-up",
+          "x": 85,
+          "y": 15
+        },
+        {
+          "id": "dpi-down",
+          "x": 8,
+          "y": 25
+        }
+      ]
+    },
+    {
+      "id": "deathadder-elite",
+      "name": "Razer DeathAdder Elite / Chroma",
+      "category": "Mouse",
+      "asset": "mice/deathadder-elite.svg",
+      "lightingZones": [
+        "scroll-wheel",
+        "logo",
+        "underglow-strip",
+        "dpi-indicator"
+      ],
+      "buttons": [
+        "left-click",
+        "right-click",
+        "scroll-click",
+        "scroll-up",
+        "scroll-down",
+        "side-btn-1",
+        "side-btn-2",
+        "dpi-up",
+        "dpi-down",
+        "scroll-tilt-left",
+        "scroll-tilt-right"
+      ],
+      "hotspots": [
+        {
+          "id": "left-click",
+          "x": 8,
+          "y": 15
+        },
+        {
+          "id": "right-click",
+          "x": 19,
+          "y": 15
+        },
+        {
+          "id": "scroll-click",
+          "x": 30,
+          "y": 15
+        },
+        {
+          "id": "scroll-up",
+          "x": 41,
+          "y": 15
+        },
+        {
+          "id": "scroll-down",
+          "x": 52,
+          "y": 15
+        },
+        {
+          "id": "side-btn-1",
+          "x": 63,
+          "y": 15
+        },
+        {
+          "id": "side-btn-2",
+          "x": 74,
+          "y": 15
+        },
+        {
+          "id": "dpi-up",
+          "x": 85,
+          "y": 15
+        },
+        {
+          "id": "dpi-down",
+          "x": 8,
+          "y": 25
+        },
+        {
+          "id": "scroll-tilt-left",
+          "x": 19,
+          "y": 25
+        },
+        {
+          "id": "scroll-tilt-right",
+          "x": 30,
+          "y": 25
+        }
+      ]
+    },
+    {
+      "id": "viper-v3-pro",
+      "name": "Razer Viper V3 Pro",
+      "category": "Mouse",
+      "asset": "mice/viper-v3-pro.svg",
+      "lightingZones": [
+        "scroll-wheel",
+        "logo",
+        "underglow-strip",
+        "dpi-indicator"
+      ],
+      "buttons": [
+        "left-click",
+        "right-click",
+        "scroll-click",
+        "scroll-up",
+        "scroll-down",
+        "dpi-up",
+        "dpi-down",
+        "side-btn-1",
+        "side-btn-2",
+        "side-btn-3",
+        "side-btn-4"
+      ],
+      "hotspots": [
+        {
+          "id": "left-click",
+          "x": 8,
+          "y": 15
+        },
+        {
+          "id": "right-click",
+          "x": 19,
+          "y": 15
+        },
+        {
+          "id": "scroll-click",
+          "x": 30,
+          "y": 15
+        },
+        {
+          "id": "scroll-up",
+          "x": 41,
+          "y": 15
+        },
+        {
+          "id": "scroll-down",
+          "x": 52,
+          "y": 15
+        },
+        {
+          "id": "dpi-up",
+          "x": 63,
+          "y": 15
+        },
+        {
+          "id": "dpi-down",
+          "x": 74,
+          "y": 15
+        },
+        {
+          "id": "side-btn-1",
+          "x": 85,
+          "y": 15
+        },
+        {
+          "id": "side-btn-2",
+          "x": 8,
+          "y": 25
+        },
+        {
+          "id": "side-btn-3",
+          "x": 19,
+          "y": 25
+        },
+        {
+          "id": "side-btn-4",
+          "x": 30,
+          "y": 25
+        }
+      ]
+    },
+    {
+      "id": "naga-v2-pro",
+      "name": "Razer Naga V2 Pro",
+      "category": "Mouse",
+      "asset": "mice/naga-v2-pro.svg",
+      "lightingZones": [
+        "scroll-wheel",
+        "logo",
+        "underglow-strip",
+        "dpi-indicator"
+      ],
+      "buttons": [
+        "left-click",
+        "right-click",
+        "scroll-click",
+        "scroll-up",
+        "scroll-down",
+        "dpi-cycle",
+        "top-btn-1",
+        "top-btn-2",
+        "scroll-tilt-left",
+        "scroll-tilt-right",
+        "side-grid-1",
+        "side-grid-2",
+        "side-grid-3",
+        "side-grid-4",
+        "side-grid-5",
+        "side-grid-6",
+        "side-grid-7",
+        "side-grid-8",
+        "side-grid-9",
+        "side-grid-10",
+        "side-grid-11",
+        "side-grid-12"
+      ],
+      "hotspots": [
+        {
+          "id": "left-click",
+          "x": 8,
+          "y": 15
+        },
+        {
+          "id": "right-click",
+          "x": 19,
+          "y": 15
+        },
+        {
+          "id": "scroll-click",
+          "x": 30,
+          "y": 15
+        },
+        {
+          "id": "scroll-up",
+          "x": 41,
+          "y": 15
+        },
+        {
+          "id": "scroll-down",
+          "x": 52,
+          "y": 15
+        },
+        {
+          "id": "dpi-cycle",
+          "x": 63,
+          "y": 15
+        },
+        {
+          "id": "top-btn-1",
+          "x": 74,
+          "y": 15
+        },
+        {
+          "id": "top-btn-2",
+          "x": 85,
+          "y": 15
+        },
+        {
+          "id": "scroll-tilt-left",
+          "x": 8,
+          "y": 25
+        },
+        {
+          "id": "scroll-tilt-right",
+          "x": 19,
+          "y": 25
+        },
+        {
+          "id": "side-grid-1",
+          "x": 30,
+          "y": 25
+        },
+        {
+          "id": "side-grid-2",
+          "x": 41,
+          "y": 25
+        },
+        {
+          "id": "side-grid-3",
+          "x": 52,
+          "y": 25
+        },
+        {
+          "id": "side-grid-4",
+          "x": 63,
+          "y": 25
+        },
+        {
+          "id": "side-grid-5",
+          "x": 74,
+          "y": 25
+        },
+        {
+          "id": "side-grid-6",
+          "x": 85,
+          "y": 25
+        },
+        {
+          "id": "side-grid-7",
+          "x": 8,
+          "y": 35
+        },
+        {
+          "id": "side-grid-8",
+          "x": 19,
+          "y": 35
+        },
+        {
+          "id": "side-grid-9",
+          "x": 30,
+          "y": 35
+        },
+        {
+          "id": "side-grid-10",
+          "x": 41,
+          "y": 35
+        },
+        {
+          "id": "side-grid-11",
+          "x": 52,
+          "y": 35
+        },
+        {
+          "id": "side-grid-12",
+          "x": 63,
+          "y": 35
+        }
+      ]
+    },
+    {
+      "id": "basilisk-v3-pro",
+      "name": "Razer Basilisk V3 Pro",
+      "category": "Mouse",
+      "asset": "mice/basilisk-v3-pro.svg",
+      "lightingZones": [
+        "scroll-wheel",
+        "logo",
+        "underglow-strip",
+        "dpi-indicator"
+      ],
+      "buttons": [
+        "left-click",
+        "right-click",
+        "scroll-click",
+        "scroll-up",
+        "scroll-down",
+        "scroll-tilt-left",
+        "scroll-tilt-right",
+        "scroll-mode",
+        "side-btn-1",
+        "side-btn-2",
+        "dpi-up",
+        "dpi-down",
+        "profile-cycle"
+      ],
+      "hotspots": [
+        {
+          "id": "left-click",
+          "x": 8,
+          "y": 15
+        },
+        {
+          "id": "right-click",
+          "x": 19,
+          "y": 15
+        },
+        {
+          "id": "scroll-click",
+          "x": 30,
+          "y": 15
+        },
+        {
+          "id": "scroll-up",
+          "x": 41,
+          "y": 15
+        },
+        {
+          "id": "scroll-down",
+          "x": 52,
+          "y": 15
+        },
+        {
+          "id": "scroll-tilt-left",
+          "x": 63,
+          "y": 15
+        },
+        {
+          "id": "scroll-tilt-right",
+          "x": 74,
+          "y": 15
+        },
+        {
+          "id": "scroll-mode",
+          "x": 85,
+          "y": 15
+        },
+        {
+          "id": "side-btn-1",
+          "x": 8,
+          "y": 25
+        },
+        {
+          "id": "side-btn-2",
+          "x": 19,
+          "y": 25
+        },
+        {
+          "id": "dpi-up",
+          "x": 30,
+          "y": 25
+        },
+        {
+          "id": "dpi-down",
+          "x": 41,
+          "y": 25
+        },
+        {
+          "id": "profile-cycle",
+          "x": 52,
+          "y": 25
+        }
+      ]
+    },
+    {
+      "id": "mamba-elite",
+      "name": "Razer Mamba Elite",
+      "category": "Mouse",
+      "asset": "mice/mamba-elite.svg",
+      "lightingZones": [
+        "scroll-wheel",
+        "logo",
+        "underglow-strip",
+        "dpi-indicator"
+      ],
+      "buttons": [
+        "left-click",
+        "right-click",
+        "scroll-click",
+        "scroll-up",
+        "scroll-down",
+        "scroll-tilt-left",
+        "scroll-tilt-right",
+        "side-btn-1",
+        "side-btn-2",
+        "side-btn-3",
+        "side-btn-4",
+        "dpi-up",
+        "dpi-down",
+        "profile-btn"
+      ],
+      "hotspots": [
+        {
+          "id": "left-click",
+          "x": 8,
+          "y": 15
+        },
+        {
+          "id": "right-click",
+          "x": 19,
+          "y": 15
+        },
+        {
+          "id": "scroll-click",
+          "x": 30,
+          "y": 15
+        },
+        {
+          "id": "scroll-up",
+          "x": 41,
+          "y": 15
+        },
+        {
+          "id": "scroll-down",
+          "x": 52,
+          "y": 15
+        },
+        {
+          "id": "scroll-tilt-left",
+          "x": 63,
+          "y": 15
+        },
+        {
+          "id": "scroll-tilt-right",
+          "x": 74,
+          "y": 15
+        },
+        {
+          "id": "side-btn-1",
+          "x": 85,
+          "y": 15
+        },
+        {
+          "id": "side-btn-2",
+          "x": 8,
+          "y": 25
+        },
+        {
+          "id": "side-btn-3",
+          "x": 19,
+          "y": 25
+        },
+        {
+          "id": "side-btn-4",
+          "x": 30,
+          "y": 25
+        },
+        {
+          "id": "dpi-up",
+          "x": 41,
+          "y": 25
+        },
+        {
+          "id": "dpi-down",
+          "x": 52,
+          "y": 25
+        },
+        {
+          "id": "profile-btn",
+          "x": 63,
+          "y": 25
+        }
+      ]
+    },
+    {
+      "id": "cobra-pro",
+      "name": "Razer Cobra Pro",
+      "category": "Mouse",
+      "asset": "mice/cobra-pro.svg",
+      "lightingZones": [
+        "scroll-wheel",
+        "logo",
+        "underglow-strip",
+        "dpi-indicator"
+      ],
+      "buttons": [
+        "left-click",
+        "right-click",
+        "scroll-click",
+        "scroll-up",
+        "scroll-down",
+        "side-btn-1",
+        "side-btn-2",
+        "dpi-up",
+        "dpi-down"
+      ],
+      "hotspots": [
+        {
+          "id": "left-click",
+          "x": 8,
+          "y": 15
+        },
+        {
+          "id": "right-click",
+          "x": 19,
+          "y": 15
+        },
+        {
+          "id": "scroll-click",
+          "x": 30,
+          "y": 15
+        },
+        {
+          "id": "scroll-up",
+          "x": 41,
+          "y": 15
+        },
+        {
+          "id": "scroll-down",
+          "x": 52,
+          "y": 15
+        },
+        {
+          "id": "side-btn-1",
+          "x": 63,
+          "y": 15
+        },
+        {
+          "id": "side-btn-2",
+          "x": 74,
+          "y": 15
+        },
+        {
+          "id": "dpi-up",
+          "x": 85,
+          "y": 15
+        },
+        {
+          "id": "dpi-down",
+          "x": 8,
+          "y": 25
+        }
+      ]
+    },
+    {
+      "id": "blackwidow-v4-pro",
+      "name": "Razer BlackWidow V4 Pro",
+      "category": "Keyboard",
+      "asset": "keyboards/blackwidow-v4-pro.svg",
+      "lightingZones": [
+        "per-key"
+      ],
+      "buttons": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "f6",
+        "f7",
+        "f8",
+        "f9",
+        "f10",
+        "f11",
+        "f12",
+        "esc",
+        "print-screen",
+        "scroll-lock",
+        "pause",
+        "grave",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "0",
+        "minus",
+        "equal",
+        "backspace",
+        "tab",
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "k",
+        "l",
+        "m",
+        "n",
+        "o",
+        "p",
+        "q",
+        "r",
+        "s",
+        "t",
+        "u",
+        "v",
+        "w",
+        "x",
+        "y",
+        "z",
+        "left-bracket",
+        "right-bracket",
+        "backslash",
+        "caps-lock",
+        "semicolon",
+        "quote",
+        "enter",
+        "left-shift",
+        "right-shift",
+        "comma",
+        "period",
+        "slash",
+        "left-ctrl",
+        "left-win",
+        "left-alt",
+        "space",
+        "right-alt",
+        "menu",
+        "right-ctrl",
+        "insert",
+        "home",
+        "page-up",
+        "delete",
+        "end",
+        "page-down",
+        "arrow-up",
+        "arrow-left",
+        "arrow-down",
+        "arrow-right",
+        "num-lock",
+        "num-divide",
+        "num-multiply",
+        "num-subtract",
+        "numpad-0",
+        "numpad-1",
+        "numpad-2",
+        "numpad-3",
+        "numpad-4",
+        "numpad-5",
+        "numpad-6",
+        "numpad-7",
+        "numpad-8",
+        "numpad-9",
+        "num-add",
+        "num-enter",
+        "num-decimal",
+        "macro-m1",
+        "macro-m2",
+        "macro-m3",
+        "macro-m4",
+        "macro-m5",
+        "game-mode",
+        "media-play-pause",
+        "media-stop",
+        "media-next",
+        "media-prev",
+        "vol-up",
+        "vol-down",
+        "vol-mute",
+        "multi-fn"
+      ],
+      "hotspots": [
+        {
+          "id": "f1",
+          "x": 8,
+          "y": 15
+        },
+        {
+          "id": "f2",
+          "x": 19,
+          "y": 15
+        },
+        {
+          "id": "f3",
+          "x": 30,
+          "y": 15
+        },
+        {
+          "id": "f4",
+          "x": 41,
+          "y": 15
+        },
+        {
+          "id": "f5",
+          "x": 52,
+          "y": 15
+        },
+        {
+          "id": "f6",
+          "x": 63,
+          "y": 15
+        },
+        {
+          "id": "f7",
+          "x": 74,
+          "y": 15
+        },
+        {
+          "id": "f8",
+          "x": 85,
+          "y": 15
+        },
+        {
+          "id": "f9",
+          "x": 8,
+          "y": 25
+        },
+        {
+          "id": "f10",
+          "x": 19,
+          "y": 25
+        },
+        {
+          "id": "f11",
+          "x": 30,
+          "y": 25
+        },
+        {
+          "id": "f12",
+          "x": 41,
+          "y": 25
+        },
+        {
+          "id": "esc",
+          "x": 52,
+          "y": 25
+        },
+        {
+          "id": "print-screen",
+          "x": 63,
+          "y": 25
+        },
+        {
+          "id": "scroll-lock",
+          "x": 74,
+          "y": 25
+        },
+        {
+          "id": "pause",
+          "x": 85,
+          "y": 25
+        },
+        {
+          "id": "grave",
+          "x": 8,
+          "y": 35
+        },
+        {
+          "id": "1",
+          "x": 19,
+          "y": 35
+        },
+        {
+          "id": "2",
+          "x": 30,
+          "y": 35
+        },
+        {
+          "id": "3",
+          "x": 41,
+          "y": 35
+        },
+        {
+          "id": "4",
+          "x": 52,
+          "y": 35
+        },
+        {
+          "id": "5",
+          "x": 63,
+          "y": 35
+        },
+        {
+          "id": "6",
+          "x": 74,
+          "y": 35
+        },
+        {
+          "id": "7",
+          "x": 85,
+          "y": 35
+        },
+        {
+          "id": "8",
+          "x": 8,
+          "y": 45
+        },
+        {
+          "id": "9",
+          "x": 19,
+          "y": 45
+        },
+        {
+          "id": "0",
+          "x": 30,
+          "y": 45
+        },
+        {
+          "id": "minus",
+          "x": 41,
+          "y": 45
+        },
+        {
+          "id": "equal",
+          "x": 52,
+          "y": 45
+        },
+        {
+          "id": "backspace",
+          "x": 63,
+          "y": 45
+        },
+        {
+          "id": "tab",
+          "x": 74,
+          "y": 45
+        },
+        {
+          "id": "a",
+          "x": 85,
+          "y": 45
+        },
+        {
+          "id": "b",
+          "x": 8,
+          "y": 55
+        },
+        {
+          "id": "c",
+          "x": 19,
+          "y": 55
+        },
+        {
+          "id": "d",
+          "x": 30,
+          "y": 55
+        },
+        {
+          "id": "e",
+          "x": 41,
+          "y": 55
+        },
+        {
+          "id": "f",
+          "x": 52,
+          "y": 55
+        },
+        {
+          "id": "g",
+          "x": 63,
+          "y": 55
+        },
+        {
+          "id": "h",
+          "x": 74,
+          "y": 55
+        },
+        {
+          "id": "i",
+          "x": 85,
+          "y": 55
+        },
+        {
+          "id": "j",
+          "x": 8,
+          "y": 65
+        },
+        {
+          "id": "k",
+          "x": 19,
+          "y": 65
+        },
+        {
+          "id": "l",
+          "x": 30,
+          "y": 65
+        },
+        {
+          "id": "m",
+          "x": 41,
+          "y": 65
+        },
+        {
+          "id": "n",
+          "x": 52,
+          "y": 65
+        },
+        {
+          "id": "o",
+          "x": 63,
+          "y": 65
+        },
+        {
+          "id": "p",
+          "x": 74,
+          "y": 65
+        },
+        {
+          "id": "q",
+          "x": 85,
+          "y": 65
+        },
+        {
+          "id": "r",
+          "x": 8,
+          "y": 75
+        },
+        {
+          "id": "s",
+          "x": 19,
+          "y": 75
+        },
+        {
+          "id": "t",
+          "x": 30,
+          "y": 75
+        },
+        {
+          "id": "u",
+          "x": 41,
+          "y": 75
+        },
+        {
+          "id": "v",
+          "x": 52,
+          "y": 75
+        },
+        {
+          "id": "w",
+          "x": 63,
+          "y": 75
+        },
+        {
+          "id": "x",
+          "x": 74,
+          "y": 75
+        },
+        {
+          "id": "y",
+          "x": 85,
+          "y": 75
+        },
+        {
+          "id": "z",
+          "x": 8,
+          "y": 85
+        },
+        {
+          "id": "left-bracket",
+          "x": 19,
+          "y": 85
+        },
+        {
+          "id": "right-bracket",
+          "x": 30,
+          "y": 85
+        },
+        {
+          "id": "backslash",
+          "x": 41,
+          "y": 85
+        },
+        {
+          "id": "caps-lock",
+          "x": 52,
+          "y": 85
+        },
+        {
+          "id": "semicolon",
+          "x": 63,
+          "y": 85
+        },
+        {
+          "id": "quote",
+          "x": 74,
+          "y": 85
+        },
+        {
+          "id": "enter",
+          "x": 85,
+          "y": 85
+        }
+      ]
+    },
+    {
+      "id": "blackwidow-v4-75",
+      "name": "Razer BlackWidow V4 75%",
+      "category": "Keyboard",
+      "asset": "keyboards/blackwidow-v4-75.svg",
+      "lightingZones": [
+        "per-key"
+      ],
+      "buttons": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "f6",
+        "f7",
+        "f8",
+        "f9",
+        "f10",
+        "f11",
+        "f12",
+        "esc",
+        "print-screen",
+        "scroll-lock",
+        "pause",
+        "grave",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "0",
+        "minus",
+        "equal",
+        "backspace",
+        "tab",
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "k",
+        "l",
+        "m",
+        "n",
+        "o",
+        "p",
+        "q",
+        "r",
+        "s",
+        "t",
+        "u",
+        "v",
+        "w",
+        "x",
+        "y",
+        "z",
+        "left-bracket",
+        "right-bracket",
+        "backslash",
+        "caps-lock",
+        "semicolon",
+        "quote",
+        "enter",
+        "left-shift",
+        "right-shift",
+        "comma",
+        "period",
+        "slash",
+        "left-ctrl",
+        "left-win",
+        "left-alt",
+        "space",
+        "right-alt",
+        "menu",
+        "right-ctrl",
+        "insert",
+        "home",
+        "page-up",
+        "delete",
+        "end",
+        "page-down",
+        "arrow-up",
+        "arrow-left",
+        "arrow-down",
+        "arrow-right",
+        "game-mode",
+        "vol-up",
+        "vol-down",
+        "vol-mute"
+      ],
+      "hotspots": [
+        {
+          "id": "f1",
+          "x": 8,
+          "y": 15
+        },
+        {
+          "id": "f2",
+          "x": 19,
+          "y": 15
+        },
+        {
+          "id": "f3",
+          "x": 30,
+          "y": 15
+        },
+        {
+          "id": "f4",
+          "x": 41,
+          "y": 15
+        },
+        {
+          "id": "f5",
+          "x": 52,
+          "y": 15
+        },
+        {
+          "id": "f6",
+          "x": 63,
+          "y": 15
+        },
+        {
+          "id": "f7",
+          "x": 74,
+          "y": 15
+        },
+        {
+          "id": "f8",
+          "x": 85,
+          "y": 15
+        },
+        {
+          "id": "f9",
+          "x": 8,
+          "y": 25
+        },
+        {
+          "id": "f10",
+          "x": 19,
+          "y": 25
+        },
+        {
+          "id": "f11",
+          "x": 30,
+          "y": 25
+        },
+        {
+          "id": "f12",
+          "x": 41,
+          "y": 25
+        },
+        {
+          "id": "esc",
+          "x": 52,
+          "y": 25
+        },
+        {
+          "id": "print-screen",
+          "x": 63,
+          "y": 25
+        },
+        {
+          "id": "scroll-lock",
+          "x": 74,
+          "y": 25
+        },
+        {
+          "id": "pause",
+          "x": 85,
+          "y": 25
+        },
+        {
+          "id": "grave",
+          "x": 8,
+          "y": 35
+        },
+        {
+          "id": "1",
+          "x": 19,
+          "y": 35
+        },
+        {
+          "id": "2",
+          "x": 30,
+          "y": 35
+        },
+        {
+          "id": "3",
+          "x": 41,
+          "y": 35
+        },
+        {
+          "id": "4",
+          "x": 52,
+          "y": 35
+        },
+        {
+          "id": "5",
+          "x": 63,
+          "y": 35
+        },
+        {
+          "id": "6",
+          "x": 74,
+          "y": 35
+        },
+        {
+          "id": "7",
+          "x": 85,
+          "y": 35
+        },
+        {
+          "id": "8",
+          "x": 8,
+          "y": 45
+        },
+        {
+          "id": "9",
+          "x": 19,
+          "y": 45
+        },
+        {
+          "id": "0",
+          "x": 30,
+          "y": 45
+        },
+        {
+          "id": "minus",
+          "x": 41,
+          "y": 45
+        },
+        {
+          "id": "equal",
+          "x": 52,
+          "y": 45
+        },
+        {
+          "id": "backspace",
+          "x": 63,
+          "y": 45
+        },
+        {
+          "id": "tab",
+          "x": 74,
+          "y": 45
+        },
+        {
+          "id": "a",
+          "x": 85,
+          "y": 45
+        },
+        {
+          "id": "b",
+          "x": 8,
+          "y": 55
+        },
+        {
+          "id": "c",
+          "x": 19,
+          "y": 55
+        },
+        {
+          "id": "d",
+          "x": 30,
+          "y": 55
+        },
+        {
+          "id": "e",
+          "x": 41,
+          "y": 55
+        },
+        {
+          "id": "f",
+          "x": 52,
+          "y": 55
+        },
+        {
+          "id": "g",
+          "x": 63,
+          "y": 55
+        },
+        {
+          "id": "h",
+          "x": 74,
+          "y": 55
+        },
+        {
+          "id": "i",
+          "x": 85,
+          "y": 55
+        },
+        {
+          "id": "j",
+          "x": 8,
+          "y": 65
+        },
+        {
+          "id": "k",
+          "x": 19,
+          "y": 65
+        },
+        {
+          "id": "l",
+          "x": 30,
+          "y": 65
+        },
+        {
+          "id": "m",
+          "x": 41,
+          "y": 65
+        },
+        {
+          "id": "n",
+          "x": 52,
+          "y": 65
+        },
+        {
+          "id": "o",
+          "x": 63,
+          "y": 65
+        },
+        {
+          "id": "p",
+          "x": 74,
+          "y": 65
+        },
+        {
+          "id": "q",
+          "x": 85,
+          "y": 65
+        },
+        {
+          "id": "r",
+          "x": 8,
+          "y": 75
+        },
+        {
+          "id": "s",
+          "x": 19,
+          "y": 75
+        },
+        {
+          "id": "t",
+          "x": 30,
+          "y": 75
+        },
+        {
+          "id": "u",
+          "x": 41,
+          "y": 75
+        },
+        {
+          "id": "v",
+          "x": 52,
+          "y": 75
+        },
+        {
+          "id": "w",
+          "x": 63,
+          "y": 75
+        },
+        {
+          "id": "x",
+          "x": 74,
+          "y": 75
+        },
+        {
+          "id": "y",
+          "x": 85,
+          "y": 75
+        },
+        {
+          "id": "z",
+          "x": 8,
+          "y": 85
+        },
+        {
+          "id": "left-bracket",
+          "x": 19,
+          "y": 85
+        },
+        {
+          "id": "right-bracket",
+          "x": 30,
+          "y": 85
+        },
+        {
+          "id": "backslash",
+          "x": 41,
+          "y": 85
+        },
+        {
+          "id": "caps-lock",
+          "x": 52,
+          "y": 85
+        },
+        {
+          "id": "semicolon",
+          "x": 63,
+          "y": 85
+        },
+        {
+          "id": "quote",
+          "x": 74,
+          "y": 85
+        },
+        {
+          "id": "enter",
+          "x": 85,
+          "y": 85
+        }
+      ]
+    },
+    {
+      "id": "huntsman-v3-pro",
+      "name": "Razer Huntsman V3 Pro",
+      "category": "Keyboard",
+      "asset": "keyboards/huntsman-v3-pro.svg",
+      "lightingZones": [
+        "per-key"
+      ],
+      "buttons": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "f6",
+        "f7",
+        "f8",
+        "f9",
+        "f10",
+        "f11",
+        "f12",
+        "esc",
+        "print-screen",
+        "scroll-lock",
+        "pause",
+        "grave",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "0",
+        "minus",
+        "equal",
+        "backspace",
+        "tab",
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "k",
+        "l",
+        "m",
+        "n",
+        "o",
+        "p",
+        "q",
+        "r",
+        "s",
+        "t",
+        "u",
+        "v",
+        "w",
+        "x",
+        "y",
+        "z",
+        "left-bracket",
+        "right-bracket",
+        "backslash",
+        "caps-lock",
+        "semicolon",
+        "quote",
+        "enter",
+        "left-shift",
+        "right-shift",
+        "comma",
+        "period",
+        "slash",
+        "left-ctrl",
+        "left-win",
+        "left-alt",
+        "space",
+        "right-alt",
+        "menu",
+        "right-ctrl",
+        "insert",
+        "home",
+        "page-up",
+        "delete",
+        "end",
+        "page-down",
+        "arrow-up",
+        "arrow-left",
+        "arrow-down",
+        "arrow-right",
+        "num-lock",
+        "num-divide",
+        "num-multiply",
+        "num-subtract",
+        "numpad-0",
+        "numpad-1",
+        "numpad-2",
+        "numpad-3",
+        "numpad-4",
+        "numpad-5",
+        "numpad-6",
+        "numpad-7",
+        "numpad-8",
+        "numpad-9",
+        "num-add",
+        "num-enter",
+        "num-decimal",
+        "multi-fn-dial",
+        "f13",
+        "f14",
+        "f15",
+        "media-play-pause",
+        "media-stop",
+        "media-next",
+        "media-prev",
+        "vol-up",
+        "vol-down",
+        "vol-mute"
+      ],
+      "hotspots": [
+        {
+          "id": "f1",
+          "x": 8,
+          "y": 15
+        },
+        {
+          "id": "f2",
+          "x": 19,
+          "y": 15
+        },
+        {
+          "id": "f3",
+          "x": 30,
+          "y": 15
+        },
+        {
+          "id": "f4",
+          "x": 41,
+          "y": 15
+        },
+        {
+          "id": "f5",
+          "x": 52,
+          "y": 15
+        },
+        {
+          "id": "f6",
+          "x": 63,
+          "y": 15
+        },
+        {
+          "id": "f7",
+          "x": 74,
+          "y": 15
+        },
+        {
+          "id": "f8",
+          "x": 85,
+          "y": 15
+        },
+        {
+          "id": "f9",
+          "x": 8,
+          "y": 25
+        },
+        {
+          "id": "f10",
+          "x": 19,
+          "y": 25
+        },
+        {
+          "id": "f11",
+          "x": 30,
+          "y": 25
+        },
+        {
+          "id": "f12",
+          "x": 41,
+          "y": 25
+        },
+        {
+          "id": "esc",
+          "x": 52,
+          "y": 25
+        },
+        {
+          "id": "print-screen",
+          "x": 63,
+          "y": 25
+        },
+        {
+          "id": "scroll-lock",
+          "x": 74,
+          "y": 25
+        },
+        {
+          "id": "pause",
+          "x": 85,
+          "y": 25
+        },
+        {
+          "id": "grave",
+          "x": 8,
+          "y": 35
+        },
+        {
+          "id": "1",
+          "x": 19,
+          "y": 35
+        },
+        {
+          "id": "2",
+          "x": 30,
+          "y": 35
+        },
+        {
+          "id": "3",
+          "x": 41,
+          "y": 35
+        },
+        {
+          "id": "4",
+          "x": 52,
+          "y": 35
+        },
+        {
+          "id": "5",
+          "x": 63,
+          "y": 35
+        },
+        {
+          "id": "6",
+          "x": 74,
+          "y": 35
+        },
+        {
+          "id": "7",
+          "x": 85,
+          "y": 35
+        },
+        {
+          "id": "8",
+          "x": 8,
+          "y": 45
+        },
+        {
+          "id": "9",
+          "x": 19,
+          "y": 45
+        },
+        {
+          "id": "0",
+          "x": 30,
+          "y": 45
+        },
+        {
+          "id": "minus",
+          "x": 41,
+          "y": 45
+        },
+        {
+          "id": "equal",
+          "x": 52,
+          "y": 45
+        },
+        {
+          "id": "backspace",
+          "x": 63,
+          "y": 45
+        },
+        {
+          "id": "tab",
+          "x": 74,
+          "y": 45
+        },
+        {
+          "id": "a",
+          "x": 85,
+          "y": 45
+        },
+        {
+          "id": "b",
+          "x": 8,
+          "y": 55
+        },
+        {
+          "id": "c",
+          "x": 19,
+          "y": 55
+        },
+        {
+          "id": "d",
+          "x": 30,
+          "y": 55
+        },
+        {
+          "id": "e",
+          "x": 41,
+          "y": 55
+        },
+        {
+          "id": "f",
+          "x": 52,
+          "y": 55
+        },
+        {
+          "id": "g",
+          "x": 63,
+          "y": 55
+        },
+        {
+          "id": "h",
+          "x": 74,
+          "y": 55
+        },
+        {
+          "id": "i",
+          "x": 85,
+          "y": 55
+        },
+        {
+          "id": "j",
+          "x": 8,
+          "y": 65
+        },
+        {
+          "id": "k",
+          "x": 19,
+          "y": 65
+        },
+        {
+          "id": "l",
+          "x": 30,
+          "y": 65
+        },
+        {
+          "id": "m",
+          "x": 41,
+          "y": 65
+        },
+        {
+          "id": "n",
+          "x": 52,
+          "y": 65
+        },
+        {
+          "id": "o",
+          "x": 63,
+          "y": 65
+        },
+        {
+          "id": "p",
+          "x": 74,
+          "y": 65
+        },
+        {
+          "id": "q",
+          "x": 85,
+          "y": 65
+        },
+        {
+          "id": "r",
+          "x": 8,
+          "y": 75
+        },
+        {
+          "id": "s",
+          "x": 19,
+          "y": 75
+        },
+        {
+          "id": "t",
+          "x": 30,
+          "y": 75
+        },
+        {
+          "id": "u",
+          "x": 41,
+          "y": 75
+        },
+        {
+          "id": "v",
+          "x": 52,
+          "y": 75
+        },
+        {
+          "id": "w",
+          "x": 63,
+          "y": 75
+        },
+        {
+          "id": "x",
+          "x": 74,
+          "y": 75
+        },
+        {
+          "id": "y",
+          "x": 85,
+          "y": 75
+        },
+        {
+          "id": "z",
+          "x": 8,
+          "y": 85
+        },
+        {
+          "id": "left-bracket",
+          "x": 19,
+          "y": 85
+        },
+        {
+          "id": "right-bracket",
+          "x": 30,
+          "y": 85
+        },
+        {
+          "id": "backslash",
+          "x": 41,
+          "y": 85
+        },
+        {
+          "id": "caps-lock",
+          "x": 52,
+          "y": 85
+        },
+        {
+          "id": "semicolon",
+          "x": 63,
+          "y": 85
+        },
+        {
+          "id": "quote",
+          "x": 74,
+          "y": 85
+        },
+        {
+          "id": "enter",
+          "x": 85,
+          "y": 85
+        }
+      ]
+    },
+    {
+      "id": "huntsman-v3-pro-tkl",
+      "name": "Razer Huntsman V3 Pro TKL",
+      "category": "Keyboard",
+      "asset": "keyboards/huntsman-v3-pro-tkl.svg",
+      "lightingZones": [
+        "per-key"
+      ],
+      "buttons": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "f6",
+        "f7",
+        "f8",
+        "f9",
+        "f10",
+        "f11",
+        "f12",
+        "esc",
+        "print-screen",
+        "scroll-lock",
+        "pause",
+        "grave",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "0",
+        "minus",
+        "equal",
+        "backspace",
+        "tab",
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "k",
+        "l",
+        "m",
+        "n",
+        "o",
+        "p",
+        "q",
+        "r",
+        "s",
+        "t",
+        "u",
+        "v",
+        "w",
+        "x",
+        "y",
+        "z",
+        "left-bracket",
+        "right-bracket",
+        "backslash",
+        "caps-lock",
+        "semicolon",
+        "quote",
+        "enter",
+        "left-shift",
+        "right-shift",
+        "comma",
+        "period",
+        "slash",
+        "left-ctrl",
+        "left-win",
+        "left-alt",
+        "space",
+        "right-alt",
+        "menu",
+        "right-ctrl",
+        "insert",
+        "home",
+        "page-up",
+        "delete",
+        "end",
+        "page-down",
+        "arrow-up",
+        "arrow-left",
+        "arrow-down",
+        "arrow-right",
+        "multi-fn-dial",
+        "media-play-pause",
+        "media-stop",
+        "media-next",
+        "media-prev",
+        "vol-up",
+        "vol-down",
+        "vol-mute"
+      ],
+      "hotspots": [
+        {
+          "id": "f1",
+          "x": 8,
+          "y": 15
+        },
+        {
+          "id": "f2",
+          "x": 19,
+          "y": 15
+        },
+        {
+          "id": "f3",
+          "x": 30,
+          "y": 15
+        },
+        {
+          "id": "f4",
+          "x": 41,
+          "y": 15
+        },
+        {
+          "id": "f5",
+          "x": 52,
+          "y": 15
+        },
+        {
+          "id": "f6",
+          "x": 63,
+          "y": 15
+        },
+        {
+          "id": "f7",
+          "x": 74,
+          "y": 15
+        },
+        {
+          "id": "f8",
+          "x": 85,
+          "y": 15
+        },
+        {
+          "id": "f9",
+          "x": 8,
+          "y": 25
+        },
+        {
+          "id": "f10",
+          "x": 19,
+          "y": 25
+        },
+        {
+          "id": "f11",
+          "x": 30,
+          "y": 25
+        },
+        {
+          "id": "f12",
+          "x": 41,
+          "y": 25
+        },
+        {
+          "id": "esc",
+          "x": 52,
+          "y": 25
+        },
+        {
+          "id": "print-screen",
+          "x": 63,
+          "y": 25
+        },
+        {
+          "id": "scroll-lock",
+          "x": 74,
+          "y": 25
+        },
+        {
+          "id": "pause",
+          "x": 85,
+          "y": 25
+        },
+        {
+          "id": "grave",
+          "x": 8,
+          "y": 35
+        },
+        {
+          "id": "1",
+          "x": 19,
+          "y": 35
+        },
+        {
+          "id": "2",
+          "x": 30,
+          "y": 35
+        },
+        {
+          "id": "3",
+          "x": 41,
+          "y": 35
+        },
+        {
+          "id": "4",
+          "x": 52,
+          "y": 35
+        },
+        {
+          "id": "5",
+          "x": 63,
+          "y": 35
+        },
+        {
+          "id": "6",
+          "x": 74,
+          "y": 35
+        },
+        {
+          "id": "7",
+          "x": 85,
+          "y": 35
+        },
+        {
+          "id": "8",
+          "x": 8,
+          "y": 45
+        },
+        {
+          "id": "9",
+          "x": 19,
+          "y": 45
+        },
+        {
+          "id": "0",
+          "x": 30,
+          "y": 45
+        },
+        {
+          "id": "minus",
+          "x": 41,
+          "y": 45
+        },
+        {
+          "id": "equal",
+          "x": 52,
+          "y": 45
+        },
+        {
+          "id": "backspace",
+          "x": 63,
+          "y": 45
+        },
+        {
+          "id": "tab",
+          "x": 74,
+          "y": 45
+        },
+        {
+          "id": "a",
+          "x": 85,
+          "y": 45
+        },
+        {
+          "id": "b",
+          "x": 8,
+          "y": 55
+        },
+        {
+          "id": "c",
+          "x": 19,
+          "y": 55
+        },
+        {
+          "id": "d",
+          "x": 30,
+          "y": 55
+        },
+        {
+          "id": "e",
+          "x": 41,
+          "y": 55
+        },
+        {
+          "id": "f",
+          "x": 52,
+          "y": 55
+        },
+        {
+          "id": "g",
+          "x": 63,
+          "y": 55
+        },
+        {
+          "id": "h",
+          "x": 74,
+          "y": 55
+        },
+        {
+          "id": "i",
+          "x": 85,
+          "y": 55
+        },
+        {
+          "id": "j",
+          "x": 8,
+          "y": 65
+        },
+        {
+          "id": "k",
+          "x": 19,
+          "y": 65
+        },
+        {
+          "id": "l",
+          "x": 30,
+          "y": 65
+        },
+        {
+          "id": "m",
+          "x": 41,
+          "y": 65
+        },
+        {
+          "id": "n",
+          "x": 52,
+          "y": 65
+        },
+        {
+          "id": "o",
+          "x": 63,
+          "y": 65
+        },
+        {
+          "id": "p",
+          "x": 74,
+          "y": 65
+        },
+        {
+          "id": "q",
+          "x": 85,
+          "y": 65
+        },
+        {
+          "id": "r",
+          "x": 8,
+          "y": 75
+        },
+        {
+          "id": "s",
+          "x": 19,
+          "y": 75
+        },
+        {
+          "id": "t",
+          "x": 30,
+          "y": 75
+        },
+        {
+          "id": "u",
+          "x": 41,
+          "y": 75
+        },
+        {
+          "id": "v",
+          "x": 52,
+          "y": 75
+        },
+        {
+          "id": "w",
+          "x": 63,
+          "y": 75
+        },
+        {
+          "id": "x",
+          "x": 74,
+          "y": 75
+        },
+        {
+          "id": "y",
+          "x": 85,
+          "y": 75
+        },
+        {
+          "id": "z",
+          "x": 8,
+          "y": 85
+        },
+        {
+          "id": "left-bracket",
+          "x": 19,
+          "y": 85
+        },
+        {
+          "id": "right-bracket",
+          "x": 30,
+          "y": 85
+        },
+        {
+          "id": "backslash",
+          "x": 41,
+          "y": 85
+        },
+        {
+          "id": "caps-lock",
+          "x": 52,
+          "y": 85
+        },
+        {
+          "id": "semicolon",
+          "x": 63,
+          "y": 85
+        },
+        {
+          "id": "quote",
+          "x": 74,
+          "y": 85
+        },
+        {
+          "id": "enter",
+          "x": 85,
+          "y": 85
+        }
+      ]
+    },
+    {
+      "id": "cynosa-v2",
+      "name": "Razer Cynosa V2",
+      "category": "Keyboard",
+      "asset": "keyboards/cynosa-v2.svg",
+      "lightingZones": [
+        "per-key"
+      ],
+      "buttons": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "f6",
+        "f7",
+        "f8",
+        "f9",
+        "f10",
+        "f11",
+        "f12",
+        "esc",
+        "print-screen",
+        "scroll-lock",
+        "pause",
+        "grave",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "0",
+        "minus",
+        "equal",
+        "backspace",
+        "tab",
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "k",
+        "l",
+        "m",
+        "n",
+        "o",
+        "p",
+        "q",
+        "r",
+        "s",
+        "t",
+        "u",
+        "v",
+        "w",
+        "x",
+        "y",
+        "z",
+        "left-bracket",
+        "right-bracket",
+        "backslash",
+        "caps-lock",
+        "semicolon",
+        "quote",
+        "enter",
+        "left-shift",
+        "right-shift",
+        "comma",
+        "period",
+        "slash",
+        "left-ctrl",
+        "left-win",
+        "left-alt",
+        "space",
+        "right-alt",
+        "menu",
+        "right-ctrl",
+        "insert",
+        "home",
+        "page-up",
+        "delete",
+        "end",
+        "page-down",
+        "arrow-up",
+        "arrow-left",
+        "arrow-down",
+        "arrow-right",
+        "num-lock",
+        "num-divide",
+        "num-multiply",
+        "num-subtract",
+        "numpad-0",
+        "numpad-1",
+        "numpad-2",
+        "numpad-3",
+        "numpad-4",
+        "numpad-5",
+        "numpad-6",
+        "numpad-7",
+        "numpad-8",
+        "numpad-9",
+        "num-add",
+        "num-enter",
+        "num-decimal",
+        "game-mode",
+        "media-play-pause",
+        "media-stop",
+        "media-next",
+        "media-prev",
+        "vol-up",
+        "vol-down",
+        "vol-mute"
+      ],
+      "hotspots": [
+        {
+          "id": "f1",
+          "x": 8,
+          "y": 15
+        },
+        {
+          "id": "f2",
+          "x": 19,
+          "y": 15
+        },
+        {
+          "id": "f3",
+          "x": 30,
+          "y": 15
+        },
+        {
+          "id": "f4",
+          "x": 41,
+          "y": 15
+        },
+        {
+          "id": "f5",
+          "x": 52,
+          "y": 15
+        },
+        {
+          "id": "f6",
+          "x": 63,
+          "y": 15
+        },
+        {
+          "id": "f7",
+          "x": 74,
+          "y": 15
+        },
+        {
+          "id": "f8",
+          "x": 85,
+          "y": 15
+        },
+        {
+          "id": "f9",
+          "x": 8,
+          "y": 25
+        },
+        {
+          "id": "f10",
+          "x": 19,
+          "y": 25
+        },
+        {
+          "id": "f11",
+          "x": 30,
+          "y": 25
+        },
+        {
+          "id": "f12",
+          "x": 41,
+          "y": 25
+        },
+        {
+          "id": "esc",
+          "x": 52,
+          "y": 25
+        },
+        {
+          "id": "print-screen",
+          "x": 63,
+          "y": 25
+        },
+        {
+          "id": "scroll-lock",
+          "x": 74,
+          "y": 25
+        },
+        {
+          "id": "pause",
+          "x": 85,
+          "y": 25
+        },
+        {
+          "id": "grave",
+          "x": 8,
+          "y": 35
+        },
+        {
+          "id": "1",
+          "x": 19,
+          "y": 35
+        },
+        {
+          "id": "2",
+          "x": 30,
+          "y": 35
+        },
+        {
+          "id": "3",
+          "x": 41,
+          "y": 35
+        },
+        {
+          "id": "4",
+          "x": 52,
+          "y": 35
+        },
+        {
+          "id": "5",
+          "x": 63,
+          "y": 35
+        },
+        {
+          "id": "6",
+          "x": 74,
+          "y": 35
+        },
+        {
+          "id": "7",
+          "x": 85,
+          "y": 35
+        },
+        {
+          "id": "8",
+          "x": 8,
+          "y": 45
+        },
+        {
+          "id": "9",
+          "x": 19,
+          "y": 45
+        },
+        {
+          "id": "0",
+          "x": 30,
+          "y": 45
+        },
+        {
+          "id": "minus",
+          "x": 41,
+          "y": 45
+        },
+        {
+          "id": "equal",
+          "x": 52,
+          "y": 45
+        },
+        {
+          "id": "backspace",
+          "x": 63,
+          "y": 45
+        },
+        {
+          "id": "tab",
+          "x": 74,
+          "y": 45
+        },
+        {
+          "id": "a",
+          "x": 85,
+          "y": 45
+        },
+        {
+          "id": "b",
+          "x": 8,
+          "y": 55
+        },
+        {
+          "id": "c",
+          "x": 19,
+          "y": 55
+        },
+        {
+          "id": "d",
+          "x": 30,
+          "y": 55
+        },
+        {
+          "id": "e",
+          "x": 41,
+          "y": 55
+        },
+        {
+          "id": "f",
+          "x": 52,
+          "y": 55
+        },
+        {
+          "id": "g",
+          "x": 63,
+          "y": 55
+        },
+        {
+          "id": "h",
+          "x": 74,
+          "y": 55
+        },
+        {
+          "id": "i",
+          "x": 85,
+          "y": 55
+        },
+        {
+          "id": "j",
+          "x": 8,
+          "y": 65
+        },
+        {
+          "id": "k",
+          "x": 19,
+          "y": 65
+        },
+        {
+          "id": "l",
+          "x": 30,
+          "y": 65
+        },
+        {
+          "id": "m",
+          "x": 41,
+          "y": 65
+        },
+        {
+          "id": "n",
+          "x": 52,
+          "y": 65
+        },
+        {
+          "id": "o",
+          "x": 63,
+          "y": 65
+        },
+        {
+          "id": "p",
+          "x": 74,
+          "y": 65
+        },
+        {
+          "id": "q",
+          "x": 85,
+          "y": 65
+        },
+        {
+          "id": "r",
+          "x": 8,
+          "y": 75
+        },
+        {
+          "id": "s",
+          "x": 19,
+          "y": 75
+        },
+        {
+          "id": "t",
+          "x": 30,
+          "y": 75
+        },
+        {
+          "id": "u",
+          "x": 41,
+          "y": 75
+        },
+        {
+          "id": "v",
+          "x": 52,
+          "y": 75
+        },
+        {
+          "id": "w",
+          "x": 63,
+          "y": 75
+        },
+        {
+          "id": "x",
+          "x": 74,
+          "y": 75
+        },
+        {
+          "id": "y",
+          "x": 85,
+          "y": 75
+        },
+        {
+          "id": "z",
+          "x": 8,
+          "y": 85
+        },
+        {
+          "id": "left-bracket",
+          "x": 19,
+          "y": 85
+        },
+        {
+          "id": "right-bracket",
+          "x": 30,
+          "y": 85
+        },
+        {
+          "id": "backslash",
+          "x": 41,
+          "y": 85
+        },
+        {
+          "id": "caps-lock",
+          "x": 52,
+          "y": 85
+        },
+        {
+          "id": "semicolon",
+          "x": 63,
+          "y": 85
+        },
+        {
+          "id": "quote",
+          "x": 74,
+          "y": 85
+        },
+        {
+          "id": "enter",
+          "x": 85,
+          "y": 85
+        }
+      ]
+    },
+    {
+      "id": "ornata-v3",
+      "name": "Razer Ornata V3",
+      "category": "Keyboard",
+      "asset": "keyboards/ornata-v3.svg",
+      "lightingZones": [
+        "per-key"
+      ],
+      "buttons": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "f6",
+        "f7",
+        "f8",
+        "f9",
+        "f10",
+        "f11",
+        "f12",
+        "esc",
+        "print-screen",
+        "scroll-lock",
+        "pause",
+        "grave",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "0",
+        "minus",
+        "equal",
+        "backspace",
+        "tab",
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "k",
+        "l",
+        "m",
+        "n",
+        "o",
+        "p",
+        "q",
+        "r",
+        "s",
+        "t",
+        "u",
+        "v",
+        "w",
+        "x",
+        "y",
+        "z",
+        "left-bracket",
+        "right-bracket",
+        "backslash",
+        "caps-lock",
+        "semicolon",
+        "quote",
+        "enter",
+        "left-shift",
+        "right-shift",
+        "comma",
+        "period",
+        "slash",
+        "left-ctrl",
+        "left-win",
+        "left-alt",
+        "space",
+        "right-alt",
+        "menu",
+        "right-ctrl",
+        "insert",
+        "home",
+        "page-up",
+        "delete",
+        "end",
+        "page-down",
+        "arrow-up",
+        "arrow-left",
+        "arrow-down",
+        "arrow-right",
+        "num-lock",
+        "num-divide",
+        "num-multiply",
+        "num-subtract",
+        "numpad-0",
+        "numpad-1",
+        "numpad-2",
+        "numpad-3",
+        "numpad-4",
+        "numpad-5",
+        "numpad-6",
+        "numpad-7",
+        "numpad-8",
+        "numpad-9",
+        "num-add",
+        "num-enter",
+        "num-decimal",
+        "game-mode",
+        "media-play-pause",
+        "media-next",
+        "media-prev",
+        "vol-up",
+        "vol-down",
+        "vol-mute"
+      ],
+      "hotspots": [
+        {
+          "id": "f1",
+          "x": 8,
+          "y": 15
+        },
+        {
+          "id": "f2",
+          "x": 19,
+          "y": 15
+        },
+        {
+          "id": "f3",
+          "x": 30,
+          "y": 15
+        },
+        {
+          "id": "f4",
+          "x": 41,
+          "y": 15
+        },
+        {
+          "id": "f5",
+          "x": 52,
+          "y": 15
+        },
+        {
+          "id": "f6",
+          "x": 63,
+          "y": 15
+        },
+        {
+          "id": "f7",
+          "x": 74,
+          "y": 15
+        },
+        {
+          "id": "f8",
+          "x": 85,
+          "y": 15
+        },
+        {
+          "id": "f9",
+          "x": 8,
+          "y": 25
+        },
+        {
+          "id": "f10",
+          "x": 19,
+          "y": 25
+        },
+        {
+          "id": "f11",
+          "x": 30,
+          "y": 25
+        },
+        {
+          "id": "f12",
+          "x": 41,
+          "y": 25
+        },
+        {
+          "id": "esc",
+          "x": 52,
+          "y": 25
+        },
+        {
+          "id": "print-screen",
+          "x": 63,
+          "y": 25
+        },
+        {
+          "id": "scroll-lock",
+          "x": 74,
+          "y": 25
+        },
+        {
+          "id": "pause",
+          "x": 85,
+          "y": 25
+        },
+        {
+          "id": "grave",
+          "x": 8,
+          "y": 35
+        },
+        {
+          "id": "1",
+          "x": 19,
+          "y": 35
+        },
+        {
+          "id": "2",
+          "x": 30,
+          "y": 35
+        },
+        {
+          "id": "3",
+          "x": 41,
+          "y": 35
+        },
+        {
+          "id": "4",
+          "x": 52,
+          "y": 35
+        },
+        {
+          "id": "5",
+          "x": 63,
+          "y": 35
+        },
+        {
+          "id": "6",
+          "x": 74,
+          "y": 35
+        },
+        {
+          "id": "7",
+          "x": 85,
+          "y": 35
+        },
+        {
+          "id": "8",
+          "x": 8,
+          "y": 45
+        },
+        {
+          "id": "9",
+          "x": 19,
+          "y": 45
+        },
+        {
+          "id": "0",
+          "x": 30,
+          "y": 45
+        },
+        {
+          "id": "minus",
+          "x": 41,
+          "y": 45
+        },
+        {
+          "id": "equal",
+          "x": 52,
+          "y": 45
+        },
+        {
+          "id": "backspace",
+          "x": 63,
+          "y": 45
+        },
+        {
+          "id": "tab",
+          "x": 74,
+          "y": 45
+        },
+        {
+          "id": "a",
+          "x": 85,
+          "y": 45
+        },
+        {
+          "id": "b",
+          "x": 8,
+          "y": 55
+        },
+        {
+          "id": "c",
+          "x": 19,
+          "y": 55
+        },
+        {
+          "id": "d",
+          "x": 30,
+          "y": 55
+        },
+        {
+          "id": "e",
+          "x": 41,
+          "y": 55
+        },
+        {
+          "id": "f",
+          "x": 52,
+          "y": 55
+        },
+        {
+          "id": "g",
+          "x": 63,
+          "y": 55
+        },
+        {
+          "id": "h",
+          "x": 74,
+          "y": 55
+        },
+        {
+          "id": "i",
+          "x": 85,
+          "y": 55
+        },
+        {
+          "id": "j",
+          "x": 8,
+          "y": 65
+        },
+        {
+          "id": "k",
+          "x": 19,
+          "y": 65
+        },
+        {
+          "id": "l",
+          "x": 30,
+          "y": 65
+        },
+        {
+          "id": "m",
+          "x": 41,
+          "y": 65
+        },
+        {
+          "id": "n",
+          "x": 52,
+          "y": 65
+        },
+        {
+          "id": "o",
+          "x": 63,
+          "y": 65
+        },
+        {
+          "id": "p",
+          "x": 74,
+          "y": 65
+        },
+        {
+          "id": "q",
+          "x": 85,
+          "y": 65
+        },
+        {
+          "id": "r",
+          "x": 8,
+          "y": 75
+        },
+        {
+          "id": "s",
+          "x": 19,
+          "y": 75
+        },
+        {
+          "id": "t",
+          "x": 30,
+          "y": 75
+        },
+        {
+          "id": "u",
+          "x": 41,
+          "y": 75
+        },
+        {
+          "id": "v",
+          "x": 52,
+          "y": 75
+        },
+        {
+          "id": "w",
+          "x": 63,
+          "y": 75
+        },
+        {
+          "id": "x",
+          "x": 74,
+          "y": 75
+        },
+        {
+          "id": "y",
+          "x": 85,
+          "y": 75
+        },
+        {
+          "id": "z",
+          "x": 8,
+          "y": 85
+        },
+        {
+          "id": "left-bracket",
+          "x": 19,
+          "y": 85
+        },
+        {
+          "id": "right-bracket",
+          "x": 30,
+          "y": 85
+        },
+        {
+          "id": "backslash",
+          "x": 41,
+          "y": 85
+        },
+        {
+          "id": "caps-lock",
+          "x": 52,
+          "y": 85
+        },
+        {
+          "id": "semicolon",
+          "x": 63,
+          "y": 85
+        },
+        {
+          "id": "quote",
+          "x": 74,
+          "y": 85
+        },
+        {
+          "id": "enter",
+          "x": 85,
+          "y": 85
+        }
+      ]
+    },
+    {
+      "id": "tartarus-v2",
+      "name": "Razer Tartarus V2",
+      "category": "Keypad",
+      "asset": "keypads/tartarus-v2.svg",
+      "lightingZones": [
+        "per-key"
+      ],
+      "buttons": [
+        "key-01",
+        "key-02",
+        "key-03",
+        "key-04",
+        "key-05",
+        "key-06",
+        "key-07",
+        "key-08",
+        "key-09",
+        "key-10",
+        "key-11",
+        "key-12",
+        "key-13",
+        "key-14",
+        "key-15",
+        "key-16",
+        "key-17",
+        "key-18",
+        "key-19",
+        "key-20",
+        "scroll-click",
+        "scroll-up",
+        "scroll-down",
+        "d-pad-up",
+        "d-pad-down",
+        "d-pad-left",
+        "d-pad-right",
+        "shift-key",
+        "profile-1",
+        "profile-2",
+        "profile-3"
+      ],
+      "hotspots": [
+        {
+          "id": "key-01",
+          "x": 8,
+          "y": 15
+        },
+        {
+          "id": "key-02",
+          "x": 19,
+          "y": 15
+        },
+        {
+          "id": "key-03",
+          "x": 30,
+          "y": 15
+        },
+        {
+          "id": "key-04",
+          "x": 41,
+          "y": 15
+        },
+        {
+          "id": "key-05",
+          "x": 52,
+          "y": 15
+        },
+        {
+          "id": "key-06",
+          "x": 63,
+          "y": 15
+        },
+        {
+          "id": "key-07",
+          "x": 74,
+          "y": 15
+        },
+        {
+          "id": "key-08",
+          "x": 85,
+          "y": 15
+        },
+        {
+          "id": "key-09",
+          "x": 8,
+          "y": 25
+        },
+        {
+          "id": "key-10",
+          "x": 19,
+          "y": 25
+        },
+        {
+          "id": "key-11",
+          "x": 30,
+          "y": 25
+        },
+        {
+          "id": "key-12",
+          "x": 41,
+          "y": 25
+        },
+        {
+          "id": "key-13",
+          "x": 52,
+          "y": 25
+        },
+        {
+          "id": "key-14",
+          "x": 63,
+          "y": 25
+        },
+        {
+          "id": "key-15",
+          "x": 74,
+          "y": 25
+        },
+        {
+          "id": "key-16",
+          "x": 85,
+          "y": 25
+        },
+        {
+          "id": "key-17",
+          "x": 8,
+          "y": 35
+        },
+        {
+          "id": "key-18",
+          "x": 19,
+          "y": 35
+        },
+        {
+          "id": "key-19",
+          "x": 30,
+          "y": 35
+        },
+        {
+          "id": "key-20",
+          "x": 41,
+          "y": 35
+        },
+        {
+          "id": "scroll-click",
+          "x": 52,
+          "y": 35
+        },
+        {
+          "id": "scroll-up",
+          "x": 63,
+          "y": 35
+        },
+        {
+          "id": "scroll-down",
+          "x": 74,
+          "y": 35
+        },
+        {
+          "id": "d-pad-up",
+          "x": 85,
+          "y": 35
+        },
+        {
+          "id": "d-pad-down",
+          "x": 8,
+          "y": 45
+        },
+        {
+          "id": "d-pad-left",
+          "x": 19,
+          "y": 45
+        },
+        {
+          "id": "d-pad-right",
+          "x": 30,
+          "y": 45
+        },
+        {
+          "id": "shift-key",
+          "x": 41,
+          "y": 45
+        },
+        {
+          "id": "profile-1",
+          "x": 52,
+          "y": 45
+        },
+        {
+          "id": "profile-2",
+          "x": 63,
+          "y": 45
+        },
+        {
+          "id": "profile-3",
+          "x": 74,
+          "y": 45
+        }
+      ]
+    },
+    {
+      "id": "tartarus-pro",
+      "name": "Razer Tartarus Pro",
+      "category": "Keypad",
+      "asset": "keypads/tartarus-pro.svg",
+      "lightingZones": [
+        "per-key"
+      ],
+      "buttons": [
+        "key-01",
+        "key-02",
+        "key-03",
+        "key-04",
+        "key-05",
+        "key-06",
+        "key-07",
+        "key-08",
+        "key-09",
+        "key-10",
+        "key-11",
+        "key-12",
+        "key-13",
+        "key-14",
+        "key-15",
+        "key-16",
+        "key-17",
+        "key-18",
+        "key-19",
+        "key-20",
+        "scroll-click",
+        "scroll-up",
+        "scroll-down",
+        "analog-stick",
+        "analog-axis-x",
+        "analog-axis-y",
+        "shift-key",
+        "profile-1",
+        "profile-2",
+        "profile-3"
+      ],
+      "hotspots": [
+        {
+          "id": "key-01",
+          "x": 8,
+          "y": 15
+        },
+        {
+          "id": "key-02",
+          "x": 19,
+          "y": 15
+        },
+        {
+          "id": "key-03",
+          "x": 30,
+          "y": 15
+        },
+        {
+          "id": "key-04",
+          "x": 41,
+          "y": 15
+        },
+        {
+          "id": "key-05",
+          "x": 52,
+          "y": 15
+        },
+        {
+          "id": "key-06",
+          "x": 63,
+          "y": 15
+        },
+        {
+          "id": "key-07",
+          "x": 74,
+          "y": 15
+        },
+        {
+          "id": "key-08",
+          "x": 85,
+          "y": 15
+        },
+        {
+          "id": "key-09",
+          "x": 8,
+          "y": 25
+        },
+        {
+          "id": "key-10",
+          "x": 19,
+          "y": 25
+        },
+        {
+          "id": "key-11",
+          "x": 30,
+          "y": 25
+        },
+        {
+          "id": "key-12",
+          "x": 41,
+          "y": 25
+        },
+        {
+          "id": "key-13",
+          "x": 52,
+          "y": 25
+        },
+        {
+          "id": "key-14",
+          "x": 63,
+          "y": 25
+        },
+        {
+          "id": "key-15",
+          "x": 74,
+          "y": 25
+        },
+        {
+          "id": "key-16",
+          "x": 85,
+          "y": 25
+        },
+        {
+          "id": "key-17",
+          "x": 8,
+          "y": 35
+        },
+        {
+          "id": "key-18",
+          "x": 19,
+          "y": 35
+        },
+        {
+          "id": "key-19",
+          "x": 30,
+          "y": 35
+        },
+        {
+          "id": "key-20",
+          "x": 41,
+          "y": 35
+        },
+        {
+          "id": "scroll-click",
+          "x": 52,
+          "y": 35
+        },
+        {
+          "id": "scroll-up",
+          "x": 63,
+          "y": 35
+        },
+        {
+          "id": "scroll-down",
+          "x": 74,
+          "y": 35
+        },
+        {
+          "id": "analog-stick",
+          "x": 85,
+          "y": 35
+        },
+        {
+          "id": "analog-axis-x",
+          "x": 8,
+          "y": 45
+        },
+        {
+          "id": "analog-axis-y",
+          "x": 19,
+          "y": 45
+        },
+        {
+          "id": "shift-key",
+          "x": 30,
+          "y": 45
+        },
+        {
+          "id": "profile-1",
+          "x": 41,
+          "y": 45
+        },
+        {
+          "id": "profile-2",
+          "x": 52,
+          "y": 45
+        },
+        {
+          "id": "profile-3",
+          "x": 63,
+          "y": 45
+        }
+      ]
+    },
+    {
+      "id": "orbweaver",
+      "name": "Razer Orbweaver Chroma",
+      "category": "Keypad",
+      "asset": "keypads/orbweaver.svg",
+      "lightingZones": [
+        "per-key"
+      ],
+      "buttons": [
+        "key-01",
+        "key-02",
+        "key-03",
+        "key-04",
+        "key-05",
+        "key-06",
+        "key-07",
+        "key-08",
+        "key-09",
+        "key-10",
+        "key-11",
+        "key-12",
+        "key-13",
+        "key-14",
+        "key-15",
+        "key-16",
+        "key-17",
+        "key-18",
+        "key-19",
+        "key-20",
+        "thumb-1",
+        "thumb-2",
+        "thumb-3",
+        "d-pad-up",
+        "d-pad-down",
+        "d-pad-left",
+        "d-pad-right",
+        "shift-key",
+        "profile-1",
+        "profile-2",
+        "profile-3"
+      ],
+      "hotspots": [
+        {
+          "id": "key-01",
+          "x": 8,
+          "y": 15
+        },
+        {
+          "id": "key-02",
+          "x": 19,
+          "y": 15
+        },
+        {
+          "id": "key-03",
+          "x": 30,
+          "y": 15
+        },
+        {
+          "id": "key-04",
+          "x": 41,
+          "y": 15
+        },
+        {
+          "id": "key-05",
+          "x": 52,
+          "y": 15
+        },
+        {
+          "id": "key-06",
+          "x": 63,
+          "y": 15
+        },
+        {
+          "id": "key-07",
+          "x": 74,
+          "y": 15
+        },
+        {
+          "id": "key-08",
+          "x": 85,
+          "y": 15
+        },
+        {
+          "id": "key-09",
+          "x": 8,
+          "y": 25
+        },
+        {
+          "id": "key-10",
+          "x": 19,
+          "y": 25
+        },
+        {
+          "id": "key-11",
+          "x": 30,
+          "y": 25
+        },
+        {
+          "id": "key-12",
+          "x": 41,
+          "y": 25
+        },
+        {
+          "id": "key-13",
+          "x": 52,
+          "y": 25
+        },
+        {
+          "id": "key-14",
+          "x": 63,
+          "y": 25
+        },
+        {
+          "id": "key-15",
+          "x": 74,
+          "y": 25
+        },
+        {
+          "id": "key-16",
+          "x": 85,
+          "y": 25
+        },
+        {
+          "id": "key-17",
+          "x": 8,
+          "y": 35
+        },
+        {
+          "id": "key-18",
+          "x": 19,
+          "y": 35
+        },
+        {
+          "id": "key-19",
+          "x": 30,
+          "y": 35
+        },
+        {
+          "id": "key-20",
+          "x": 41,
+          "y": 35
+        },
+        {
+          "id": "thumb-1",
+          "x": 52,
+          "y": 35
+        },
+        {
+          "id": "thumb-2",
+          "x": 63,
+          "y": 35
+        },
+        {
+          "id": "thumb-3",
+          "x": 74,
+          "y": 35
+        },
+        {
+          "id": "d-pad-up",
+          "x": 85,
+          "y": 35
+        },
+        {
+          "id": "d-pad-down",
+          "x": 8,
+          "y": 45
+        },
+        {
+          "id": "d-pad-left",
+          "x": 19,
+          "y": 45
+        },
+        {
+          "id": "d-pad-right",
+          "x": 30,
+          "y": 45
+        },
+        {
+          "id": "shift-key",
+          "x": 41,
+          "y": 45
+        },
+        {
+          "id": "profile-1",
+          "x": 52,
+          "y": 45
+        },
+        {
+          "id": "profile-2",
+          "x": 63,
+          "y": 45
+        },
+        {
+          "id": "profile-3",
+          "x": 74,
+          "y": 45
+        }
+      ]
+    },
+    {
+      "id": "kraken-v3-pro",
+      "name": "Razer Kraken V3 Pro",
+      "category": "Headset",
+      "asset": "headsets/kraken-v3-pro.svg",
+      "lightingZones": [
+        "left-cup",
+        "right-cup"
+      ],
+      "buttons": [
+        "vol-up",
+        "vol-down",
+        "vol-mute",
+        "eq-toggle",
+        "power",
+        "chat-mix",
+        "noise-cancel"
+      ],
+      "hotspots": [
+        {
+          "id": "vol-up",
+          "x": 8,
+          "y": 15
+        },
+        {
+          "id": "vol-down",
+          "x": 19,
+          "y": 15
+        },
+        {
+          "id": "vol-mute",
+          "x": 30,
+          "y": 15
+        },
+        {
+          "id": "eq-toggle",
+          "x": 41,
+          "y": 15
+        },
+        {
+          "id": "power",
+          "x": 52,
+          "y": 15
+        },
+        {
+          "id": "chat-mix",
+          "x": 63,
+          "y": 15
+        },
+        {
+          "id": "noise-cancel",
+          "x": 74,
+          "y": 15
+        }
+      ]
+    },
+    {
+      "id": "blackshark-v2-pro",
+      "name": "Razer BlackShark V2 Pro",
+      "category": "Headset",
+      "asset": "headsets/blackshark-v2-pro.svg",
+      "lightingZones": [
+        "left-cup",
+        "right-cup"
+      ],
+      "buttons": [
+        "vol-up",
+        "vol-down",
+        "mic-mute",
+        "power",
+        "surround-toggle"
+      ],
+      "hotspots": [
+        {
+          "id": "vol-up",
+          "x": 8,
+          "y": 15
+        },
+        {
+          "id": "vol-down",
+          "x": 19,
+          "y": 15
+        },
+        {
+          "id": "mic-mute",
+          "x": 30,
+          "y": 15
+        },
+        {
+          "id": "power",
+          "x": 41,
+          "y": 15
+        },
+        {
+          "id": "surround-toggle",
+          "x": 52,
+          "y": 15
+        }
+      ]
+    },
+    {
+      "id": "raiju-ultimate",
+      "name": "Razer Raiju Ultimate",
+      "category": "Controller",
+      "asset": "controllers/raiju-ultimate.svg",
+      "lightingZones": [
+        "left-touchpad",
+        "right-touchpad",
+        "logo",
+        "underglow"
+      ],
+      "buttons": [
+        "btn-a",
+        "btn-b",
+        "btn-x",
+        "btn-y",
+        "btn-lb",
+        "btn-rb",
+        "btn-lt",
+        "btn-rt",
+        "axis-lt",
+        "axis-rt",
+        "btn-ls",
+        "btn-rs",
+        "axis-ls-x",
+        "axis-ls-y",
+        "axis-rs-x",
+        "axis-rs-y",
+        "dpad-up",
+        "dpad-down",
+        "dpad-left",
+        "dpad-right",
+        "btn-start",
+        "btn-select",
+        "profile-btn",
+        "trigger-hair-lt",
+        "trigger-hair-rt",
+        "btn-m1",
+        "btn-m2",
+        "btn-m3",
+        "btn-m4"
+      ],
+      "hotspots": [
+        {
+          "id": "btn-a",
+          "x": 8,
+          "y": 15
+        },
+        {
+          "id": "btn-b",
+          "x": 19,
+          "y": 15
+        },
+        {
+          "id": "btn-x",
+          "x": 30,
+          "y": 15
+        },
+        {
+          "id": "btn-y",
+          "x": 41,
+          "y": 15
+        },
+        {
+          "id": "btn-lb",
+          "x": 52,
+          "y": 15
+        },
+        {
+          "id": "btn-rb",
+          "x": 63,
+          "y": 15
+        },
+        {
+          "id": "btn-lt",
+          "x": 74,
+          "y": 15
+        },
+        {
+          "id": "btn-rt",
+          "x": 85,
+          "y": 15
+        },
+        {
+          "id": "axis-lt",
+          "x": 8,
+          "y": 25
+        },
+        {
+          "id": "axis-rt",
+          "x": 19,
+          "y": 25
+        },
+        {
+          "id": "btn-ls",
+          "x": 30,
+          "y": 25
+        },
+        {
+          "id": "btn-rs",
+          "x": 41,
+          "y": 25
+        },
+        {
+          "id": "axis-ls-x",
+          "x": 52,
+          "y": 25
+        },
+        {
+          "id": "axis-ls-y",
+          "x": 63,
+          "y": 25
+        },
+        {
+          "id": "axis-rs-x",
+          "x": 74,
+          "y": 25
+        },
+        {
+          "id": "axis-rs-y",
+          "x": 85,
+          "y": 25
+        },
+        {
+          "id": "dpad-up",
+          "x": 8,
+          "y": 35
+        },
+        {
+          "id": "dpad-down",
+          "x": 19,
+          "y": 35
+        },
+        {
+          "id": "dpad-left",
+          "x": 30,
+          "y": 35
+        },
+        {
+          "id": "dpad-right",
+          "x": 41,
+          "y": 35
+        },
+        {
+          "id": "btn-start",
+          "x": 52,
+          "y": 35
+        },
+        {
+          "id": "btn-select",
+          "x": 63,
+          "y": 35
+        },
+        {
+          "id": "profile-btn",
+          "x": 74,
+          "y": 35
+        },
+        {
+          "id": "trigger-hair-lt",
+          "x": 85,
+          "y": 35
+        },
+        {
+          "id": "trigger-hair-rt",
+          "x": 8,
+          "y": 45
+        },
+        {
+          "id": "btn-m1",
+          "x": 19,
+          "y": 45
+        },
+        {
+          "id": "btn-m2",
+          "x": 30,
+          "y": 45
+        },
+        {
+          "id": "btn-m3",
+          "x": 41,
+          "y": 45
+        },
+        {
+          "id": "btn-m4",
+          "x": 52,
+          "y": 45
+        }
+      ]
+    },
+    {
+      "id": "raiju-tournament",
+      "name": "Razer Raiju Tournament",
+      "category": "Controller",
+      "asset": "controllers/raiju-tournament.svg",
+      "lightingZones": [
+        "left-touchpad",
+        "right-touchpad",
+        "logo",
+        "underglow"
+      ],
+      "buttons": [
+        "btn-a",
+        "btn-b",
+        "btn-x",
+        "btn-y",
+        "btn-lb",
+        "btn-rb",
+        "btn-lt",
+        "btn-rt",
+        "axis-lt",
+        "axis-rt",
+        "btn-ls",
+        "btn-rs",
+        "axis-ls-x",
+        "axis-ls-y",
+        "axis-rs-x",
+        "axis-rs-y",
+        "dpad-up",
+        "dpad-down",
+        "dpad-left",
+        "dpad-right",
+        "btn-start",
+        "btn-select",
+        "profile-btn",
+        "trigger-hair-lt",
+        "trigger-hair-rt",
+        "btn-m1",
+        "btn-m2",
+        "btn-fn1",
+        "btn-fn2"
+      ],
+      "hotspots": [
+        {
+          "id": "btn-a",
+          "x": 8,
+          "y": 15
+        },
+        {
+          "id": "btn-b",
+          "x": 19,
+          "y": 15
+        },
+        {
+          "id": "btn-x",
+          "x": 30,
+          "y": 15
+        },
+        {
+          "id": "btn-y",
+          "x": 41,
+          "y": 15
+        },
+        {
+          "id": "btn-lb",
+          "x": 52,
+          "y": 15
+        },
+        {
+          "id": "btn-rb",
+          "x": 63,
+          "y": 15
+        },
+        {
+          "id": "btn-lt",
+          "x": 74,
+          "y": 15
+        },
+        {
+          "id": "btn-rt",
+          "x": 85,
+          "y": 15
+        },
+        {
+          "id": "axis-lt",
+          "x": 8,
+          "y": 25
+        },
+        {
+          "id": "axis-rt",
+          "x": 19,
+          "y": 25
+        },
+        {
+          "id": "btn-ls",
+          "x": 30,
+          "y": 25
+        },
+        {
+          "id": "btn-rs",
+          "x": 41,
+          "y": 25
+        },
+        {
+          "id": "axis-ls-x",
+          "x": 52,
+          "y": 25
+        },
+        {
+          "id": "axis-ls-y",
+          "x": 63,
+          "y": 25
+        },
+        {
+          "id": "axis-rs-x",
+          "x": 74,
+          "y": 25
+        },
+        {
+          "id": "axis-rs-y",
+          "x": 85,
+          "y": 25
+        },
+        {
+          "id": "dpad-up",
+          "x": 8,
+          "y": 35
+        },
+        {
+          "id": "dpad-down",
+          "x": 19,
+          "y": 35
+        },
+        {
+          "id": "dpad-left",
+          "x": 30,
+          "y": 35
+        },
+        {
+          "id": "dpad-right",
+          "x": 41,
+          "y": 35
+        },
+        {
+          "id": "btn-start",
+          "x": 52,
+          "y": 35
+        },
+        {
+          "id": "btn-select",
+          "x": 63,
+          "y": 35
+        },
+        {
+          "id": "profile-btn",
+          "x": 74,
+          "y": 35
+        },
+        {
+          "id": "trigger-hair-lt",
+          "x": 85,
+          "y": 35
+        },
+        {
+          "id": "trigger-hair-rt",
+          "x": 8,
+          "y": 45
+        },
+        {
+          "id": "btn-m1",
+          "x": 19,
+          "y": 45
+        },
+        {
+          "id": "btn-m2",
+          "x": 30,
+          "y": 45
+        },
+        {
+          "id": "btn-fn1",
+          "x": 41,
+          "y": 45
+        },
+        {
+          "id": "btn-fn2",
+          "x": 52,
+          "y": 45
+        }
+      ]
+    }
+  ]
+}
