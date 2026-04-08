@@ -1,0 +1,1604 @@
+{
+  "1432:027A": {
+    "asset": "generated/1432_027a.svg",
+    "category": "Keyboard",
+    "name": "Razer Blade 15 Base (2022)",
+    "style": "line-drawn-card"
+  },
+  "1532:0013": {
+    "asset": "generated/1532_0013.svg",
+    "category": "Mouse",
+    "name": "Razer Orochi 2011",
+    "style": "line-drawn-card"
+  },
+  "1532:0015": {
+    "asset": "generated/1532_0015.svg",
+    "category": "Mouse",
+    "name": "Razer Naga",
+    "style": "line-drawn-card"
+  },
+  "1532:0016": {
+    "asset": "generated/1532_0016.svg",
+    "category": "Mouse",
+    "name": "Razer DeathAdder 3.5G",
+    "style": "line-drawn-card"
+  },
+  "1532:001F": {
+    "asset": "generated/1532_001f.svg",
+    "category": "Mouse",
+    "name": "Razer Naga Epic",
+    "style": "line-drawn-card"
+  },
+  "1532:0020": {
+    "asset": "generated/1532_0020.svg",
+    "category": "Mouse",
+    "name": "Razer Abyssus 1800",
+    "style": "line-drawn-card"
+  },
+  "1532:0024": {
+    "asset": "generated/1532_0024.svg",
+    "category": "Mouse",
+    "name": "Razer Mamba 2012 (Wired)",
+    "style": "line-drawn-card"
+  },
+  "1532:0025": {
+    "asset": "generated/1532_0025.svg",
+    "category": "Mouse",
+    "name": "Razer Mamba 2012 (Wireless)",
+    "style": "line-drawn-card"
+  },
+  "1532:0029": {
+    "asset": "generated/1532_0029.svg",
+    "category": "Mouse",
+    "name": "Razer DeathAdder 3.5G Black",
+    "style": "line-drawn-card"
+  },
+  "1532:002E": {
+    "asset": "generated/1532_002e.svg",
+    "category": "Mouse",
+    "name": "Razer Naga 2012",
+    "style": "line-drawn-card"
+  },
+  "1532:002F": {
+    "asset": "generated/1532_002f.svg",
+    "category": "Mouse",
+    "name": "Razer Imperator 2012",
+    "style": "line-drawn-card"
+  },
+  "1532:0032": {
+    "asset": "generated/1532_0032.svg",
+    "category": "Mouse",
+    "name": "Razer Ouroboros 2012",
+    "style": "line-drawn-card"
+  },
+  "1532:0034": {
+    "asset": "generated/1532_0034.svg",
+    "category": "Mouse",
+    "name": "Razer Taipan",
+    "style": "line-drawn-card"
+  },
+  "1532:0036": {
+    "asset": "generated/1532_0036.svg",
+    "category": "Mouse",
+    "name": "Razer Naga Hex (Red)",
+    "style": "line-drawn-card"
+  },
+  "1532:0037": {
+    "asset": "generated/1532_0037.svg",
+    "category": "Mouse",
+    "name": "Razer DeathAdder 2013",
+    "style": "line-drawn-card"
+  },
+  "1532:0038": {
+    "asset": "generated/1532_0038.svg",
+    "category": "Mouse",
+    "name": "Razer DeathAdder 1800",
+    "style": "line-drawn-card"
+  },
+  "1532:0039": {
+    "asset": "generated/1532_0039.svg",
+    "category": "Mouse",
+    "name": "Razer Orochi 2013",
+    "style": "line-drawn-card"
+  },
+  "1532:003E": {
+    "asset": "generated/1532_003e.svg",
+    "category": "Mouse",
+    "name": "Razer Naga Epic Chroma (Wired)",
+    "style": "line-drawn-card"
+  },
+  "1532:003F": {
+    "asset": "generated/1532_003f.svg",
+    "category": "Mouse",
+    "name": "Razer Naga Epic Chroma (Wireless)",
+    "style": "line-drawn-card"
+  },
+  "1532:0040": {
+    "asset": "generated/1532_0040.svg",
+    "category": "Mouse",
+    "name": "Razer Naga 2014",
+    "style": "line-drawn-card"
+  },
+  "1532:0041": {
+    "asset": "generated/1532_0041.svg",
+    "category": "Mouse",
+    "name": "Razer Naga Hex",
+    "style": "line-drawn-card"
+  },
+  "1532:0042": {
+    "asset": "generated/1532_0042.svg",
+    "category": "Mouse",
+    "name": "Razer Abyssus 2014",
+    "style": "line-drawn-card"
+  },
+  "1532:0043": {
+    "asset": "generated/1532_0043.svg",
+    "category": "Mouse",
+    "name": "Razer DeathAdder Chroma",
+    "style": "line-drawn-card"
+  },
+  "1532:0044": {
+    "asset": "generated/1532_0044.svg",
+    "category": "Mouse",
+    "name": "Razer Mamba (Wired)",
+    "style": "line-drawn-card"
+  },
+  "1532:0045": {
+    "asset": "generated/1532_0045.svg",
+    "category": "Mouse",
+    "name": "Razer Mamba (Wireless)",
+    "style": "line-drawn-card"
+  },
+  "1532:0046": {
+    "asset": "generated/1532_0046.svg",
+    "category": "Mouse",
+    "name": "Razer Mamba Tournament Edition",
+    "style": "line-drawn-card"
+  },
+  "1532:0048": {
+    "asset": "generated/1532_0048.svg",
+    "category": "Mouse",
+    "name": "Razer Orochi (Wired)",
+    "style": "line-drawn-card"
+  },
+  "1532:004C": {
+    "asset": "generated/1532_004c.svg",
+    "category": "Mouse",
+    "name": "Razer Diamondback Chroma",
+    "style": "line-drawn-card"
+  },
+  "1532:004F": {
+    "asset": "generated/1532_004f.svg",
+    "category": "Mouse",
+    "name": "Razer DeathAdder 2000",
+    "style": "line-drawn-card"
+  },
+  "1532:0050": {
+    "asset": "generated/1532_0050.svg",
+    "category": "Mouse",
+    "name": "Razer Naga Hex V2",
+    "style": "line-drawn-card"
+  },
+  "1532:0053": {
+    "asset": "generated/1532_0053.svg",
+    "category": "Mouse",
+    "name": "Razer Naga Chroma",
+    "style": "line-drawn-card"
+  },
+  "1532:0054": {
+    "asset": "generated/1532_0054.svg",
+    "category": "Mouse",
+    "name": "Razer DeathAdder 3500",
+    "style": "line-drawn-card"
+  },
+  "1532:0059": {
+    "asset": "generated/1532_0059.svg",
+    "category": "Mouse",
+    "name": "Razer Lancehead (Wired)",
+    "style": "line-drawn-card"
+  },
+  "1532:005A": {
+    "asset": "generated/1532_005a.svg",
+    "category": "Mouse",
+    "name": "Razer Lancehead (Wireless)",
+    "style": "line-drawn-card"
+  },
+  "1532:005B": {
+    "asset": "generated/1532_005b.svg",
+    "category": "Mouse",
+    "name": "Razer Abyssus V2",
+    "style": "line-drawn-card"
+  },
+  "1532:005C": {
+    "asset": "generated/1532_005c.svg",
+    "category": "Mouse",
+    "name": "Razer DeathAdder Elite",
+    "style": "line-drawn-card"
+  },
+  "1532:005E": {
+    "asset": "generated/1532_005e.svg",
+    "category": "Mouse",
+    "name": "Razer Abyssus 2000",
+    "style": "line-drawn-card"
+  },
+  "1532:0060": {
+    "asset": "generated/1532_0060.svg",
+    "category": "Mouse",
+    "name": "Razer Lancehead Tournament Edition",
+    "style": "line-drawn-card"
+  },
+  "1532:0062": {
+    "asset": "generated/1532_0062.svg",
+    "category": "Mouse",
+    "name": "Razer Atheris (Receiver)",
+    "style": "line-drawn-card"
+  },
+  "1532:0064": {
+    "asset": "generated/1532_0064.svg",
+    "category": "Mouse",
+    "name": "Razer Basilisk",
+    "style": "line-drawn-card"
+  },
+  "1532:0065": {
+    "asset": "generated/1532_0065.svg",
+    "category": "Mouse",
+    "name": "Razer Basilisk Essential",
+    "style": "line-drawn-card"
+  },
+  "1532:0067": {
+    "asset": "generated/1532_0067.svg",
+    "category": "Mouse",
+    "name": "Razer Naga Trinity",
+    "style": "line-drawn-card"
+  },
+  "1532:0068": {
+    "asset": "generated/1532_0068.svg",
+    "category": "Mousemat",
+    "name": "Razer Firefly Hyperflux",
+    "style": "line-drawn-card"
+  },
+  "1532:006A": {
+    "asset": "generated/1532_006a.svg",
+    "category": "Mouse",
+    "name": "Razer Abyssus Elite (D.Va Edition)",
+    "style": "line-drawn-card"
+  },
+  "1532:006B": {
+    "asset": "generated/1532_006b.svg",
+    "category": "Mouse",
+    "name": "Razer Abyssus Essential",
+    "style": "line-drawn-card"
+  },
+  "1532:006C": {
+    "asset": "generated/1532_006c.svg",
+    "category": "Mouse",
+    "name": "Razer Mamba Elite (Wired)",
+    "style": "line-drawn-card"
+  },
+  "1532:006E": {
+    "asset": "generated/1532_006e.svg",
+    "category": "Mouse",
+    "name": "Razer DeathAdder Essential",
+    "style": "line-drawn-card"
+  },
+  "1532:006F": {
+    "asset": "generated/1532_006f.svg",
+    "category": "Mouse",
+    "name": "Razer Lancehead Wireless (Receiver)",
+    "style": "line-drawn-card"
+  },
+  "1532:0070": {
+    "asset": "generated/1532_0070.svg",
+    "category": "Mouse",
+    "name": "Razer Lancehead Wireless (Wired)",
+    "style": "line-drawn-card"
+  },
+  "1532:0071": {
+    "asset": "generated/1532_0071.svg",
+    "category": "Mouse",
+    "name": "Razer DeathAdder Essential (White Edition)",
+    "style": "line-drawn-card"
+  },
+  "1532:0072": {
+    "asset": "generated/1532_0072.svg",
+    "category": "Mouse",
+    "name": "Razer Mamba Wireless (Receiver)",
+    "style": "line-drawn-card"
+  },
+  "1532:0073": {
+    "asset": "generated/1532_0073.svg",
+    "category": "Mouse",
+    "name": "Razer Mamba Wireless (Wired)",
+    "style": "line-drawn-card"
+  },
+  "1532:0077": {
+    "asset": "generated/1532_0077.svg",
+    "category": "Mouse",
+    "name": "Razer Pro Click (Receiver)",
+    "style": "line-drawn-card"
+  },
+  "1532:0078": {
+    "asset": "generated/1532_0078.svg",
+    "category": "Mouse",
+    "name": "Razer Viper",
+    "style": "line-drawn-card"
+  },
+  "1532:007A": {
+    "asset": "generated/1532_007a.svg",
+    "category": "Mouse",
+    "name": "Razer Viper Ultimate (Wired)",
+    "style": "line-drawn-card"
+  },
+  "1532:007B": {
+    "asset": "generated/1532_007b.svg",
+    "category": "Mouse",
+    "name": "Razer Viper Ultimate (Wireless)",
+    "style": "line-drawn-card"
+  },
+  "1532:007C": {
+    "asset": "generated/1532_007c.svg",
+    "category": "Mouse",
+    "name": "Razer DeathAdder V2 Pro (Wired)",
+    "style": "line-drawn-card"
+  },
+  "1532:007D": {
+    "asset": "generated/1532_007d.svg",
+    "category": "Mouse",
+    "name": "Razer DeathAdder V2 Pro (Wireless)",
+    "style": "line-drawn-card"
+  },
+  "1532:007E": {
+    "asset": "generated/1532_007e.svg",
+    "category": "Misc",
+    "name": "Razer Mouse Dock",
+    "style": "line-drawn-card"
+  },
+  "1532:0080": {
+    "asset": "generated/1532_0080.svg",
+    "category": "Mouse",
+    "name": "Razer Pro Click (Wired)",
+    "style": "line-drawn-card"
+  },
+  "1532:0083": {
+    "asset": "generated/1532_0083.svg",
+    "category": "Mouse",
+    "name": "Razer Basilisk X HyperSpeed",
+    "style": "line-drawn-card"
+  },
+  "1532:0084": {
+    "asset": "generated/1532_0084.svg",
+    "category": "Mouse",
+    "name": "Razer DeathAdder V2",
+    "style": "line-drawn-card"
+  },
+  "1532:0085": {
+    "asset": "generated/1532_0085.svg",
+    "category": "Mouse",
+    "name": "Razer Basilisk V2",
+    "style": "line-drawn-card"
+  },
+  "1532:0086": {
+    "asset": "generated/1532_0086.svg",
+    "category": "Mouse",
+    "name": "Razer Basilisk Ultimate (Wired)",
+    "style": "line-drawn-card"
+  },
+  "1532:0088": {
+    "asset": "generated/1532_0088.svg",
+    "category": "Mouse",
+    "name": "Razer Basilisk Ultimate (Receiver)",
+    "style": "line-drawn-card"
+  },
+  "1532:008A": {
+    "asset": "generated/1532_008a.svg",
+    "category": "Mouse",
+    "name": "Razer Viper Mini",
+    "style": "line-drawn-card"
+  },
+  "1532:008C": {
+    "asset": "generated/1532_008c.svg",
+    "category": "Mouse",
+    "name": "Razer DeathAdder V2 Mini",
+    "style": "line-drawn-card"
+  },
+  "1532:008D": {
+    "asset": "generated/1532_008d.svg",
+    "category": "Mouse",
+    "name": "Razer Naga Left-Handed Edition",
+    "style": "line-drawn-card"
+  },
+  "1532:008F": {
+    "asset": "generated/1532_008f.svg",
+    "category": "Mouse",
+    "name": "Razer Naga Pro (Wired)",
+    "style": "line-drawn-card"
+  },
+  "1532:0090": {
+    "asset": "generated/1532_0090.svg",
+    "category": "Mouse",
+    "name": "Razer Naga Pro (Wireless)",
+    "style": "line-drawn-card"
+  },
+  "1532:0091": {
+    "asset": "generated/1532_0091.svg",
+    "category": "Mouse",
+    "name": "Razer Viper 8KHz",
+    "style": "line-drawn-card"
+  },
+  "1532:0094": {
+    "asset": "generated/1532_0094.svg",
+    "category": "Mouse",
+    "name": "Razer Orochi V2 (Receiver)",
+    "style": "line-drawn-card"
+  },
+  "1532:0095": {
+    "asset": "generated/1532_0095.svg",
+    "category": "Mouse",
+    "name": "Razer Orochi V2 (Bluetooth)",
+    "style": "line-drawn-card"
+  },
+  "1532:0096": {
+    "asset": "generated/1532_0096.svg",
+    "category": "Mouse",
+    "name": "Razer Naga X",
+    "style": "line-drawn-card"
+  },
+  "1532:0098": {
+    "asset": "generated/1532_0098.svg",
+    "category": "Mouse",
+    "name": "Razer DeathAdder Essential (2021)",
+    "style": "line-drawn-card"
+  },
+  "1532:0099": {
+    "asset": "generated/1532_0099.svg",
+    "category": "Mouse",
+    "name": "Razer Basilisk V3",
+    "style": "line-drawn-card"
+  },
+  "1532:009A": {
+    "asset": "generated/1532_009a.svg",
+    "category": "Mouse",
+    "name": "Razer Pro Click Mini (Receiver)",
+    "style": "line-drawn-card"
+  },
+  "1532:009C": {
+    "asset": "generated/1532_009c.svg",
+    "category": "Mouse",
+    "name": "Razer DeathAdder V2 X HyperSpeed",
+    "style": "line-drawn-card"
+  },
+  "1532:009E": {
+    "asset": "generated/1532_009e.svg",
+    "category": "Mouse",
+    "name": "Razer Viper Mini Signature Edition (Wired)",
+    "style": "line-drawn-card"
+  },
+  "1532:009F": {
+    "asset": "generated/1532_009f.svg",
+    "category": "Mouse",
+    "name": "Razer Viper Mini Signature Edition (Wireless)",
+    "style": "line-drawn-card"
+  },
+  "1532:00A1": {
+    "asset": "generated/1532_00a1.svg",
+    "category": "Mouse",
+    "name": "Razer DeathAdder V2 Lite",
+    "style": "line-drawn-card"
+  },
+  "1532:00A3": {
+    "asset": "generated/1532_00a3.svg",
+    "category": "Mouse",
+    "name": "Razer Cobra",
+    "style": "line-drawn-card"
+  },
+  "1532:00A4": {
+    "asset": "generated/1532_00a4.svg",
+    "category": "Misc",
+    "name": "Razer Mouse Dock Pro",
+    "style": "line-drawn-card"
+  },
+  "1532:00A5": {
+    "asset": "generated/1532_00a5.svg",
+    "category": "Mouse",
+    "name": "Razer Viper V2 Pro (Wired)",
+    "style": "line-drawn-card"
+  },
+  "1532:00A6": {
+    "asset": "generated/1532_00a6.svg",
+    "category": "Mouse",
+    "name": "Razer Viper V2 Pro (Wireless)",
+    "style": "line-drawn-card"
+  },
+  "1532:00A7": {
+    "asset": "generated/1532_00a7.svg",
+    "category": "Mouse",
+    "name": "Razer Naga V2 Pro (Wired)",
+    "style": "line-drawn-card"
+  },
+  "1532:00A8": {
+    "asset": "generated/1532_00a8.svg",
+    "category": "Mouse",
+    "name": "Razer Naga V2 Pro (Wireless)",
+    "style": "line-drawn-card"
+  },
+  "1532:00AA": {
+    "asset": "generated/1532_00aa.svg",
+    "category": "Mouse",
+    "name": "Razer Basilisk V3 Pro (Wired)",
+    "style": "line-drawn-card"
+  },
+  "1532:00AB": {
+    "asset": "generated/1532_00ab.svg",
+    "category": "Mouse",
+    "name": "Razer Basilisk V3 Pro (Wireless)",
+    "style": "line-drawn-card"
+  },
+  "1532:00AF": {
+    "asset": "generated/1532_00af.svg",
+    "category": "Mouse",
+    "name": "Razer Cobra Pro (Wired)",
+    "style": "line-drawn-card"
+  },
+  "1532:00B0": {
+    "asset": "generated/1532_00b0.svg",
+    "category": "Mouse",
+    "name": "Razer Cobra Pro (Wireless)",
+    "style": "line-drawn-card"
+  },
+  "1532:00B2": {
+    "asset": "generated/1532_00b2.svg",
+    "category": "Mouse",
+    "name": "Razer DeathAdder V3",
+    "style": "line-drawn-card"
+  },
+  "1532:00B3": {
+    "asset": "generated/1532_00b3.svg",
+    "category": "Mouse",
+    "name": "Razer HyperPolling Wireless Dongle",
+    "style": "line-drawn-card"
+  },
+  "1532:00B4": {
+    "asset": "generated/1532_00b4.svg",
+    "category": "Mouse",
+    "name": "Razer Naga V2 HyperSpeed (Receiver)",
+    "style": "line-drawn-card"
+  },
+  "1532:00B6": {
+    "asset": "generated/1532_00b6.svg",
+    "category": "Mouse",
+    "name": "Razer DeathAdder V3 Pro (Wired)",
+    "style": "line-drawn-card"
+  },
+  "1532:00B7": {
+    "asset": "generated/1532_00b7.svg",
+    "category": "Mouse",
+    "name": "Razer DeathAdder V3 Pro (Wireless)",
+    "style": "line-drawn-card"
+  },
+  "1532:00B8": {
+    "asset": "generated/1532_00b8.svg",
+    "category": "Mouse",
+    "name": "Razer Viper V3 HyperSpeed",
+    "style": "line-drawn-card"
+  },
+  "1532:00B9": {
+    "asset": "generated/1532_00b9.svg",
+    "category": "Mouse",
+    "name": "Razer Basilisk V3 X HyperSpeed",
+    "style": "line-drawn-card"
+  },
+  "1532:00BE": {
+    "asset": "generated/1532_00be.svg",
+    "category": "Mouse",
+    "name": "Razer DeathAdder V4 Pro (Wired)",
+    "style": "line-drawn-card"
+  },
+  "1532:00BF": {
+    "asset": "generated/1532_00bf.svg",
+    "category": "Mouse",
+    "name": "Razer DeathAdder V4 Pro (Wireless)",
+    "style": "line-drawn-card"
+  },
+  "1532:00C0": {
+    "asset": "generated/1532_00c0.svg",
+    "category": "Mouse",
+    "name": "Razer Viper V3 Pro (Wired)",
+    "style": "line-drawn-card"
+  },
+  "1532:00C1": {
+    "asset": "generated/1532_00c1.svg",
+    "category": "Mouse",
+    "name": "Razer Viper V3 Pro (Wireless)",
+    "style": "line-drawn-card"
+  },
+  "1532:00C2": {
+    "asset": "generated/1532_00c2.svg",
+    "category": "Mouse",
+    "name": "Razer DeathAdder V3 Pro (Wired)",
+    "style": "line-drawn-card"
+  },
+  "1532:00C3": {
+    "asset": "generated/1532_00c3.svg",
+    "category": "Mouse",
+    "name": "Razer DeathAdder V3 Pro (Wireless)",
+    "style": "line-drawn-card"
+  },
+  "1532:00C4": {
+    "asset": "generated/1532_00c4.svg",
+    "category": "Mouse",
+    "name": "Razer DeathAdder V3 HyperSpeed (Wired)",
+    "style": "line-drawn-card"
+  },
+  "1532:00C5": {
+    "asset": "generated/1532_00c5.svg",
+    "category": "Mouse",
+    "name": "Razer DeathAdder V3 HyperSpeed (Wireless)",
+    "style": "line-drawn-card"
+  },
+  "1532:00C7": {
+    "asset": "generated/1532_00c7.svg",
+    "category": "Mouse",
+    "name": "Razer Pro Click V2 Vertical Edition (Wired)",
+    "style": "line-drawn-card"
+  },
+  "1532:00C8": {
+    "asset": "generated/1532_00c8.svg",
+    "category": "Mouse",
+    "name": "Razer Pro Click V2 Vertical Edition (Wireless)",
+    "style": "line-drawn-card"
+  },
+  "1532:00CB": {
+    "asset": "generated/1532_00cb.svg",
+    "category": "Mouse",
+    "name": "Razer Basilisk V3 35K",
+    "style": "line-drawn-card"
+  },
+  "1532:00CC": {
+    "asset": "generated/1532_00cc.svg",
+    "category": "Mouse",
+    "name": "Razer Basilisk V3 Pro 35K (Wired)",
+    "style": "line-drawn-card"
+  },
+  "1532:00CD": {
+    "asset": "generated/1532_00cd.svg",
+    "category": "Mouse",
+    "name": "Razer Basilisk V3 Pro 35K (Wireless)",
+    "style": "line-drawn-card"
+  },
+  "1532:00D0": {
+    "asset": "generated/1532_00d0.svg",
+    "category": "Mouse",
+    "name": "Razer Pro Click V2 (Wired)",
+    "style": "line-drawn-card"
+  },
+  "1532:00D1": {
+    "asset": "generated/1532_00d1.svg",
+    "category": "Mouse",
+    "name": "Razer Pro Click V2 (Wireless)",
+    "style": "line-drawn-card"
+  },
+  "1532:00D3": {
+    "asset": "generated/1532_00d3.svg",
+    "category": "Mouse",
+    "name": "Razer Basilisk Mobile (Wired)",
+    "style": "line-drawn-card"
+  },
+  "1532:00D4": {
+    "asset": "generated/1532_00d4.svg",
+    "category": "Mouse",
+    "name": "Razer Basilisk Mobile (Receiver)",
+    "style": "line-drawn-card"
+  },
+  "1532:00D6": {
+    "asset": "generated/1532_00d6.svg",
+    "category": "Mouse",
+    "name": "Razer Basilisk V3 Pro 35K Phantom Green Edition (Wired)",
+    "style": "line-drawn-card"
+  },
+  "1532:00D7": {
+    "asset": "generated/1532_00d7.svg",
+    "category": "Mouse",
+    "name": "Razer Basilisk V3 Pro 35K Phantom Green Edition (Wireless)",
+    "style": "line-drawn-card"
+  },
+  "1532:010D": {
+    "asset": "generated/1532_010d.svg",
+    "category": "Keyboard",
+    "name": "Razer BlackWidow Ultimate 2012",
+    "style": "line-drawn-card"
+  },
+  "1532:010E": {
+    "asset": "generated/1532_010e.svg",
+    "category": "Keyboard",
+    "name": "Razer BlackWidow Classic (Alternate)",
+    "style": "line-drawn-card"
+  },
+  "1532:010F": {
+    "asset": "generated/1532_010f.svg",
+    "category": "Keyboard",
+    "name": "Razer Anansi",
+    "style": "line-drawn-card"
+  },
+  "1532:0111": {
+    "asset": "generated/1532_0111.svg",
+    "category": "Misc",
+    "name": "Razer Nostromo",
+    "style": "line-drawn-card"
+  },
+  "1532:0113": {
+    "asset": "generated/1532_0113.svg",
+    "category": "Misc",
+    "name": "Razer Orbweaver",
+    "style": "line-drawn-card"
+  },
+  "1532:0118": {
+    "asset": "generated/1532_0118.svg",
+    "category": "Keyboard",
+    "name": "Razer DeathStalker (Essential)",
+    "style": "line-drawn-card"
+  },
+  "1532:011A": {
+    "asset": "generated/1532_011a.svg",
+    "category": "Keyboard",
+    "name": "Razer BlackWidow Ultimate 2013",
+    "style": "line-drawn-card"
+  },
+  "1532:011B": {
+    "asset": "generated/1532_011b.svg",
+    "category": "Keyboard",
+    "name": "Razer BlackWidow Stealth",
+    "style": "line-drawn-card"
+  },
+  "1532:011C": {
+    "asset": "generated/1532_011c.svg",
+    "category": "Keyboard",
+    "name": "Razer BlackWidow Tournament Edition 2014",
+    "style": "line-drawn-card"
+  },
+  "1532:0201": {
+    "asset": "generated/1532_0201.svg",
+    "category": "Misc",
+    "name": "Razer Tartarus",
+    "style": "line-drawn-card"
+  },
+  "1532:0202": {
+    "asset": "generated/1532_0202.svg",
+    "category": "Keyboard",
+    "name": "Razer DeathStalker Expert",
+    "style": "line-drawn-card"
+  },
+  "1532:0203": {
+    "asset": "generated/1532_0203.svg",
+    "category": "Keyboard",
+    "name": "Razer BlackWidow Chroma",
+    "style": "line-drawn-card"
+  },
+  "1532:0204": {
+    "asset": "generated/1532_0204.svg",
+    "category": "Keyboard",
+    "name": "Razer DeathStalker Chroma",
+    "style": "line-drawn-card"
+  },
+  "1532:0205": {
+    "asset": "generated/1532_0205.svg",
+    "category": "Keyboard",
+    "name": "Razer Blade Stealth",
+    "style": "line-drawn-card"
+  },
+  "1532:0207": {
+    "asset": "generated/1532_0207.svg",
+    "category": "Misc",
+    "name": "Razer Orbweaver Chroma",
+    "style": "line-drawn-card"
+  },
+  "1532:0208": {
+    "asset": "generated/1532_0208.svg",
+    "category": "Misc",
+    "name": "Razer Tartarus Chroma",
+    "style": "line-drawn-card"
+  },
+  "1532:0209": {
+    "asset": "generated/1532_0209.svg",
+    "category": "Keyboard",
+    "name": "Razer BlackWidow Tournament Edition Chroma",
+    "style": "line-drawn-card"
+  },
+  "1532:020F": {
+    "asset": "generated/1532_020f.svg",
+    "category": "Keyboard",
+    "name": "Razer Blade QHD",
+    "style": "line-drawn-card"
+  },
+  "1532:0210": {
+    "asset": "generated/1532_0210.svg",
+    "category": "Keyboard",
+    "name": "Razer Blade Pro (Late 2016)",
+    "style": "line-drawn-card"
+  },
+  "1532:0211": {
+    "asset": "generated/1532_0211.svg",
+    "category": "Keyboard",
+    "name": "Razer BlackWidow Chroma (Overwatch)",
+    "style": "line-drawn-card"
+  },
+  "1532:0214": {
+    "asset": "generated/1532_0214.svg",
+    "category": "Keyboard",
+    "name": "Razer BlackWidow Ultimate 2016",
+    "style": "line-drawn-card"
+  },
+  "1532:0215": {
+    "asset": "generated/1532_0215.svg",
+    "category": "Misc",
+    "name": "Razer Core",
+    "style": "line-drawn-card"
+  },
+  "1532:0216": {
+    "asset": "generated/1532_0216.svg",
+    "category": "Keyboard",
+    "name": "Razer BlackWidow X Chroma",
+    "style": "line-drawn-card"
+  },
+  "1532:0217": {
+    "asset": "generated/1532_0217.svg",
+    "category": "Keyboard",
+    "name": "Razer BlackWidow X Ultimate",
+    "style": "line-drawn-card"
+  },
+  "1532:021A": {
+    "asset": "generated/1532_021a.svg",
+    "category": "Keyboard",
+    "name": "Razer BlackWidow X Tournament Edition Chroma",
+    "style": "line-drawn-card"
+  },
+  "1532:021E": {
+    "asset": "generated/1532_021e.svg",
+    "category": "Keyboard",
+    "name": "Razer Ornata Chroma",
+    "style": "line-drawn-card"
+  },
+  "1532:021F": {
+    "asset": "generated/1532_021f.svg",
+    "category": "Keyboard",
+    "name": "Razer Ornata",
+    "style": "line-drawn-card"
+  },
+  "1532:0220": {
+    "asset": "generated/1532_0220.svg",
+    "category": "Keyboard",
+    "name": "Razer Blade Stealth (Late 2016)",
+    "style": "line-drawn-card"
+  },
+  "1532:0221": {
+    "asset": "generated/1532_0221.svg",
+    "category": "Keyboard",
+    "name": "Razer BlackWidow Chroma V2",
+    "style": "line-drawn-card"
+  },
+  "1532:0224": {
+    "asset": "generated/1532_0224.svg",
+    "category": "Keyboard",
+    "name": "Razer Blade (Late 2016)",
+    "style": "line-drawn-card"
+  },
+  "1532:0225": {
+    "asset": "generated/1532_0225.svg",
+    "category": "Keyboard",
+    "name": "Razer Blade Pro (2017)",
+    "style": "line-drawn-card"
+  },
+  "1532:0226": {
+    "asset": "generated/1532_0226.svg",
+    "category": "Keyboard",
+    "name": "Razer Huntsman Elite",
+    "style": "line-drawn-card"
+  },
+  "1532:0227": {
+    "asset": "generated/1532_0227.svg",
+    "category": "Keyboard",
+    "name": "Razer Huntsman",
+    "style": "line-drawn-card"
+  },
+  "1532:0228": {
+    "asset": "generated/1532_0228.svg",
+    "category": "Keyboard",
+    "name": "Razer BlackWidow Elite",
+    "style": "line-drawn-card"
+  },
+  "1532:022A": {
+    "asset": "generated/1532_022a.svg",
+    "category": "Keyboard",
+    "name": "Razer Cynosa Chroma",
+    "style": "line-drawn-card"
+  },
+  "1532:022B": {
+    "asset": "generated/1532_022b.svg",
+    "category": "Misc",
+    "name": "Razer Tartarus V2",
+    "style": "line-drawn-card"
+  },
+  "1532:022C": {
+    "asset": "generated/1532_022c.svg",
+    "category": "Keyboard",
+    "name": "Razer Cynosa Chroma Pro",
+    "style": "line-drawn-card"
+  },
+  "1532:022D": {
+    "asset": "generated/1532_022d.svg",
+    "category": "Keyboard",
+    "name": "Razer Blade Stealth (Mid 2017)",
+    "style": "line-drawn-card"
+  },
+  "1532:022F": {
+    "asset": "generated/1532_022f.svg",
+    "category": "Keyboard",
+    "name": "Razer Blade Pro FullHD (2017)",
+    "style": "line-drawn-card"
+  },
+  "1532:0232": {
+    "asset": "generated/1532_0232.svg",
+    "category": "Keyboard",
+    "name": "Razer Blade Stealth (Late 2017)",
+    "style": "line-drawn-card"
+  },
+  "1532:0233": {
+    "asset": "generated/1532_0233.svg",
+    "category": "Keyboard",
+    "name": "Razer Blade 15 (2018)",
+    "style": "line-drawn-card"
+  },
+  "1532:0234": {
+    "asset": "generated/1532_0234.svg",
+    "category": "Keyboard",
+    "name": "Razer Blade Pro 17 (2019)",
+    "style": "line-drawn-card"
+  },
+  "1532:0235": {
+    "asset": "generated/1532_0235.svg",
+    "category": "Keyboard",
+    "name": "Razer BlackWidow Lite (2018)",
+    "style": "line-drawn-card"
+  },
+  "1532:0237": {
+    "asset": "generated/1532_0237.svg",
+    "category": "Keyboard",
+    "name": "Razer BlackWidow Essential",
+    "style": "line-drawn-card"
+  },
+  "1532:0239": {
+    "asset": "generated/1532_0239.svg",
+    "category": "Keyboard",
+    "name": "Razer Blade Stealth (2019)",
+    "style": "line-drawn-card"
+  },
+  "1532:023A": {
+    "asset": "generated/1532_023a.svg",
+    "category": "Keyboard",
+    "name": "Razer Blade 15 Advanced (2019)",
+    "style": "line-drawn-card"
+  },
+  "1532:023B": {
+    "asset": "generated/1532_023b.svg",
+    "category": "Keyboard",
+    "name": "Razer Blade 15 Base (2018)",
+    "style": "line-drawn-card"
+  },
+  "1532:023F": {
+    "asset": "generated/1532_023f.svg",
+    "category": "Keyboard",
+    "name": "Razer Cynosa Lite",
+    "style": "line-drawn-card"
+  },
+  "1532:0240": {
+    "asset": "generated/1532_0240.svg",
+    "category": "Keyboard",
+    "name": "Razer Blade 15 Mercury (2018)",
+    "style": "line-drawn-card"
+  },
+  "1532:0241": {
+    "asset": "generated/1532_0241.svg",
+    "category": "Keyboard",
+    "name": "Razer BlackWidow (2019)",
+    "style": "line-drawn-card"
+  },
+  "1532:0243": {
+    "asset": "generated/1532_0243.svg",
+    "category": "Keyboard",
+    "name": "Razer Huntsman Tournament Edition",
+    "style": "line-drawn-card"
+  },
+  "1532:0244": {
+    "asset": "generated/1532_0244.svg",
+    "category": "Misc",
+    "name": "Razer Tartarus Pro",
+    "style": "line-drawn-card"
+  },
+  "1532:0245": {
+    "asset": "generated/1532_0245.svg",
+    "category": "Keyboard",
+    "name": "Razer Blade 15 Mercury (Mid 2019)",
+    "style": "line-drawn-card"
+  },
+  "1532:0246": {
+    "asset": "generated/1532_0246.svg",
+    "category": "Keyboard",
+    "name": "Razer Blade 15 Base (Mid 2019)",
+    "style": "line-drawn-card"
+  },
+  "1532:024A": {
+    "asset": "generated/1532_024a.svg",
+    "category": "Keyboard",
+    "name": "Razer Blade Stealth (Late 2019)",
+    "style": "line-drawn-card"
+  },
+  "1532:024B": {
+    "asset": "generated/1532_024b.svg",
+    "category": "Keyboard",
+    "name": "Razer Blade Advanced (Late 2019)",
+    "style": "line-drawn-card"
+  },
+  "1532:024C": {
+    "asset": "generated/1532_024c.svg",
+    "category": "Keyboard",
+    "name": "Razer Blade Pro (Late 2019)",
+    "style": "line-drawn-card"
+  },
+  "1532:024D": {
+    "asset": "generated/1532_024d.svg",
+    "category": "Keyboard",
+    "name": "Razer Blade 15 Studio Edition (2019)",
+    "style": "line-drawn-card"
+  },
+  "1532:024E": {
+    "asset": "generated/1532_024e.svg",
+    "category": "Keyboard",
+    "name": "Razer BlackWidow V3",
+    "style": "line-drawn-card"
+  },
+  "1532:0252": {
+    "asset": "generated/1532_0252.svg",
+    "category": "Keyboard",
+    "name": "Razer Blade Stealth (Early 2020)",
+    "style": "line-drawn-card"
+  },
+  "1532:0253": {
+    "asset": "generated/1532_0253.svg",
+    "category": "Keyboard",
+    "name": "Razer Blade 15 Advanced (2020)",
+    "style": "line-drawn-card"
+  },
+  "1532:0255": {
+    "asset": "generated/1532_0255.svg",
+    "category": "Keyboard",
+    "name": "Razer Blade 15 Base (Early 2020)",
+    "style": "line-drawn-card"
+  },
+  "1532:0256": {
+    "asset": "generated/1532_0256.svg",
+    "category": "Keyboard",
+    "name": "Razer Blade Pro 17 (Early 2020)",
+    "style": "line-drawn-card"
+  },
+  "1532:0257": {
+    "asset": "generated/1532_0257.svg",
+    "category": "Keyboard",
+    "name": "Razer Huntsman Mini",
+    "style": "line-drawn-card"
+  },
+  "1532:0258": {
+    "asset": "generated/1532_0258.svg",
+    "category": "Keyboard",
+    "name": "Razer BlackWidow V3 Mini HyperSpeed (Wired)",
+    "style": "line-drawn-card"
+  },
+  "1532:0259": {
+    "asset": "generated/1532_0259.svg",
+    "category": "Keyboard",
+    "name": "Razer Blade Stealth (Late 2020)",
+    "style": "line-drawn-card"
+  },
+  "1532:025A": {
+    "asset": "generated/1532_025a.svg",
+    "category": "Keyboard",
+    "name": "Razer BlackWidow V3 Pro (Wired)",
+    "style": "line-drawn-card"
+  },
+  "1532:025C": {
+    "asset": "generated/1532_025c.svg",
+    "category": "Keyboard",
+    "name": "Razer BlackWidow V3 Pro (Wireless)",
+    "style": "line-drawn-card"
+  },
+  "1532:025D": {
+    "asset": "generated/1532_025d.svg",
+    "category": "Keyboard",
+    "name": "Razer Ornata V2",
+    "style": "line-drawn-card"
+  },
+  "1532:025E": {
+    "asset": "generated/1532_025e.svg",
+    "category": "Keyboard",
+    "name": "Razer Cynosa V2",
+    "style": "line-drawn-card"
+  },
+  "1532:0266": {
+    "asset": "generated/1532_0266.svg",
+    "category": "Keyboard",
+    "name": "Razer Huntsman V2 Analog",
+    "style": "line-drawn-card"
+  },
+  "1532:0268": {
+    "asset": "generated/1532_0268.svg",
+    "category": "Keyboard",
+    "name": "Razer Blade 15 Base (Late 2020)",
+    "style": "line-drawn-card"
+  },
+  "1532:0269": {
+    "asset": "generated/1532_0269.svg",
+    "category": "Keyboard",
+    "name": "Razer Huntsman Mini (JP)",
+    "style": "line-drawn-card"
+  },
+  "1532:026A": {
+    "asset": "generated/1532_026a.svg",
+    "category": "Keyboard",
+    "name": "Razer Book 13 (2020)",
+    "style": "line-drawn-card"
+  },
+  "1532:026B": {
+    "asset": "generated/1532_026b.svg",
+    "category": "Keyboard",
+    "name": "Razer Huntsman V2 TKL",
+    "style": "line-drawn-card"
+  },
+  "1532:026C": {
+    "asset": "generated/1532_026c.svg",
+    "category": "Keyboard",
+    "name": "Razer Huntsman V2",
+    "style": "line-drawn-card"
+  },
+  "1532:026D": {
+    "asset": "generated/1532_026d.svg",
+    "category": "Keyboard",
+    "name": "Razer Blade 15 Advanced (Early 2021)",
+    "style": "line-drawn-card"
+  },
+  "1532:026E": {
+    "asset": "generated/1532_026e.svg",
+    "category": "Keyboard",
+    "name": "Razer Blade 17 Pro (Early 2021)",
+    "style": "line-drawn-card"
+  },
+  "1532:026F": {
+    "asset": "generated/1532_026f.svg",
+    "category": "Keyboard",
+    "name": "Razer Blade 15 Base (Early 2021)",
+    "style": "line-drawn-card"
+  },
+  "1532:0270": {
+    "asset": "generated/1532_0270.svg",
+    "category": "Keyboard",
+    "name": "Razer Blade 14 (2021)",
+    "style": "line-drawn-card"
+  },
+  "1532:0271": {
+    "asset": "generated/1532_0271.svg",
+    "category": "Keyboard",
+    "name": "Razer BlackWidow V3 Mini HyperSpeed (Wireless)",
+    "style": "line-drawn-card"
+  },
+  "1532:0276": {
+    "asset": "generated/1532_0276.svg",
+    "category": "Keyboard",
+    "name": "Razer Blade 15 Advanced (Mid 2021)",
+    "style": "line-drawn-card"
+  },
+  "1532:0279": {
+    "asset": "generated/1532_0279.svg",
+    "category": "Keyboard",
+    "name": "Razer Blade 17 Pro (Mid 2021)",
+    "style": "line-drawn-card"
+  },
+  "1532:0282": {
+    "asset": "generated/1532_0282.svg",
+    "category": "Keyboard",
+    "name": "Razer Huntsman Mini Analog",
+    "style": "line-drawn-card"
+  },
+  "1532:0287": {
+    "asset": "generated/1532_0287.svg",
+    "category": "Keyboard",
+    "name": "Razer BlackWidow V4",
+    "style": "line-drawn-card"
+  },
+  "1532:028A": {
+    "asset": "generated/1532_028a.svg",
+    "category": "Keyboard",
+    "name": "Razer Blade 15 Advanced (Early 2022)",
+    "style": "line-drawn-card"
+  },
+  "1532:028B": {
+    "asset": "generated/1532_028b.svg",
+    "category": "Keyboard",
+    "name": "Razer Blade 17 (2022)",
+    "style": "line-drawn-card"
+  },
+  "1532:028C": {
+    "asset": "generated/1532_028c.svg",
+    "category": "Keyboard",
+    "name": "Razer Blade 14 (2022)",
+    "style": "line-drawn-card"
+  },
+  "1532:028D": {
+    "asset": "generated/1532_028d.svg",
+    "category": "Keyboard",
+    "name": "Razer BlackWidow V4 Pro",
+    "style": "line-drawn-card"
+  },
+  "1532:028F": {
+    "asset": "generated/1532_028f.svg",
+    "category": "Keyboard",
+    "name": "Razer Ornata V3",
+    "style": "line-drawn-card"
+  },
+  "1532:0290": {
+    "asset": "generated/1532_0290.svg",
+    "category": "Keyboard",
+    "name": "Razer DeathStalker V2 Pro (Wireless)",
+    "style": "line-drawn-card"
+  },
+  "1532:0292": {
+    "asset": "generated/1532_0292.svg",
+    "category": "Keyboard",
+    "name": "Razer DeathStalker V2 Pro (Wired)",
+    "style": "line-drawn-card"
+  },
+  "1532:0293": {
+    "asset": "generated/1532_0293.svg",
+    "category": "Keyboard",
+    "name": "Razer BlackWidow V4 X",
+    "style": "line-drawn-card"
+  },
+  "1532:0294": {
+    "asset": "generated/1532_0294.svg",
+    "category": "Keyboard",
+    "name": "Razer Ornata V3 X",
+    "style": "line-drawn-card"
+  },
+  "1532:0295": {
+    "asset": "generated/1532_0295.svg",
+    "category": "Keyboard",
+    "name": "Razer DeathStalker V2",
+    "style": "line-drawn-card"
+  },
+  "1532:0296": {
+    "asset": "generated/1532_0296.svg",
+    "category": "Keyboard",
+    "name": "Razer DeathStalker V2 Pro TKL (Wireless)",
+    "style": "line-drawn-card"
+  },
+  "1532:0298": {
+    "asset": "generated/1532_0298.svg",
+    "category": "Keyboard",
+    "name": "Razer DeathStalker V2 Pro TKL (Wired)",
+    "style": "line-drawn-card"
+  },
+  "1532:029D": {
+    "asset": "generated/1532_029d.svg",
+    "category": "Keyboard",
+    "name": "Razer Blade 14 (2023)",
+    "style": "line-drawn-card"
+  },
+  "1532:029E": {
+    "asset": "generated/1532_029e.svg",
+    "category": "Keyboard",
+    "name": "Razer Blade 15 (2023)",
+    "style": "line-drawn-card"
+  },
+  "1532:029F": {
+    "asset": "generated/1532_029f.svg",
+    "category": "Keyboard",
+    "name": "Razer Blade 16 (2023)",
+    "style": "line-drawn-card"
+  },
+  "1532:02A0": {
+    "asset": "generated/1532_02a0.svg",
+    "category": "Keyboard",
+    "name": "Razer Blade 18 (2023)",
+    "style": "line-drawn-card"
+  },
+  "1532:02A1": {
+    "asset": "generated/1532_02a1.svg",
+    "category": "Keyboard",
+    "name": "Razer Ornata V3",
+    "style": "line-drawn-card"
+  },
+  "1532:02A2": {
+    "asset": "generated/1532_02a2.svg",
+    "category": "Keyboard",
+    "name": "Razer Ornata V3 X",
+    "style": "line-drawn-card"
+  },
+  "1532:02A3": {
+    "asset": "generated/1532_02a3.svg",
+    "category": "Keyboard",
+    "name": "Razer Ornata V3 Tenkeyless",
+    "style": "line-drawn-card"
+  },
+  "1532:02A5": {
+    "asset": "generated/1532_02a5.svg",
+    "category": "Keyboard",
+    "name": "Razer BlackWidow V4 75%",
+    "style": "line-drawn-card"
+  },
+  "1532:02A6": {
+    "asset": "generated/1532_02a6.svg",
+    "category": "Keyboard",
+    "name": "Razer Huntsman V3 Pro",
+    "style": "line-drawn-card"
+  },
+  "1532:02A7": {
+    "asset": "generated/1532_02a7.svg",
+    "category": "Keyboard",
+    "name": "Razer Huntsman V3 Pro TKL",
+    "style": "line-drawn-card"
+  },
+  "1532:02B0": {
+    "asset": "generated/1532_02b0.svg",
+    "category": "Keyboard",
+    "name": "Razer Huntsman V3 Pro Mini",
+    "style": "line-drawn-card"
+  },
+  "1532:02B6": {
+    "asset": "generated/1532_02b6.svg",
+    "category": "Keyboard",
+    "name": "Razer Blade 14 (2024)",
+    "style": "line-drawn-card"
+  },
+  "1532:02B8": {
+    "asset": "generated/1532_02b8.svg",
+    "category": "Keyboard",
+    "name": "Razer Blade 18 (2024)",
+    "style": "line-drawn-card"
+  },
+  "1532:02B9": {
+    "asset": "generated/1532_02b9.svg",
+    "category": "Keyboard",
+    "name": "Razer BlackWidow V4 Mini HyperSpeed (Wired)",
+    "style": "line-drawn-card"
+  },
+  "1532:02BA": {
+    "asset": "generated/1532_02ba.svg",
+    "category": "Keyboard",
+    "name": "Razer BlackWidow V4 Mini HyperSpeed (Wireless)",
+    "style": "line-drawn-card"
+  },
+  "1532:02C5": {
+    "asset": "generated/1532_02c5.svg",
+    "category": "Keyboard",
+    "name": "Razer Blade 14 (2025)",
+    "style": "line-drawn-card"
+  },
+  "1532:02C6": {
+    "asset": "generated/1532_02c6.svg",
+    "category": "Keyboard",
+    "name": "Razer Blade 16 (2025)",
+    "style": "line-drawn-card"
+  },
+  "1532:02C7": {
+    "asset": "generated/1532_02c7.svg",
+    "category": "Keyboard",
+    "name": "Razer Blade 18 (2025)",
+    "style": "line-drawn-card"
+  },
+  "1532:02CF": {
+    "asset": "generated/1532_02cf.svg",
+    "category": "Keyboard",
+    "name": "Razer Huntsman V3 Pro 8KHz",
+    "style": "line-drawn-card"
+  },
+  "1532:02D5": {
+    "asset": "generated/1532_02d5.svg",
+    "category": "Keyboard",
+    "name": "Razer BlackWidow V4 Tenkeyless HyperSpeed (Wireless)",
+    "style": "line-drawn-card"
+  },
+  "1532:02D7": {
+    "asset": "generated/1532_02d7.svg",
+    "category": "Keyboard",
+    "name": "Razer BlackWidow V4 Tenkeyless HyperSpeed (Wired)",
+    "style": "line-drawn-card"
+  },
+  "1532:0501": {
+    "asset": "generated/1532_0501.svg",
+    "category": "Headset",
+    "name": "Razer Kraken 7.1",
+    "style": "line-drawn-card"
+  },
+  "1532:0504": {
+    "asset": "generated/1532_0504.svg",
+    "category": "Headset",
+    "name": "Razer Kraken 7.1 Chroma",
+    "style": "line-drawn-card"
+  },
+  "1532:0506": {
+    "asset": "generated/1532_0506.svg",
+    "category": "Headset",
+    "name": "Razer Kraken 7.1",
+    "style": "line-drawn-card"
+  },
+  "1532:0510": {
+    "asset": "generated/1532_0510.svg",
+    "category": "Headset",
+    "name": "Razer Kraken 7.1 V2",
+    "style": "line-drawn-card"
+  },
+  "1532:0517": {
+    "asset": "generated/1532_0517.svg",
+    "category": "Misc",
+    "name": "Razer Nommo Chroma",
+    "style": "line-drawn-card"
+  },
+  "1532:0518": {
+    "asset": "generated/1532_0518.svg",
+    "category": "Misc",
+    "name": "Razer Nommo Pro",
+    "style": "line-drawn-card"
+  },
+  "1532:0520": {
+    "asset": "generated/1532_0520.svg",
+    "category": "Headset",
+    "name": "Razer Kraken Tournament Edition",
+    "style": "line-drawn-card"
+  },
+  "1532:0527": {
+    "asset": "generated/1532_0527.svg",
+    "category": "Headset",
+    "name": "Razer Kraken Ultimate",
+    "style": "line-drawn-card"
+  },
+  "1532:0560": {
+    "asset": "generated/1532_0560.svg",
+    "category": "Headset",
+    "name": "Razer Kraken Kitty Edition V2",
+    "style": "line-drawn-card"
+  },
+  "1532:0A24": {
+    "asset": "generated/1532_0a24.svg",
+    "category": "Keyboard",
+    "name": "Razer BlackWidow V3 Tenkeyless",
+    "style": "line-drawn-card"
+  },
+  "1532:0C00": {
+    "asset": "generated/1532_0c00.svg",
+    "category": "Mousemat",
+    "name": "Razer Firefly",
+    "style": "line-drawn-card"
+  },
+  "1532:0C01": {
+    "asset": "generated/1532_0c01.svg",
+    "category": "Mousemat",
+    "name": "Razer Goliathus",
+    "style": "line-drawn-card"
+  },
+  "1532:0C02": {
+    "asset": "generated/1532_0c02.svg",
+    "category": "Mousemat",
+    "name": "Razer Goliathus Extended",
+    "style": "line-drawn-card"
+  },
+  "1532:0C04": {
+    "asset": "generated/1532_0c04.svg",
+    "category": "Mousemat",
+    "name": "Razer Firefly V2",
+    "style": "line-drawn-card"
+  },
+  "1532:0C05": {
+    "asset": "generated/1532_0c05.svg",
+    "category": "Mousemat",
+    "name": "Razer Strider Chroma",
+    "style": "line-drawn-card"
+  },
+  "1532:0C06": {
+    "asset": "generated/1532_0c06.svg",
+    "category": "Mousemat",
+    "name": "Razer Goliathus Chroma 3XL",
+    "style": "line-drawn-card"
+  },
+  "1532:0C08": {
+    "asset": "generated/1532_0c08.svg",
+    "category": "Mousemat",
+    "name": "Razer Firefly V2 Pro",
+    "style": "line-drawn-card"
+  },
+  "1532:0F07": {
+    "asset": "generated/1532_0f07.svg",
+    "category": "Misc",
+    "name": "Razer Chroma Mug Holder",
+    "style": "line-drawn-card"
+  },
+  "1532:0F08": {
+    "asset": "generated/1532_0f08.svg",
+    "category": "Misc",
+    "name": "Razer Base Station Chroma",
+    "style": "line-drawn-card"
+  },
+  "1532:0F09": {
+    "asset": "generated/1532_0f09.svg",
+    "category": "Misc",
+    "name": "Razer Chroma Hardware Development Kit (HDK)",
+    "style": "line-drawn-card"
+  },
+  "1532:0F0D": {
+    "asset": "generated/1532_0f0d.svg",
+    "category": "Misc",
+    "name": "Razer Laptop Stand Chroma",
+    "style": "line-drawn-card"
+  },
+  "1532:0F12": {
+    "asset": "generated/1532_0f12.svg",
+    "category": "Misc",
+    "name": "Razer Raptor 27",
+    "style": "line-drawn-card"
+  },
+  "1532:0F13": {
+    "asset": "generated/1532_0f13.svg",
+    "category": "Misc",
+    "name": "Lian Li O11 Dynamic - Razer Edition",
+    "style": "line-drawn-card"
+  },
+  "1532:0F17": {
+    "asset": "generated/1532_0f17.svg",
+    "category": "Misc",
+    "name": "Razer Tomahawk ATX",
+    "style": "line-drawn-card"
+  },
+  "1532:0F19": {
+    "asset": "generated/1532_0f19.svg",
+    "category": "Headset",
+    "name": "Razer Kraken Kitty Edition",
+    "style": "line-drawn-card"
+  },
+  "1532:0F1A": {
+    "asset": "generated/1532_0f1a.svg",
+    "category": "Misc",
+    "name": "Razer Core X Chroma",
+    "style": "line-drawn-card"
+  },
+  "1532:0F1D": {
+    "asset": "generated/1532_0f1d.svg",
+    "category": "Misc",
+    "name": "Razer Mouse Bungee V3 Chroma",
+    "style": "line-drawn-card"
+  },
+  "1532:0F1F": {
+    "asset": "generated/1532_0f1f.svg",
+    "category": "Misc",
+    "name": "Razer Chroma Addressable RGB Controller",
+    "style": "line-drawn-card"
+  },
+  "1532:0F20": {
+    "asset": "generated/1532_0f20.svg",
+    "category": "Misc",
+    "name": "Razer Base Station V2 Chroma",
+    "style": "line-drawn-card"
+  },
+  "1532:0F21": {
+    "asset": "generated/1532_0f21.svg",
+    "category": "Misc",
+    "name": "Razer Thunderbolt 4 Dock Chroma",
+    "style": "line-drawn-card"
+  },
+  "1532:0F26": {
+    "asset": "generated/1532_0f26.svg",
+    "category": "Misc",
+    "name": "Razer Charging Pad Chroma",
+    "style": "line-drawn-card"
+  },
+  "1532:0F2B": {
+    "asset": "generated/1532_0f2b.svg",
+    "category": "Misc",
+    "name": "Razer Laptop Stand Chroma V2",
+    "style": "line-drawn-card"
+  }
+}
