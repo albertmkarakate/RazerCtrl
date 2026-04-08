@@ -46,7 +46,7 @@ export default function App() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6 tracking-tight leading-tight">
             The Ultimate <span className="text-[#44d62c]">C.T.R.L</span> Manager for Linux
           </h2>
           <p className="text-lg text-[#8b949e] max-w-2xl mx-auto leading-relaxed">
