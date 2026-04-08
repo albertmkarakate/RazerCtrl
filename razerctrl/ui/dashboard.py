@@ -55,10 +55,14 @@ class DeviceCard(QFrame):
         body = QHBoxLayout()
         self.svg_widget = QSvgWidget()
         self.svg_widget.setFixedSize(100, 100)
+        
         # Load generic SVG based on type
-        svg_path = f"razerctrl/assets/devices/{self.device.type}_generic.svg"
+        base_path = os.path.dirname(os.path.dirname(__file__))
+        svg_path = os.path.join(base_path, "assets", "devices", f"{self.device.type}_generic.svg")
+        
         if not os.path.exists(svg_path):
-            svg_path = "razerctrl/assets/devices/mouse_generic.svg"
+            svg_path = os.path.join(base_path, "assets", "devices", "mouse_generic.svg")
+            
         self.svg_widget.load(svg_path)
         body.addStretch()
         body.addWidget(self.svg_widget)

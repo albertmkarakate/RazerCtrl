@@ -1,5 +1,5 @@
 {
-  "name": "RazerCtrl",
-  "description": "Unified Razer device manager and input mapper for Linux",
+  "name": "RazerCtrl (Unbreakable Edition)",
+  "description": "Unified Razer device manager for Linux, powered by a high-performance Rust backend and React frontend.",
   "requestFramePermissions": []
 }

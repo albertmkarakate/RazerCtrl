@@ -1,77 +1,86 @@
 #!/bin/bash
 set -e
 
-echo "[RazerCtrl] Detecting distribution..."
-# Try to get distro ID without the 'distro' python package first
-if [ -f /etc/os-release ]; then
-    DISTRO=$(grep "^ID=" /etc/os-release | cut -d= -f2 | tr -d '"')
-    # Handle variants like cachyos, manjaro, etc.
-    ID_LIKE=$(grep "^ID_LIKE=" /etc/os-release | cut -d= -f2 | tr -d '"')
+echo "== RazerCtrl (Unbreakable Edition) Installer =="
+
+# Detect distro
+if grep -qi arch /etc/os-release; then
+    DISTRO="arch"
+elif grep -qi fedora /etc/os-release; then
+    DISTRO="fedora"
+elif grep -qi debian /etc/os-release || grep -qi ubuntu /etc/os-release; then
+    DISTRO="debian"
 else
-    DISTRO=$(python3 -c "import distro; print(distro.id())" 2>/dev/null || echo "unknown")
-    ID_LIKE=""
+    echo "Unsupported distro. Please install dependencies manually."
+    exit 1
 fi
 
-case "$DISTRO" in
-  arch|cachyos|manjaro|endeavouros)
-    echo "[RazerCtrl] Detected Arch-based distro ($DISTRO)."
-    bash installers/install-arch.sh
-    ;;
-  fedora|rhel|centos)
-    echo "[RazerCtrl] Detected Fedora-based distro ($DISTRO)."
-    bash installers/install-fedora.sh
-    ;;
-  ubuntu|debian|linuxmint|pop|kali|raspbian)
-    echo "[RazerCtrl] Detected Debian-based distro ($DISTRO)."
-    bash installers/install-debian.sh
-    ;;
-  *)
-    if [[ "$ID_LIKE" == *"arch"* ]]; then
-        echo "[RazerCtrl] Detected Arch-like distro ($DISTRO)."
-        bash installers/install-arch.sh
-    elif [[ "$ID_LIKE" == *"debian"* || "$ID_LIKE" == *"ubuntu"* ]]; then
-        echo "[RazerCtrl] Detected Debian-like distro ($DISTRO)."
-        bash installers/install-debian.sh
-    elif [[ "$ID_LIKE" == *"fedora"* ]]; then
-        echo "[RazerCtrl] Detected Fedora-like distro ($DISTRO)."
-        bash installers/install-fedora.sh
-    else
-        echo "[RazerCtrl] Unsupported or unknown distro: $DISTRO."
-        echo "[RazerCtrl] Attempting to install generic dependencies via pip..."
-        pip3 install --user PyQt6 openrazer evdev distro python-uinput
-    fi
-    ;;
+echo "Detected Distro: $DISTRO"
+
+# Install system dependencies
+case $DISTRO in
+    "arch")
+        echo "Installing Arch dependencies..."
+        sudo pacman -S --needed \
+            openrazer-daemon \
+            python-openrazer \
+            libappindicator-gtk3 \
+            webkit2gtk \
+            base-devel \
+            curl \
+            wget \
+            openssl \
+            dbus
+        ;;
+    "fedora")
+        echo "Installing Fedora dependencies..."
+        sudo dnf install -y \
+            openrazer \
+            python3-openrazer \
+            webkit2gtk3-devel \
+            openssl-devel \
+            curl \
+            wget \
+            dbus-devel \
+            libappindicator-gtk3-devel
+        ;;
+    "debian")
+        echo "Installing Debian/Ubuntu dependencies..."
+        sudo apt update
+        sudo apt install -y \
+            openrazer-daemon \
+            python3-openrazer \
+            libwebkit2gtk-4.0-dev \
+            build-essential \
+            curl \
+            wget \
+            libssl-dev \
+            libgtk-3-dev \
+            libappindicator3-dev \
+            librsvg2-dev
+        ;;
 esac
 
-echo "[RazerCtrl] Installing Python package..."
-# Handle PEP 668 (externally-managed-environment)
-if ! pip3 install -e . 2>/dev/null; then
-    echo "[RazerCtrl] System Python is externally managed. Creating a virtual environment with system site packages..."
-    # Use --system-site-packages so we can use pacman-installed PyQt6 and OpenRazer
-    python3 -m venv --system-site-packages venv
-    source venv/bin/activate
-    pip install -e .
-    
-    echo "[RazerCtrl] Creating wrapper script in ~/.local/bin/razerctrl..."
-    mkdir -p ~/.local/bin
-    cat <<EOF > ~/.local/bin/razerctrl
-#!/bin/bash
-# Wrapper script for RazerCtrl (C.T.R.L Edition)
-PROJECT_DIR="$(pwd)"
-if [ -f "\$PROJECT_DIR/venv/bin/razerctrl" ]; then
-    "\$PROJECT_DIR/venv/bin/razerctrl" "\$@"
-else
-    "\$PROJECT_DIR/venv/bin/python" -m razerctrl.main "\$@"
-fi
-EOF
-    chmod +x ~/.local/bin/razerctrl
-    export PATH="$HOME/.local/bin:$PATH"
-    echo "[RazerCtrl] Added ~/.local/bin to PATH for this session."
-else
-    echo "[RazerCtrl] Package installed successfully via pip."
+# Add user to plugdev group
+echo "Adding $USER to plugdev group..."
+sudo gpasswd -a $USER plugdev || true
+
+# Enable and start openrazer-daemon
+echo "Enabling OpenRazer daemon..."
+systemctl --user daemon-reexec || true
+systemctl --user enable openrazer-daemon || true
+systemctl --user start openrazer-daemon || true
+
+# Check if Rust is installed
+if ! command -v cargo &> /dev/null; then
+    echo "Rust not found. Installing via rustup..."
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+    source $HOME/.cargo/env
 fi
 
-echo "[RazerCtrl] Installation complete."
-echo "[RazerCtrl] IMPORTANT: You may need to log out and back in for group changes (plugdev) to take effect."
-echo "[RazerCtrl] If 'razerctrl' command is not found, ensure ~/.local/bin is in your PATH."
-echo "[RazerCtrl] Run 'razerctrl' to start the application."
+echo "Installing Node.js dependencies..."
+npm install
+
+echo "== Installation Complete =="
+echo "You may need to log out and log back in for group changes to take effect."
+echo "To start development: npm run tauri dev"

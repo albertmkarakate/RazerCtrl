@@ -1,0 +1,25 @@
+[package]
+name = "razerctrl"
+version = "0.1.0"
+description = "Unified Razer device manager and input mapper for Linux"
+authors = ["RazerCtrl Project"]
+license = "MIT"
+repository = "https://github.com/username/razerctrl"
+edition = "2021"
+rust-version = "1.60"
+
+[build-dependencies]
+tauri-build = { version = "1.5" }
+
+[dependencies]
+serde_json = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+tauri = { version = "1.5", features = ["all"] }
+zbus = "3.14"
+tokio = { version = "1.35", features = ["full"] }
+futures-util = "0.3"
+
+[features]
+# by default Tauri runs in production mode
+# this feature is used for development
+custom-protocol = [ "tauri/custom-protocol" ]

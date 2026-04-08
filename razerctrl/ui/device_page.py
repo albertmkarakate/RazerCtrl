@@ -46,9 +46,12 @@ class DevicePage(QWidget):
         left_layout = QVBoxLayout(left_panel)
         
         self.svg_widget = QSvgWidget()
-        svg_path = f"razerctrl/assets/devices/{self.device.type}_generic.svg"
+        base_path = os.path.dirname(os.path.dirname(__file__))
+        svg_path = os.path.join(base_path, "assets", "devices", f"{self.device.type}_generic.svg")
+        
         if not os.path.exists(svg_path):
-            svg_path = "razerctrl/assets/devices/mouse_generic.svg"
+            svg_path = os.path.join(base_path, "assets", "devices", "mouse_generic.svg")
+            
         self.svg_widget.load(svg_path)
         left_layout.addStretch()
         left_layout.addWidget(self.svg_widget)

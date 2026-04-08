@@ -1,18 +1,17 @@
-# RazerCtrl (C.T.R.L Edition)
+# RazerCtrl (Unbreakable Edition)
 
-Unified Razer device manager and input mapper for Linux.
+Unified Razer device manager for Linux, powered by a high-performance Rust backend and React frontend.
 
 ![RazerCtrl Logo](razerctrl/assets/icons/razerctrl.svg)
 
 ## Features
 
-- **C.T.R.L Branding**: New high-tech interface and icon design.
-- **Device Management**: Control lighting, DPI, and power settings for Razer devices via `openrazer`.
+- **Rust Backend**: Memory-safe, high-performance core for hardware control.
+- **Tauri Architecture**: Modern desktop app architecture for a lightweight and secure experience.
+- **Device Management**: Control lighting, DPI, and power settings for Razer devices via OpenRazer D-Bus.
 - **Input Mapping**: Remap keys and buttons using `evdev` and `uinput`.
 - **Macro Recording**: Record and assign complex macros to your device buttons.
-- **Profile Support**: Save and switch between different configurations.
 - **Universal Installer**: Distro-aware installer for Arch, Fedora, and Debian.
-- **AppImage Support**: Build portable executables that run on any distribution.
 
 ## Installation
 
