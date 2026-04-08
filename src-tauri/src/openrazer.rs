@@ -8,6 +8,7 @@ pub struct DeviceInfo {
     pub device_type: String,
     pub battery_level: Option<i32>,
     pub is_charging: bool,
+    pub pid: String,
 }
 
 #[dbus_proxy(
@@ -35,6 +36,8 @@ trait RazerDevice {
     fn battery_level(&self) -> zbus::Result<i32>;
     #[dbus_proxy(property)]
     fn is_charging(&self) -> zbus::Result<bool>;
+    #[dbus_proxy(property)]
+    fn device_id(&self) -> zbus::Result<String>;
     
     // Lighting methods
     fn set_static(&self, r: u8, g: u8, b: u8) -> zbus::Result<()>;
@@ -113,6 +116,7 @@ pub async fn get_connected_devices() -> Result<Vec<DeviceInfo>, String> {
         // Rust's Option and Result types force us to handle missing battery levels safely
         let battery_level = device.battery_level().await.ok();
         let is_charging = device.is_charging().await.unwrap_or(false);
+        let pid = device.device_id().await.unwrap_or_else(|_| "1532:0000".to_string());
         
         devices.push(DeviceInfo {
             name,
@@ -120,6 +124,7 @@ pub async fn get_connected_devices() -> Result<Vec<DeviceInfo>, String> {
             device_type,
             battery_level,
             is_charging,
+            pid,
         });
     }
     
