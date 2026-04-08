@@ -77,7 +77,15 @@ class DeviceCard(QFrame):
         
         footer.addStretch()
         
-        effect_label = QLabel(f"Effect: {self.device.fx.get_effect_name() if hasattr(self.device.fx, 'get_effect_name') else 'N/A'}")
+        try:
+            if hasattr(self.device, 'fx') and hasattr(self.device.fx, 'get_effect_name'):
+                effect_name = self.device.fx.get_effect_name()
+                effect_label = QLabel(f"Effect: {effect_name}")
+            else:
+                effect_label = QLabel("Effect: N/A")
+        except (AttributeError, NotImplementedError):
+            effect_label = QLabel("Effect: N/A")
+            
         effect_label.setStyleSheet("color: #aaaaaa; font-size: 11px;")
         footer.addWidget(effect_label)
         layout.addLayout(footer)

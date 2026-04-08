@@ -1,4 +1,5 @@
-<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-  <path d="M100 20C70 20 50 50 50 100C50 150 70 180 100 180C130 180 150 150 150 100C150 50 130 20 100 20ZM100 35C105 35 110 40 110 45V75C110 80 105 85 100 85C95 85 90 80 90 75V45C90 40 95 35 100 35Z" fill="black"/>
-  <rect x="95" y="40" width="10" height="30" rx="5" fill="#444"/>
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <rect x="30" y="20" width="40" height="60" rx="20" fill="none" stroke="#44d62c" stroke-width="2"/>
+  <line x1="50" y1="20" x2="50" y2="40" stroke="#44d62c" stroke-width="2"/>
+  <path d="M30 50 Q50 50 70 50" fill="none" stroke="#44d62c" stroke-width="1" opacity="0.5"/>
 </svg>
