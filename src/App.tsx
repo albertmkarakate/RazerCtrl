@@ -110,7 +110,7 @@ export default function App() {
         </div>
       </header>
 
-      <div className="flex max-w-[1400px] mx-auto min-h-[calc(100-64px)]">
+      <div className="flex max-w-[1400px] mx-auto min-h-[calc(100vh-64px)]">
         {/* Sidebar */}
         <aside className={`w-72 border-r ${isDark ? 'border-[#30363d] bg-[#0d1117]' : 'border-[#d0d7de] bg-[#f6f8fa]'} p-4 hidden md:block`}>
           <div className="mb-6">
@@ -232,7 +232,7 @@ export default function App() {
                     </div>
                   </div>
                   
-                  {selectedDevice.battery_level !== null && (
+                  {selectedDevice.battery_level != null && (
                     <div className={`flex items-center gap-3 px-4 py-2 rounded-full border ${isDark ? 'border-[#30363d] bg-[#161b22]' : 'border-[#d0d7de] bg-white'}`}>
                       {selectedDevice.is_charging ? <BatteryCharging className="w-4 h-4 text-[#44d62c]" /> : <Battery className="w-4 h-4 text-[#8b949e]" />}
                       <span className="text-sm font-bold">{selectedDevice.battery_level}%</span>
