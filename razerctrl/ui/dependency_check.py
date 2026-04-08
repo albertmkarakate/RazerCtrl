@@ -1,6 +1,7 @@
 import sys
 import subprocess
 import logging
+import shutil
 from PyQt6.QtWidgets import (QDialog, QVBoxLayout, QHBoxLayout, QLabel, 
                              QPushButton, QPlainTextEdit, QCheckBox, QWidget)
 from PyQt6.QtCore import Qt, QThread, pyqtSignal
@@ -59,9 +60,12 @@ class DependencyCheckDialog(QDialog):
 
         self.deps = {
             "openrazer-daemon": {"name": "OpenRazer Daemon", "status": False},
+            "python-pyqt6": {"name": "PyQt6", "status": False},
             "python-openrazer": {"name": "OpenRazer Python Client", "status": False},
             "python-evdev": {"name": "evdev (Python)", "status": False},
-            "python-uinput": {"name": "uinput (Python)", "status": False}
+            "python-uinput": {"name": "uinput (Python)", "status": False},
+            "input-remapper-gtk": {"name": "Input Remapper GTK", "status": False},
+            "input-remapper-control": {"name": "Input Remapper CLI", "status": False},
         }
 
         self.dep_widgets = {}
@@ -98,20 +102,30 @@ class DependencyCheckDialog(QDialog):
         """Checks if dependencies are installed."""
         # Check openrazer-daemon
         try:
-            result = subprocess.run(["systemctl", "status", "openrazer-daemon"], capture_output=True)
-            self.deps["openrazer-daemon"]["status"] = (result.returncode == 0)
-        except FileNotFoundError:
+            proc = subprocess.run(
+                ["systemctl", "--user", "is-active", "openrazer-daemon"],
+                capture_output=True,
+                text=True,
+            )
+            self.deps["openrazer-daemon"]["status"] = proc.returncode == 0 and proc.stdout.strip() == "active"
+        except Exception:
             self.deps["openrazer-daemon"]["status"] = False
 
         # Check python modules
-        for key in ["python-openrazer", "python-evdev", "python-uinput"]:
+        for key in ["python-pyqt6", "python-openrazer", "python-evdev", "python-uinput"]:
             module_name = key.replace("python-", "").replace("-", ".")
+            if key == "python-pyqt6":
+                module_name = "PyQt6"
             if key == "python-openrazer": module_name = "openrazer.client"
             try:
                 __import__(module_name)
                 self.deps[key]["status"] = True
             except ImportError:
                 self.deps[key]["status"] = False
+
+        # Check input-remapper executables
+        self.deps["input-remapper-gtk"]["status"] = shutil.which("input-remapper-gtk") is not None
+        self.deps["input-remapper-control"]["status"] = shutil.which("input-remapper-control") is not None
 
         # Update UI
         all_satisfied = True
@@ -136,11 +150,11 @@ class DependencyCheckDialog(QDialog):
         """Runs the installation command for the detected distro."""
         cmd = ""
         if self.distro == 'arch':
-            cmd = "sudo pacman -S --needed python-pyqt6 python-evdev openrazer-daemon"
+            cmd = "sudo pacman -S --needed python-pyqt6 python-evdev openrazer-daemon input-remapper"
         elif self.distro == 'fedora':
-            cmd = "sudo dnf install -y python3-qt6 python3-evdev openrazer-daemon python3-openrazer"
+            cmd = "sudo dnf install -y python3-qt6 python3-evdev openrazer-daemon python3-openrazer input-remapper"
         elif self.distro == 'debian':
-            cmd = "sudo apt update && sudo apt install -y python3-pyqt6 python3-evdev openrazer-meta python3-openrazer"
+            cmd = "sudo apt update && sudo apt install -y python3-pyqt6 python3-evdev openrazer-meta python3-openrazer input-remapper"
         
         if not cmd:
             self.output_view.appendPlainText("Distro not supported for auto-install. Please install manually.")

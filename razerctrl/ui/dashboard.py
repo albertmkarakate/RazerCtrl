@@ -57,7 +57,6 @@ class DeviceCard(QFrame):
         body = QHBoxLayout()
         self.svg_widget = QSvgWidget()
         self.svg_widget.setFixedSize(100, 100)
-        
         # Prefer generated line-drawn per-device SVG, then fallback to generic by type
         base_path = os.path.dirname(os.path.dirname(__file__))
         svg_path = resolve_device_svg_path(self.device, base_path)
