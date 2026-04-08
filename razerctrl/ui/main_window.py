@@ -1,9 +1,16 @@
 import logging
-from PyQt6.QtWidgets import (QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, 
-                             QListWidget, QStackedWidget, QPushButton, QLabel, 
-                             QStatusBar, QFrame)
-from PyQt6.QtCore import Qt, QSize
-from PyQt6.QtGui import QIcon
+from PyQt6.QtWidgets import (
+    QMainWindow,
+    QWidget,
+    QVBoxLayout,
+    QHBoxLayout,
+    QStackedWidget,
+    QPushButton,
+    QLabel,
+    QStatusBar,
+    QFrame,
+)
+from PyQt6.QtCore import QTimer
 
 from .dashboard import DashboardPage
 from .device_page import DevicePage
@@ -15,12 +22,13 @@ class MainWindow(QMainWindow):
     """
     Main application window with sidebar navigation.
     """
-    def __init__(self, device_manager, profile_manager, input_manager, macro_manager):
+    def __init__(self, device_manager, profile_manager, input_manager, macro_manager, config):
         super().__init__()
         self.device_manager = device_manager
         self.profile_manager = profile_manager
         self.input_manager = input_manager
         self.macro_manager = macro_manager
+        self.config = config
         
         self.setWindowTitle("RazerCtrl")
         self.setMinimumSize(1000, 700)
@@ -127,7 +135,7 @@ class MainWindow(QMainWindow):
             "dashboard": DashboardPage(self.device_manager),
             "input_mapper": InputMapperPage(self.input_manager),
             "profiles": ProfilesPage(self.profile_manager),
-            "settings": SettingsPage(self.device_manager)
+            "settings": SettingsPage(self.device_manager, self.config),
         }
         
         for key, page in self.pages.items():
@@ -141,6 +149,12 @@ class MainWindow(QMainWindow):
         self.setStatusBar(self.status_bar)
         self.status_bar.setStyleSheet("background-color: #007acc; color: white;")
 
+        # Background refresh: auto-detect connected/disconnected devices.
+        self.refresh_timer = QTimer(self)
+        self.refresh_timer.setInterval(2000)
+        self.refresh_timer.timeout.connect(self.refresh_devices)
+        self.refresh_timer.start()
+
         # Initial page
         self.nav_buttons["dashboard"].setChecked(True)
         self.switch_page("dashboard")
@@ -148,6 +162,7 @@ class MainWindow(QMainWindow):
     def setup_connections(self):
         """Sets up signals and slots."""
         self.btn_apply.clicked.connect(self.apply_current_profile)
+        self.pages["settings"].theme_changed.connect(self.apply_theme)
 
     def switch_page(self, key: str):
         """Switches the visible page in the stacked widget."""
@@ -194,3 +209,46 @@ class MainWindow(QMainWindow):
         daemon_status = "Connected" if self.device_manager.is_daemon_running() else "Disconnected"
         device_count = len(self.device_manager.devices)
         self.status_bar.showMessage(f"Daemon: {daemon_status} | Devices: {device_count}")
+
+    def refresh_devices(self):
+        """Refreshes known devices and updates relevant UI elements."""
+        old_serials = {d.serial for d in self.device_manager.devices}
+        self.device_manager.refresh_devices()
+        new_serials = {d.serial for d in self.device_manager.devices}
+
+        if old_serials != new_serials:
+            # Remove stale device pages.
+            for serial in old_serials - new_serials:
+                page_key = f"device_{serial}"
+                page = self.pages.pop(page_key, None)
+                if page is not None:
+                    self.stack.removeWidget(page)
+                    page.deleteLater()
+
+            # Refresh dashboard cards.
+            self.pages["dashboard"].refresh_devices()
+
+        self.refresh_status()
+
+    def apply_theme(self, theme: str):
+        """Applies global light/dark/system app theme."""
+        if theme == "light":
+            self.setStyleSheet(
+                """
+                QMainWindow, QWidget { background-color: #f6f7fb; color: #1f2329; }
+                QStatusBar { background-color: #e9ecf3; color: #1f2329; }
+                """
+            )
+            return
+
+        if theme == "dark":
+            self.setStyleSheet(
+                """
+                QMainWindow, QWidget { background-color: #1e1e1e; color: #d4d4d4; }
+                QStatusBar { background-color: #007acc; color: white; }
+                """
+            )
+            return
+
+        # System/default: clear custom stylesheet.
+        self.setStyleSheet("")

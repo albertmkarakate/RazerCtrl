@@ -2,7 +2,8 @@ from PyQt6.QtWidgets import (QWidget, QVBoxLayout, QGridLayout, QLabel,
                              QFrame, QHBoxLayout, QPushButton, QScrollArea)
 from PyQt6.QtCore import Qt, pyqtSignal
 from PyQt6.QtSvgWidgets import QSvgWidget
-import os
+
+from ..utils.assets import device_svg_path
 
 class DeviceCard(QFrame):
     """
@@ -56,9 +57,7 @@ class DeviceCard(QFrame):
         self.svg_widget = QSvgWidget()
         self.svg_widget.setFixedSize(100, 100)
         # Load generic SVG based on type
-        svg_path = f"razerctrl/assets/devices/{self.device.type}_generic.svg"
-        if not os.path.exists(svg_path):
-            svg_path = "razerctrl/assets/devices/mouse_generic.svg"
+        svg_path = device_svg_path(self.device.type)
         self.svg_widget.load(svg_path)
         body.addStretch()
         body.addWidget(self.svg_widget)

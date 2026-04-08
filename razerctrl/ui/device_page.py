@@ -5,7 +5,8 @@ from PyQt6.QtWidgets import (QWidget, QVBoxLayout, QHBoxLayout, QLabel,
                              QListWidget, QInputDialog, QMessageBox)
 from PyQt6.QtCore import Qt, QTimer, pyqtSignal, QObject
 from PyQt6.QtSvgWidgets import QSvgWidget
-import os
+
+from ..utils.assets import device_svg_path
 
 class MacroSignal(QObject):
     """Signal for macro recording updates."""
@@ -46,9 +47,7 @@ class DevicePage(QWidget):
         left_layout = QVBoxLayout(left_panel)
         
         self.svg_widget = QSvgWidget()
-        svg_path = f"razerctrl/assets/devices/{self.device.type}_generic.svg"
-        if not os.path.exists(svg_path):
-            svg_path = "razerctrl/assets/devices/mouse_generic.svg"
+        svg_path = device_svg_path(self.device.type)
         self.svg_widget.load(svg_path)
         left_layout.addStretch()
         left_layout.addWidget(self.svg_widget)

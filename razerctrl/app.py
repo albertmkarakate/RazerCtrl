@@ -51,8 +51,10 @@ class RazerCtrlApp(QApplication):
             self.device_manager,
             self.profile_manager,
             self.input_manager,
-            self.macro_manager
+            self.macro_manager,
+            self.config,
         )
+        self.main_window.apply_theme(self.config.get("theme", "system"))
 
     def show_dependency_check(self):
         """Shows the dependency check dialog."""
