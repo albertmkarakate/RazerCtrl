@@ -1,0 +1,30 @@
+[
+  {
+    "category": "Mouse Functions",
+    "items": ["Left Click", "Right Click", "Middle Click", "Scroll Up", "Scroll Down", "Mouse Button 4", "Mouse Button 5", "DPI Up", "DPI Down", "DPI Cycle", "Sensitivity Stage 1-5", "Profile Cycle", "Smart Reel Toggle"]
+  },
+  {
+    "category": "Keyboard Keys",
+    "items": ["Alphanumeric Key", "Modifier Key", "Modifier + Key Combo", "Function Key (F1-F24)"]
+  },
+  {
+    "category": "Macros",
+    "items": ["Run Macro", "Record New Macro"]
+  },
+  {
+    "category": "Media & System",
+    "items": ["Play / Pause", "Stop", "Next Track", "Previous Track", "Mute / Unmute", "Volume Up", "Volume Down", "Brightness Up", "Brightness Down", "Screenshot", "Open File / URL", "Launch Application", "Switch Window", "Virtual Desktop: Left", "Virtual Desktop: Right", "Task View"]
+  },
+  {
+    "category": "Lighting Controls",
+    "items": ["Lighting Profile Cycle", "Toggle Lighting On/Off", "Brightness Up", "Brightness Down"]
+  },
+  {
+    "category": "Text & Clipboard",
+    "items": ["Type Text", "Paste Clipboard", "Copy Selection"]
+  },
+  {
+    "category": "Accessibility & Toggles",
+    "items": ["Caps Lock Toggle", "Num Lock Toggle", "Scroll Lock Toggle", "Game Mode Toggle", "Hyper-Shift", "No Action", "Passthrough"]
+  }
+]

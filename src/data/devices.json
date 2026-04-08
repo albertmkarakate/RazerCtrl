@@ -1,0 +1,34 @@
+[
+  {
+    "id": "deathadder-v3-pro",
+    "name": "Razer DeathAdder V3 Pro",
+    "category": "Mouse",
+    "svgUrl": "/src/assets/devices/mice/deathadder-v3.svg",
+    "hotspots": [
+      { "id": "left-click", "label": "Left Click", "x": 35, "y": 25 },
+      { "id": "right-click", "label": "Right Click", "x": 65, "y": 25 },
+      { "id": "scroll-click", "label": "Scroll Click", "x": 50, "y": 16 },
+      { "id": "dpi-up", "label": "DPI Up", "x": 50, "y": 28 },
+      { "id": "dpi-down", "label": "DPI Down", "x": 50, "y": 33 },
+      { "id": "side-btn-1", "label": "Side Button 1", "x": 12, "y": 45 },
+      { "id": "side-btn-2", "label": "Side Button 2", "x": 12, "y": 58 }
+    ]
+  },
+  {
+    "id": "blackwidow-v4-pro",
+    "name": "Razer BlackWidow V4 Pro",
+    "category": "Keyboard",
+    "svgUrl": "/src/assets/devices/keyboards/blackwidow-v4.svg",
+    "hotspots": [
+      { "id": "macro-1", "label": "M1", "x": 4, "y": 31 },
+      { "id": "macro-2", "label": "M2", "x": 4, "y": 45 },
+      { "id": "macro-3", "label": "M3", "x": 4, "y": 58 },
+      { "id": "macro-4", "label": "M4", "x": 4, "y": 71 },
+      { "id": "macro-5", "label": "M5", "x": 4, "y": 85 },
+      { "id": "media-prev", "label": "Previous Track", "x": 81, "y": 15 },
+      { "id": "media-play", "label": "Play/Pause", "x": 86, "y": 15 },
+      { "id": "media-next", "label": "Next Track", "x": 91, "y": 15 },
+      { "id": "multi-fn", "label": "Multi-Function Roller", "x": 96, "y": 13 }
+    ]
+  }
+]
