@@ -1,4 +1,4 @@
-# RazerCtrl
+# RazerCtrl (C.T.R.L Edition)
 
 Unified Razer device manager and input mapper for Linux.
 
@@ -6,11 +6,13 @@ Unified Razer device manager and input mapper for Linux.
 
 ## Features
 
+- **C.T.R.L Branding**: New high-tech interface and icon design.
 - **Device Management**: Control lighting, DPI, and power settings for Razer devices via `openrazer`.
 - **Input Mapping**: Remap keys and buttons using `evdev` and `uinput`.
+- **Macro Recording**: Record and assign complex macros to your device buttons.
 - **Profile Support**: Save and switch between different configurations.
-- **Dependency Checker**: Built-in tool to help install required system drivers and libraries.
-- **Modern UI**: Clean PyQt6-based interface with dark mode support.
+- **Universal Installer**: Distro-aware installer for Arch, Fedora, and Debian.
+- **AppImage Support**: Build portable executables that run on any distribution.
 
 ## Installation
 
@@ -21,17 +23,26 @@ Run the universal installer script:
 ```bash
 git clone https://github.com/username/razerctrl.git
 cd razerctrl
-chmod +x install.sh
-./install.sh
+bash install.sh
 ```
 
-### Manual Installation
+### AppImage Build
 
-#### Arch Linux
+To build a portable AppImage:
+
 ```bash
-sudo pacman -S python-pyqt6 python-evdev openrazer-daemon
+bash build_appimage.sh
+```
+*Note: Requires `fuse2` or `fuse3` to be installed on your system.*
+
+## Manual Installation
+
+#### Arch Linux / CachyOS
+```bash
+sudo pacman -S python-pyqt6 python-evdev openrazer-daemon python-distro
 yay -S python-openrazer python-uinput
 sudo gpasswd -a $USER plugdev
+systemctl --user enable --now openrazer-daemon
 ```
 
 #### Fedora

@@ -67,7 +67,11 @@ class DeviceCard(QFrame):
 
         # Footer
         footer = QHBoxLayout()
-        battery_label = QLabel(f"Battery: {self.device.battery_level}%" if hasattr(self.device, 'battery_level') else "Wired")
+        try:
+            battery = self.device.battery_level
+            battery_label = QLabel(f"Battery: {battery}%")
+        except (AttributeError, NotImplementedError):
+            battery_label = QLabel("Wired")
         battery_label.setStyleSheet("color: #aaaaaa; font-size: 11px;")
         footer.addWidget(battery_label)
         

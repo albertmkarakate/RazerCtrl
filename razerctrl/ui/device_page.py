@@ -27,10 +27,13 @@ class DevicePage(QWidget):
         self.init_ui()
         
         # Timer for battery updates
-        if hasattr(self.device, 'battery_level'):
-            self.timer = QTimer(self)
-            self.timer.timeout.connect(self.update_battery)
-            self.timer.start(30000) # 30 seconds
+        try:
+            if hasattr(self.device, 'battery_level') and self.device.battery_level is not None:
+                self.timer = QTimer(self)
+                self.timer.timeout.connect(self.update_battery)
+                self.timer.start(30000) # 30 seconds
+        except (AttributeError, NotImplementedError):
+            pass
 
     def init_ui(self):
         layout = QHBoxLayout(self)
@@ -66,8 +69,13 @@ class DevicePage(QWidget):
         if self.device.type == "mouse":
             self.tabs.addTab(self.create_performance_tab(), "Performance")
             
-        if hasattr(self.device, 'battery_level'):
-            self.tabs.addTab(self.create_power_tab(), "Power")
+        try:
+            if hasattr(self.device, 'battery_level'):
+                # Test if it actually works
+                _ = self.device.battery_level
+                self.tabs.addTab(self.create_power_tab(), "Power")
+        except (AttributeError, NotImplementedError):
+            pass
             
         self.tabs.addTab(self.create_keybinds_tab(), "Keybinds")
         self.tabs.addTab(self.create_macro_tab(), "Macros")
@@ -130,7 +138,12 @@ class DevicePage(QWidget):
         tab = QWidget()
         layout = QVBoxLayout(tab)
         
-        self.battery_label = QLabel(f"Current Battery: {self.device.battery_level}%")
+        try:
+            battery = self.device.battery_level
+            self.battery_label = QLabel(f"Current Battery: {battery}%")
+        except (AttributeError, NotImplementedError):
+            self.battery_label = QLabel("Current Battery: Wired / Unknown")
+            
         layout.addWidget(self.battery_label)
         
         form = QFormLayout()
@@ -281,5 +294,11 @@ class DevicePage(QWidget):
             print(f"Error applying lighting: {e}")
 
     def update_battery(self):
-        if hasattr(self.device, 'battery_level'):
-            self.battery_label.setText(f"Current Battery: {self.device.battery_level}%")
+        try:
+            if hasattr(self.device, 'battery_level'):
+                self.battery_label.setText(f"Current Battery: {self.device.battery_level}%")
+        except (AttributeError, NotImplementedError):
+            if hasattr(self, 'timer'):
+                self.timer.stop()
+            if hasattr(self, 'battery_label'):
+                self.battery_label.setText("Current Battery: Wired")
