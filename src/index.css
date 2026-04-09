@@ -1,17 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&family=JetBrains+Mono&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Rajdhani", sans-serif;
+  --font-display: "Outfit", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
   
-  --color-razer: #44d62c;
-  --color-gh-dark: #0d1117;
-  --color-gh-border: #30363d;
-  --color-gh-panel: #161b22;
+  --color-acid: #00FF41;
+  --color-charcoal: #0D0D0D;
+  --color-surface: #1A1A1A;
+  --color-border: #2A2A2A;
+  --color-glass: rgba(255, 255, 255, 0.03);
+  
+  --shadow-neon: 0 0 15px rgba(0, 255, 65, 0.3);
+  --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+}
+
+@layer base {
+  body {
+    @apply bg-charcoal text-white antialiased selection:bg-acid selection:text-charcoal;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
 }
 
 @layer utilities {
+  .glass-card {
+    @apply bg-glass backdrop-blur-xl border border-white/5 rounded-xl shadow-glass;
+  }
+  
+  .neon-glow {
+    @apply shadow-neon border-acid/50;
+  }
+  
   .custom-scrollbar::-webkit-scrollbar {
     width: 4px;
   }
@@ -19,13 +39,6 @@
     background: transparent;
   }
   .custom-scrollbar::-webkit-scrollbar-thumb {
-    background: #2A2A2A;
-    border-radius: 2px;
+    @apply bg-border rounded-full hover:bg-acid/50 transition-colors;
   }
-  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: #00FF41;
-  }
-}
-
-@layer base {
 }

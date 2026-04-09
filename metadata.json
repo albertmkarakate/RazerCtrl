@@ -1,5 +1,5 @@
 {
-  "name": "RazerCtrl (Unbreakable Edition)",
-  "description": "Unified Razer device manager for Linux, powered by a high-performance Rust backend and React frontend.",
+  "name": "NeonSuite Control",
+  "description": "A high-fidelity desktop application for managing premium gaming peripherals with a neon-accented modular dashboard.",
   "requestFramePermissions": []
 }
