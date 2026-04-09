@@ -1,0 +1,193 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background-color: #1a1a1a;
+  padding: 16px 24px;
+  border-radius: 8px;
+  border: 1px solid #2a2a2a;
+}
+
+.presetSelect {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.presetSelect label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #555;
+  text-transform: uppercase;
+}
+
+.presetSelect select {
+  background-color: #0d0d0d;
+  border: 1px solid #2a2a2a;
+  color: #f0f0f0;
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+
+.saveButton {
+  background-color: #00ff41;
+  color: #0d0d0d;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.status {
+  margin-left: auto;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #555;
+}
+
+.active {
+  color: #00ff41;
+}
+
+.visualizer {
+  display: flex;
+  justify-content: center;
+  background-color: #111;
+  padding: 40px;
+  border-radius: 12px;
+  border: 1px solid #2a2a2a;
+}
+
+.deviceSvg {
+  max-width: 400px;
+  height: auto;
+}
+
+.hotspot {
+  cursor: pointer;
+}
+
+.hotspot:hover circle {
+  fill: #00ff41;
+}
+
+.mappingGrid h3 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #555;
+  margin-bottom: 16px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 12px;
+}
+
+.gridItem {
+  background-color: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  padding: 16px 24px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btnLabel {
+  font-weight: 600;
+  color: #888;
+  font-size: 0.85rem;
+}
+
+.assignment {
+  color: #00ff41;
+  font-family: monospace;
+  font-weight: 700;
+}
+
+.editBtn {
+  background: none;
+  border: 1px solid #333;
+  color: #666;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  cursor: pointer;
+}
+
+.editBtn:hover {
+  border-color: #00ff41;
+  color: #00ff41;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: #1a1a1a;
+  border: 1px solid #00ff41;
+  padding: 32px;
+  border-radius: 12px;
+  width: 400px;
+}
+
+.modal h3 {
+  margin-top: 0;
+  color: #00ff41;
+}
+
+.modalBody {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.quickAssign {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.quickAssign button {
+  background-color: #0d0d0d;
+  border: 1px solid #2a2a2a;
+  color: #f0f0f0;
+  padding: 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.quickAssign button:hover {
+  border-color: #00ff41;
+}
+
+.cancelBtn {
+  background: none;
+  border: none;
+  color: #555;
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: underline;
+}

@@ -4,31 +4,176 @@
     "name": "Razer DeathAdder V3 Pro",
     "category": "Mouse",
     "svgUrl": "/src/assets/devices/mice/deathadder-v3.svg",
+    "capabilities": {
+      "lighting": ["Static", "Breathing", "Spectrum Cycling", "Reactive"],
+      "performance": {
+        "dpi": { "min": 100, "max": 30000, "stages": 5 },
+        "pollingRate": [125, 500, 1000, 4000]
+      }
+    },
     "hotspots": [
       { "id": "left-click", "label": "Left Click", "x": 35, "y": 25 },
       { "id": "right-click", "label": "Right Click", "x": 65, "y": 25 },
       { "id": "scroll-click", "label": "Scroll Click", "x": 50, "y": 16 },
-      { "id": "dpi-up", "label": "DPI Up", "x": 50, "y": 28 },
-      { "id": "dpi-down", "label": "DPI Down", "x": 50, "y": 33 },
       { "id": "side-btn-1", "label": "Side Button 1", "x": 12, "y": 45 },
       { "id": "side-btn-2", "label": "Side Button 2", "x": 12, "y": 58 }
+    ]
+  },
+  {
+    "id": "viper-v3-pro",
+    "name": "Razer Viper V3 Pro",
+    "category": "Mouse",
+    "svgUrl": "/src/assets/devices/mice/viper-v3-pro.svg",
+    "capabilities": {
+      "lighting": ["Static", "Breathing", "Spectrum Cycling"],
+      "performance": {
+        "dpi": { "min": 100, "max": 35000, "stages": 5 },
+        "pollingRate": [125, 500, 1000, 8000]
+      }
+    },
+    "hotspots": [
+      { "id": "left-click", "label": "Left Click", "x": 35, "y": 25 },
+      { "id": "right-click", "label": "Right Click", "x": 65, "y": 25 },
+      { "id": "scroll-click", "label": "Scroll Click", "x": 50, "y": 16 },
+      { "id": "side-btn-1", "label": "Side Button 1", "x": 15, "y": 45 },
+      { "id": "side-btn-2", "label": "Side Button 2", "x": 15, "y": 58 }
+    ]
+  },
+  {
+    "id": "naga-v2-pro",
+    "name": "Razer Naga V2 Pro",
+    "category": "Mouse",
+    "svgUrl": "/src/assets/devices/mice/naga-v2-pro.svg",
+    "capabilities": {
+      "lighting": ["Static", "Breathing", "Spectrum Cycling", "Reactive"],
+      "performance": {
+        "dpi": { "min": 100, "max": 30000, "stages": 5 },
+        "pollingRate": [125, 500, 1000]
+      }
+    },
+    "hotspots": [
+      { "id": "left-click", "label": "Left Click", "x": 35, "y": 25 },
+      { "id": "right-click", "label": "Right Click", "x": 65, "y": 25 },
+      { "id": "side-grid", "label": "12-Button Grid", "x": 10, "y": 50 }
+    ]
+  },
+  {
+    "id": "basilisk-v3-pro",
+    "name": "Razer Basilisk V3 Pro",
+    "category": "Mouse",
+    "svgUrl": "/src/assets/devices/mice/basilisk-v3-pro.svg",
+    "capabilities": {
+      "lighting": ["Static", "Breathing", "Spectrum Cycling", "Reactive", "Wave"],
+      "performance": {
+        "dpi": { "min": 100, "max": 30000, "stages": 5 },
+        "pollingRate": [125, 500, 1000, 4000]
+      }
+    },
+    "hotspots": [
+      { "id": "left-click", "label": "Left Click", "x": 35, "y": 25 },
+      { "id": "right-click", "label": "Right Click", "x": 65, "y": 25 },
+      { "id": "scroll-mode", "label": "Smart Reel", "x": 50, "y": 30 },
+      { "id": "side-btn-1", "label": "Side Button 1", "x": 10, "y": 45 }
     ]
   },
   {
     "id": "blackwidow-v4-pro",
     "name": "Razer BlackWidow V4 Pro",
     "category": "Keyboard",
-    "svgUrl": "/src/assets/devices/keyboards/blackwidow-v4.svg",
+    "svgUrl": "/src/assets/devices/keyboards/blackwidow-v4-pro.svg",
+    "capabilities": {
+      "lighting": ["Static", "Breathing", "Spectrum Cycling", "Wave", "Starlight", "Ripple"],
+      "performance": {
+        "pollingRate": [125, 250, 500, 1000, 4000, 8000]
+      }
+    },
     "hotspots": [
       { "id": "macro-1", "label": "M1", "x": 4, "y": 31 },
       { "id": "macro-2", "label": "M2", "x": 4, "y": 45 },
-      { "id": "macro-3", "label": "M3", "x": 4, "y": 58 },
-      { "id": "macro-4", "label": "M4", "x": 4, "y": 71 },
-      { "id": "macro-5", "label": "M5", "x": 4, "y": 85 },
-      { "id": "media-prev", "label": "Previous Track", "x": 81, "y": 15 },
       { "id": "media-play", "label": "Play/Pause", "x": 86, "y": 15 },
-      { "id": "media-next", "label": "Next Track", "x": 91, "y": 15 },
       { "id": "multi-fn", "label": "Multi-Function Roller", "x": 96, "y": 13 }
+    ]
+  },
+  {
+    "id": "huntsman-v3-pro",
+    "name": "Razer Huntsman V3 Pro",
+    "category": "Keyboard",
+    "svgUrl": "/src/assets/devices/keyboards/huntsman-v3-pro.svg",
+    "capabilities": {
+      "lighting": ["Static", "Breathing", "Spectrum Cycling", "Wave", "Starlight", "Ripple", "Reactive"],
+      "performance": {
+        "pollingRate": [125, 250, 500, 1000]
+      }
+    },
+    "hotspots": [
+      { "id": "multi-fn-dial", "label": "Analog Dial", "x": 96, "y": 13 },
+      { "id": "media-play", "label": "Play/Pause", "x": 86, "y": 15 }
+    ]
+  },
+  {
+    "id": "huntsman-v3-pro-tkl",
+    "name": "Razer Huntsman V3 Pro TKL",
+    "category": "Keyboard",
+    "svgUrl": "/src/assets/devices/keyboards/huntsman-v3-pro-tkl.svg",
+    "capabilities": {
+      "lighting": ["Static", "Breathing", "Spectrum Cycling", "Wave", "Starlight", "Ripple", "Reactive"],
+      "performance": {
+        "pollingRate": [125, 250, 500, 1000]
+      }
+    },
+    "hotspots": [
+      { "id": "media-play", "label": "Play/Pause", "x": 86, "y": 15 }
+    ]
+  },
+  {
+    "id": "tartarus-pro",
+    "name": "Razer Tartarus Pro",
+    "category": "Keypad",
+    "svgUrl": "/src/assets/devices/keypads/tartarus-pro.svg",
+    "capabilities": {
+      "lighting": ["Static", "Breathing", "Spectrum Cycling", "Wave", "Starlight", "Ripple"],
+      "performance": {
+        "pollingRate": [125, 250, 500, 1000]
+      }
+    },
+    "hotspots": [
+      { "id": "key-01", "label": "Key 01", "x": 30, "y": 30 },
+      { "id": "analog-stick", "label": "Analog Stick", "x": 85, "y": 60 },
+      { "id": "shift-key", "label": "Hyper-Shift", "x": 85, "y": 80 }
+    ]
+  },
+  {
+    "id": "kraken-v3-pro",
+    "name": "Razer Kraken V3 Pro",
+    "category": "Headset",
+    "svgUrl": "/src/assets/devices/headsets/kraken-v3-pro.svg",
+    "capabilities": {
+      "lighting": ["Static", "Breathing", "Spectrum Cycling"],
+      "performance": {
+        "audio": ["THX Spatial Audio", "Stereo", "Bass Boost", "Vocal Clarity"]
+      }
+    },
+    "hotspots": [
+      { "id": "vol-up", "label": "Volume Up", "x": 20, "y": 60 },
+      { "id": "mic-mute", "label": "Mic Mute", "x": 20, "y": 70 },
+      { "id": "noise-cancel", "label": "ANC Toggle", "x": 80, "y": 60 }
+    ]
+  },
+  {
+    "id": "raiju-ultimate",
+    "name": "Razer Raiju Ultimate",
+    "category": "Controller",
+    "svgUrl": "/src/assets/devices/controllers/raiju-ultimate.svg",
+    "capabilities": {
+      "lighting": ["Static", "Breathing", "Spectrum Cycling", "Immersive"],
+      "performance": {
+        "pollingRate": [125, 250, 500, 1000]
+      }
+    },
+    "hotspots": [
+      { "id": "btn-a", "label": "Button A", "x": 75, "y": 50 },
+      { "id": "axis-ls", "label": "Left Stick", "x": 30, "y": 40 },
+      { "id": "btn-m1", "label": "M1 Bumper", "x": 25, "y": 10 }
     ]
   }
 ]
