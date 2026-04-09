@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   LayoutDashboard, 
@@ -23,7 +23,27 @@ import {
   Mic2,
   Activity,
   Gamepad2,
-  Plus
+  Plus,
+  ChevronDown,
+  Copy,
+  Eye,
+  EyeOff,
+  GripVertical,
+  Lock,
+  Layers3,
+  Link2,
+  Play,
+  Save,
+  SlidersHorizontal,
+  Sparkles,
+  SplitSquareHorizontal,
+  Trash2,
+  Unlink,
+  Flame,
+  Bolt,
+  Waves,
+  Minus,
+  Settings2
 } from 'lucide-react';
 import devicesData from './data/devices.json';
 
@@ -443,107 +463,614 @@ const MacroView = () => (
   </div>
 );
 
-const StudioView = () => (
-  <div className="h-full flex flex-col overflow-hidden">
-    <div className="h-16 border-b border-border bg-surface/50 backdrop-blur-md flex items-center justify-between px-8 shrink-0">
-      <div className="flex items-center gap-8">
-        <h1 className="text-xl font-display font-bold tracking-tight">CHROMA STUDIO</h1>
-        <div className="flex gap-2">
-          <button className="p-2 rounded-lg bg-acid/10 text-acid border border-acid/20"><Maximize2 size={16} /></button>
-          <button className="p-2 rounded-lg bg-white/5 text-white/40 border border-white/5"><Layers size={16} /></button>
-        </div>
-      </div>
-      <div className="flex gap-4">
-        <button className="px-4 py-2 rounded-lg bg-surface border border-border text-[10px] font-bold uppercase tracking-widest hover:border-acid/50 transition-colors">Import</button>
-        <button className="px-4 py-2 rounded-lg bg-surface border border-border text-[10px] font-bold uppercase tracking-widest hover:border-acid/50 transition-colors">Export</button>
-        <button className="px-6 py-2 rounded-lg bg-acid text-charcoal font-bold text-xs uppercase tracking-widest hover:brightness-110 transition-all">Save</button>
-      </div>
+// --- Studio Types & Data ---
+type BlendMode = 'Normal' | 'Add' | 'Screen' | 'Multiply';
+type Direction = 'Left' | 'Right' | 'Up' | 'Down' | 'Center';
+
+type Layer = {
+  id: string;
+  name: string;
+  effect: string;
+  colorA: string;
+  colorB: string;
+  visible: boolean;
+  locked: boolean;
+  opacity: number;
+  blend: BlendMode;
+  intensity: number;
+  speed: number;
+  direction: Direction;
+};
+
+type Preset = {
+  id: string;
+  name: string;
+  subtitle: string;
+  active?: boolean;
+};
+
+const initialLayers: Layer[] = [
+  {
+    id: 'layer-1',
+    name: 'Wave Effect',
+    effect: 'Wave',
+    colorA: '#18ff6d',
+    colorB: '#00d7ff',
+    visible: true,
+    locked: false,
+    opacity: 100,
+    blend: 'Add',
+    intensity: 74,
+    speed: 62,
+    direction: 'Right',
+  },
+  {
+    id: 'layer-2',
+    name: 'Reactive Layer',
+    effect: 'Reactive',
+    colorA: '#18ff6d',
+    colorB: '#7c3aed',
+    visible: true,
+    locked: false,
+    opacity: 72,
+    blend: 'Screen',
+    intensity: 44,
+    speed: 31,
+    direction: 'Center',
+  },
+  {
+    id: 'layer-3',
+    name: 'Static Base',
+    effect: 'Static',
+    colorA: '#1f2937',
+    colorB: '#111827',
+    visible: true,
+    locked: false,
+    opacity: 100,
+    blend: 'Normal',
+    intensity: 20,
+    speed: 0,
+    direction: 'Center',
+  },
+  {
+    id: 'layer-4',
+    name: 'Starlight Accents',
+    effect: 'Starlight',
+    colorA: '#f59e0b',
+    colorB: '#ec4899',
+    visible: false,
+    locked: false,
+    opacity: 55,
+    blend: 'Add',
+    intensity: 66,
+    speed: 18,
+    direction: 'Up',
+  },
+];
+
+const initialPresets: Preset[] = [
+  { id: 'p1', name: 'Forest Pulse', subtitle: 'Wave + reactive stack', active: true },
+  { id: 'p2', name: 'Night Raid', subtitle: 'Low glow tactical' },
+  { id: 'p3', name: 'Spectrum Drift', subtitle: 'Rainbow movement' },
+  { id: 'p4', name: 'Static Minimal', subtitle: 'No animation' },
+];
+
+const blendStyles: Record<BlendMode, string> = {
+  Normal: 'bg-zinc-800/80 text-zinc-200 border-zinc-700',
+  Add: 'bg-emerald-500/15 text-emerald-300 border-emerald-500/30',
+  Screen: 'bg-cyan-500/15 text-cyan-300 border-cyan-500/30',
+  Multiply: 'bg-fuchsia-500/15 text-fuchsia-300 border-fuchsia-500/30',
+};
+
+const effectSwatches = [
+  { name: 'Wave', icon: Waves },
+  { name: 'Reactive', icon: Sparkles },
+  { name: 'Static', icon: Palette },
+  { name: 'Breathing', icon: Flame },
+  { name: 'Ripple', icon: SplitSquareHorizontal },
+  { name: 'Audio', icon: Bolt },
+];
+
+function SectionTitle({ title, right }: { title: string; right?: React.ReactNode }) {
+  return (
+    <div className="flex items-center justify-between gap-3">
+      <h3 className="text-[11px] font-semibold uppercase tracking-[0.25em] text-zinc-400">{title}</h3>
+      {right}
     </div>
+  );
+}
 
-    <div className="flex-1 flex overflow-hidden">
-      {/* Layers Panel */}
-      <div className="w-64 border-r border-border p-6 flex flex-col gap-6 bg-charcoal/30">
-        <div className="flex justify-between items-center">
-          <h3 className="text-[10px] font-bold uppercase tracking-widest text-white/40">Layers</h3>
-          <Plus size={14} className="text-white/40 cursor-pointer hover:text-acid" />
+function StudioSlider({
+  label,
+  value,
+  onChange,
+  min = 0,
+  max = 100,
+  suffix = '',
+}: {
+  label: string;
+  value: number;
+  onChange: (value: number) => void;
+  min?: number;
+  max?: number;
+  suffix?: string;
+}) {
+  return (
+    <div className="space-y-2">
+      <div className="flex items-center justify-between text-xs text-zinc-400">
+        <span>{label}</span>
+        <span className="font-medium text-zinc-200">{value}{suffix}</span>
+      </div>
+      <input
+        type="range"
+        min={min}
+        max={max}
+        value={value}
+        onChange={(e) => onChange(Number(e.target.value))}
+        className="h-2 w-full appearance-none rounded-full bg-zinc-800 accent-emerald-400"
+      />
+    </div>
+  );
+}
+
+function PillButton({
+  active,
+  children,
+  onClick,
+  tone = 'neutral',
+}: {
+  active: boolean;
+  children: React.ReactNode;
+  onClick: () => void;
+  tone?: 'neutral' | 'green';
+}) {
+  return (
+    <button
+      onClick={onClick}
+      className={`rounded-full border px-4 py-2 text-xs font-semibold transition ${
+        active
+          ? tone === 'green'
+            ? 'border-emerald-400/50 bg-emerald-400/10 text-emerald-300 shadow-[0_0_0_1px_rgba(52,211,153,0.12)]'
+            : 'border-zinc-500 bg-zinc-800 text-white'
+          : 'border-zinc-800 bg-zinc-900/60 text-zinc-400 hover:border-zinc-700 hover:text-zinc-200'
+      }`}
+    >
+      {children}
+    </button>
+  );
+}
+
+function IconCircle({ icon: Icon, active = false }: { icon: React.ComponentType<{ className?: string }>; active?: boolean }) {
+  return (
+    <div
+      className={`flex h-8 w-8 items-center justify-center rounded-lg border ${
+        active ? 'border-emerald-400/40 bg-emerald-400/10 text-emerald-300' : 'border-zinc-800 bg-zinc-900 text-zinc-400'
+      }`}
+    >
+      <Icon className="h-4 w-4" />
+    </div>
+  );
+}
+
+const StudioView = () => {
+  const [layers, setLayers] = useState<Layer[]>(initialLayers);
+  const [selectedLayerId, setSelectedLayerId] = useState(initialLayers[0].id);
+  const [presets, setPresets] = useState<Preset[]>(initialPresets);
+  const [liveSync, setLiveSync] = useState(true);
+  const [timeline, setTimeline] = useState(62);
+  const [selectedZone, setSelectedZone] = useState<'Keyboard' | 'Mouse' | 'Headset'>('Keyboard');
+  const [advancedMode, setAdvancedMode] = useState(false);
+
+  const selectedLayer = useMemo(
+    () => layers.find((l) => l.id === selectedLayerId) ?? layers[0],
+    [layers, selectedLayerId]
+  );
+
+  const updateLayer = (id: string, patch: Partial<Layer>) => {
+    setLayers((prev) => prev.map((layer) => (layer.id === id ? { ...layer, ...patch } : layer)));
+  };
+
+  const moveLayer = (index: number, direction: -1 | 1) => {
+    setLayers((prev) => {
+      const next = [...prev];
+      const target = index + direction;
+      if (target < 0 || target >= next.length) return prev;
+      [next[index], next[target]] = [next[target], next[index]];
+      return next;
+    });
+  };
+
+  const duplicateLayer = (layer: Layer) => {
+    const copy: Layer = { ...layer, id: `${layer.id}-copy-${Date.now()}`, name: `${layer.name} Copy` };
+    setLayers((prev) => [copy, ...prev]);
+    setSelectedLayerId(copy.id);
+  };
+
+  const deleteLayer = (id: string) => {
+    setLayers((prev) => prev.filter((l) => l.id !== id));
+    if (selectedLayerId === id) {
+      const fallback = layers.find((l) => l.id !== id)?.id;
+      if (fallback) setSelectedLayerId(fallback);
+    }
+  };
+
+  const addLayer = (effect: string) => {
+    const newLayer: Layer = {
+      id: `layer-${Date.now()}`,
+      name: `New ${effect} Layer`,
+      effect,
+      colorA: '#18ff6d',
+      colorB: '#00d7ff',
+      visible: true,
+      locked: false,
+      opacity: 100,
+      blend: 'Normal',
+      intensity: 50,
+      speed: 50,
+      direction: 'Center',
+    };
+    setLayers((prev) => [newLayer, ...prev]);
+    setSelectedLayerId(newLayer.id);
+  };
+
+  const loadPreset = (preset: Preset) => {
+    // In a real app, this would fetch the layer stack for the preset
+    // For now, we'll just simulate it by resetting to initial layers or a variation
+    setLayers(initialLayers.map(l => ({ ...l, id: `${l.id}-${Date.now()}` })));
+    setPresets(prev => prev.map(p => ({ ...p, active: p.id === preset.id })));
+  };
+
+  const savePreset = () => {
+    const name = `Preset ${presets.length + 1}`;
+    const newPreset = { id: `p${Date.now()}`, name, subtitle: `${layers.length} layer stack`, active: true };
+    setPresets((prev) => [newPreset, ...prev.map(p => ({ ...p, active: false }))]);
+  };
+
+  return (
+    <div className="h-full flex flex-col overflow-hidden">
+      <div className="h-16 border-b border-white/5 bg-[#111215]/90 px-8 py-4 backdrop-blur flex items-center justify-between shrink-0">
+        <div className="flex items-center gap-8">
+          <div>
+            <div className="text-[11px] uppercase tracking-[0.25em] text-zinc-500">Chroma Studio</div>
+            <h1 className="mt-1 text-xl font-semibold tracking-tight">Lighting Editor</h1>
+          </div>
+          <div className="flex gap-2">
+            <PillButton active={liveSync} onClick={() => setLiveSync((v) => !v)} tone="green">
+              {liveSync ? 'Live Sync On' : 'Live Sync Off'}
+            </PillButton>
+            <PillButton active={advancedMode} onClick={() => setAdvancedMode((v) => !v)}>
+              Advanced Mode
+            </PillButton>
+          </div>
         </div>
-        <div className="space-y-2 flex-1 overflow-y-auto custom-scrollbar">
-          {[
-            { name: 'Wave Effect', type: 'Wave', active: true },
-            { name: 'Reactive Layer', type: 'Reactive', active: true },
-            { name: 'Static Base', type: 'Static', active: true },
-            { name: 'Starlight Accents', type: 'Starlight', active: false },
-          ].map((layer, i) => (
-            <div key={i} className={`p-3 rounded-lg border flex items-center gap-3 group cursor-pointer transition-all ${layer.active ? 'bg-white/5 border-white/10' : 'opacity-40 grayscale'}`}>
-              <div className={`w-2 h-2 rounded-full ${layer.active ? 'bg-acid shadow-neon' : 'bg-white/20'}`} />
-              <div className="flex-1 min-w-0">
-                <div className="text-[11px] font-bold truncate">{layer.name}</div>
-                <div className="text-[9px] text-white/40 uppercase tracking-widest">{layer.type}</div>
-              </div>
-              <Settings size={12} className="text-white/0 group-hover:text-white/40 transition-colors" />
-            </div>
-          ))}
+        <div className="flex gap-4">
+          <button className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-zinc-200 hover:bg-white/10 transition-colors">
+            <Save className="h-4 w-4" /> Save
+          </button>
         </div>
       </div>
 
-      {/* Visualizer Canvas */}
-      <div className="flex-1 relative bg-[radial-gradient(circle_at_center,_rgba(0,255,65,0.02)_0%,_transparent_70%)] overflow-hidden">
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="relative w-full max-w-4xl aspect-video glass-card border-white/5 bg-charcoal/50 flex items-center justify-center overflow-hidden">
-            {/* Grid Pattern */}
-            <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle, #00FF41 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
-            
-            <div className="relative z-10 flex gap-12 items-center">
-              <div className="w-96 aspect-video rounded-xl bg-surface border border-white/10 flex items-center justify-center group cursor-move">
-                <Keyboard size={64} className="text-white/10 group-hover:text-acid/20 transition-colors" />
-                <div className="absolute inset-0 bg-gradient-to-br from-acid/10 via-purple-500/10 to-blue-500/10 animate-pulse" />
+      <div className="flex-1 grid grid-cols-[300px_minmax(0,1fr)_340px] overflow-hidden">
+        {/* Left Panel: Presets & Timeline */}
+        <div className="border-r border-white/5 bg-[#0e0f12] p-5 overflow-y-auto custom-scrollbar space-y-6">
+          <SectionTitle
+            title="Presets"
+            right={
+              <button onClick={savePreset} className="inline-flex items-center gap-1 rounded-lg border border-emerald-400/30 bg-emerald-400/10 px-3 py-1.5 text-xs font-semibold text-emerald-300">
+                <Plus className="h-3.5 w-3.5" /> New
+              </button>
+            }
+          />
+
+          <div className="space-y-2">
+            {presets.map((preset) => (
+              <button
+                key={preset.id}
+                onClick={() => loadPreset(preset)}
+                className={`w-full rounded-2xl border p-4 text-left transition ${
+                  preset.active ? 'border-emerald-400/30 bg-emerald-400/10 shadow-[0_0_0_1px_rgba(16,185,129,0.08)]' : 'border-white/6 bg-white/[0.03] hover:bg-white/[0.05]'
+                }`}
+              >
+                <div className="flex items-center justify-between gap-2">
+                  <div className="font-semibold text-zinc-100">{preset.name}</div>
+                  {preset.active && <span className="rounded-full bg-emerald-400 px-2 py-0.5 text-[10px] font-bold tracking-wide text-black">ACTIVE</span>}
+                </div>
+                <div className="mt-1 text-xs text-zinc-500">{preset.subtitle}</div>
+              </button>
+            ))}
+          </div>
+
+          <div className="rounded-2xl border border-white/6 bg-white/[0.03] p-4">
+            <SectionTitle title="Timeline" />
+            <div className="mt-4 space-y-3">
+              <div className="flex items-center justify-between text-xs text-zinc-500">
+                <span>Loop</span>
+                <span>{advancedMode ? 'Ping-pong' : 'Repeat'}</span>
               </div>
-              <div className="w-32 aspect-[2/3] rounded-xl bg-surface border border-white/10 flex items-center justify-center group cursor-move">
-                <MousePointer2 size={32} className="text-white/10 group-hover:text-acid/20 transition-colors" />
-                <div className="absolute inset-0 bg-gradient-to-tr from-acid/10 via-orange-500/10 to-red-500/10 animate-pulse" />
+              <input
+                type="range"
+                min={0}
+                max={100}
+                value={timeline}
+                onChange={(e) => setTimeline(Number(e.target.value))}
+                className="h-2 w-full appearance-none rounded-full bg-zinc-800 accent-emerald-400"
+              />
+              <div className="flex items-center justify-between text-xs text-zinc-500">
+                <span>0ms</span>
+                <span>{timeline}ms</span>
+                <span>100%</span>
               </div>
             </div>
           </div>
-        </div>
-        
-        {/* Canvas Controls */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 p-2 rounded-full bg-surface/80 backdrop-blur-md border border-white/10 shadow-2xl">
-          {[Maximize2, Layers, Palette, Zap, Activity].map((Icon, i) => (
-            <button key={i} className="p-3 rounded-full hover:bg-acid/10 hover:text-acid text-white/40 transition-all">
-              <Icon size={18} />
-            </button>
-          ))}
-        </div>
-      </div>
 
-      {/* Properties Panel */}
-      <div className="w-80 border-l border-border p-8 overflow-y-auto custom-scrollbar space-y-8 bg-charcoal/30">
-        <h3 className="text-xs font-bold uppercase tracking-widest text-white/60">Effect Properties</h3>
-        
-        <div className="space-y-6">
-          <div className="space-y-3">
-            <label className="text-[10px] uppercase tracking-widest text-white/40 font-bold">Color Pattern</label>
-            <div className="h-8 w-full rounded-lg bg-gradient-to-r from-red-500 via-acid to-blue-500 border border-white/10 shadow-inner" />
-          </div>
-          
-          <AcidSlider label="Speed" value={65} onChange={() => {}} />
-          <AcidSlider label="Width" value={40} onChange={() => {}} />
-          
-          <div className="space-y-3">
-            <label className="text-[10px] uppercase tracking-widest text-white/40 font-bold">Direction</label>
-            <div className="grid grid-cols-4 gap-2">
-              {[ChevronLeft, ChevronRight, ChevronLeft, ChevronRight].map((Icon, i) => (
-                <button key={i} className={`p-3 rounded-lg border flex items-center justify-center transition-all ${i === 1 ? 'bg-acid/10 border-acid text-acid' : 'bg-surface border-border text-white/20 hover:border-white/20'}`}>
-                  <Icon size={16} className={i === 2 ? 'rotate-90' : i === 3 ? '-rotate-90' : ''} />
+          <div className="rounded-2xl border border-white/6 bg-white/[0.03] p-4">
+            <SectionTitle title="Output Zone" />
+            <div className="mt-3 grid grid-cols-3 gap-2">
+              {(['Keyboard', 'Mouse', 'Headset'] as const).map((zone) => (
+                <button
+                  key={zone}
+                  onClick={() => setSelectedZone(zone)}
+                  className={`rounded-xl border px-3 py-2 text-xs font-semibold transition ${
+                    selectedZone === zone
+                      ? 'border-emerald-400/40 bg-emerald-400/10 text-emerald-300'
+                      : 'border-white/6 bg-white/[0.03] text-zinc-400 hover:text-zinc-200'
+                  }`}
+                >
+                  {zone}
                 </button>
               ))}
             </div>
           </div>
         </div>
+
+        {/* Center Panel: Layers & Canvas */}
+        <div className="overflow-y-auto bg-[#0c0d10] p-5 custom-scrollbar">
+          <div className="grid grid-cols-1 gap-5 xl:grid-cols-[320px_minmax(0,1fr)]">
+            <div className="space-y-4">
+              <div className="rounded-3xl border border-white/6 bg-white/[0.03] p-4">
+                <SectionTitle
+                  title="Layers"
+                  right={<span className="text-xs text-zinc-500">Drag, hide, lock</span>}
+                />
+                <div className="mt-4 space-y-2">
+                  {layers.map((layer, index) => {
+                    const active = layer.id === selectedLayerId;
+                    return (
+                      <motion.div
+                        key={layer.id}
+                        layout
+                        className={`rounded-2xl border p-3 transition ${
+                          active ? 'border-emerald-400/30 bg-emerald-400/10' : 'border-white/6 bg-[#111216] hover:bg-white/[0.04]'
+                        }`}
+                      >
+                        <div className="flex items-start gap-2">
+                          <button className="mt-1 cursor-grab text-zinc-600 hover:text-zinc-300">
+                            <GripVertical className="h-4 w-4" />
+                          </button>
+                          <button onClick={() => setSelectedLayerId(layer.id)} className="min-w-0 flex-1 text-left">
+                            <div className="flex items-center gap-2">
+                              <span className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: layer.colorA }} />
+                              <div className="truncate text-sm font-semibold text-zinc-100">{layer.name}</div>
+                            </div>
+                            <div className="mt-1 text-[10px] text-zinc-500 uppercase tracking-wider">{layer.effect} · {layer.blend}</div>
+                          </button>
+                          <div className="flex items-center gap-1">
+                            <button
+                              onClick={() => updateLayer(layer.id, { visible: !layer.visible })}
+                              className="rounded-lg border border-white/6 bg-white/[0.03] p-2 text-zinc-400 hover:text-zinc-100"
+                            >
+                              {layer.visible ? <Eye className="h-4 w-4" /> : <EyeOff className="h-4 w-4" />}
+                            </button>
+                            <button
+                              onClick={() => updateLayer(layer.id, { locked: !layer.locked })}
+                              className={`rounded-lg border p-2 ${
+                                layer.locked ? 'border-emerald-400/30 bg-emerald-400/10 text-emerald-300' : 'border-white/6 bg-white/[0.03] text-zinc-400 hover:text-zinc-100'
+                              }`}
+                            >
+                              <Lock className="h-4 w-4" />
+                            </button>
+                          </div>
+                        </div>
+
+                        <div className="mt-3 flex items-center justify-between gap-2">
+                          <div className={`inline-flex items-center gap-2 rounded-full border px-2 py-1 text-[9px] font-bold uppercase tracking-[0.2em] ${blendStyles[layer.blend]}`}>
+                            {layer.blend}
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <button onClick={() => moveLayer(index, -1)} className="rounded-md border border-white/6 bg-white/[0.03] p-1.5 text-zinc-500 hover:text-zinc-100"><ChevronLeft className="h-3.5 w-3.5" /></button>
+                            <button onClick={() => moveLayer(index, 1)} className="rounded-md border border-white/6 bg-white/[0.03] p-1.5 text-zinc-500 hover:text-zinc-100"><ChevronRight className="h-3.5 w-3.5" /></button>
+                            <button onClick={() => duplicateLayer(layer)} className="rounded-md border border-white/6 bg-white/[0.03] p-1.5 text-zinc-500 hover:text-zinc-100"><Copy className="h-3.5 w-3.5" /></button>
+                            <button onClick={() => deleteLayer(layer.id)} className="rounded-md border border-white/6 bg-white/[0.03] p-1.5 text-zinc-500 hover:text-red-300"><Trash2 className="h-3.5 w-3.5" /></button>
+                          </div>
+                        </div>
+                      </motion.div>
+                    );
+                  })}
+                </div>
+              </div>
+
+              <div className="rounded-3xl border border-white/6 bg-white/[0.03] p-4">
+                <SectionTitle title="Add Effect" />
+                <div className="mt-4 grid grid-cols-2 gap-2">
+                  {effectSwatches.map(({ name, icon: Icon }) => (
+                    <button
+                      key={name}
+                      onClick={() => addLayer(name)}
+                      className="flex items-center gap-2 rounded-2xl border border-white/6 bg-[#111216] p-3 text-left transition hover:border-emerald-400/30 hover:bg-emerald-400/10"
+                    >
+                      <IconCircle icon={Icon} active={name === selectedLayer.effect} />
+                      <div className="text-xs font-semibold text-zinc-100">{name}</div>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-5">
+              <div className="rounded-3xl border border-white/6 bg-[#111216] p-5 shadow-[0_0_0_1px_rgba(255,255,255,0.02)]">
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <div>
+                    <div className="text-[11px] uppercase tracking-[0.25em] text-zinc-500">Selected layer</div>
+                    <h3 className="mt-1 text-xl font-semibold">{selectedLayer.name}</h3>
+                  </div>
+                  <div className="flex flex-wrap items-center gap-2 text-xs text-zinc-400">
+                    <span className="inline-flex items-center gap-1 rounded-full border border-white/6 bg-white/[0.03] px-3 py-1.5"><Link2 className="h-3.5 w-3.5" /> Target: {selectedZone}</span>
+                  </div>
+                </div>
+
+                <div className="mt-5 grid grid-cols-1 gap-5 xl:grid-cols-[260px_minmax(0,1fr)]">
+                  <div className="rounded-3xl border border-white/6 bg-black/20 p-4 space-y-5">
+                    <SectionTitle title="Effect controls" />
+                    <StudioSlider label="Opacity" value={selectedLayer.opacity} onChange={(v) => updateLayer(selectedLayer.id, { opacity: v })} />
+                    <StudioSlider label="Intensity" value={selectedLayer.intensity} onChange={(v) => updateLayer(selectedLayer.id, { intensity: v })} />
+                    <StudioSlider label="Speed" value={selectedLayer.speed} onChange={(v) => updateLayer(selectedLayer.id, { speed: v })} />
+
+                    <div className="space-y-2">
+                      <div className="text-[10px] uppercase tracking-widest text-zinc-500 font-bold">Blend mode</div>
+                      <div className="grid grid-cols-2 gap-2">
+                        {(['Normal', 'Add', 'Screen', 'Multiply'] as BlendMode[]).map((blend) => (
+                          <button
+                            key={blend}
+                            onClick={() => updateLayer(selectedLayer.id, { blend })}
+                            className={`rounded-xl border px-3 py-2 text-[10px] font-bold uppercase tracking-widest transition ${
+                              selectedLayer.blend === blend
+                                ? 'border-emerald-400/40 bg-emerald-400/10 text-emerald-300'
+                                : 'border-white/6 bg-white/[0.03] text-zinc-400 hover:text-zinc-100'
+                            }`}
+                          >
+                            {blend}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="space-y-2">
+                      <div className="text-[10px] uppercase tracking-widest text-zinc-500 font-bold">Direction</div>
+                      <div className="grid grid-cols-3 gap-2">
+                        {(['Left', 'Center', 'Right', 'Up', 'Down'] as Direction[]).map((dir) => (
+                          <button
+                            key={dir}
+                            onClick={() => updateLayer(selectedLayer.id, { direction: dir })}
+                            className={`rounded-xl border px-3 py-2 text-[10px] font-bold uppercase tracking-widest transition ${
+                              selectedLayer.direction === dir
+                                ? 'border-emerald-400/40 bg-emerald-400/10 text-emerald-300'
+                                : 'border-white/6 bg-white/[0.03] text-zinc-400 hover:text-zinc-100'
+                            }`}
+                          >
+                            {dir}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="rounded-3xl border border-white/6 bg-black/20 p-4">
+                    <SectionTitle title="Device canvas" />
+                    <div className="mt-4 flex min-h-[380px] items-center justify-center rounded-3xl border border-white/5 bg-[radial-gradient(circle_at_center,_rgba(34,197,94,0.05),_transparent_70%)] p-6">
+                      <div className="relative w-full max-w-[600px] rounded-[28px] border border-white/6 bg-[#0f1014] p-5 shadow-2xl">
+                        <div className="grid grid-cols-12 gap-3">
+                          <div className="col-span-9 rounded-[24px] border border-white/5 bg-[#121319] p-4">
+                            <div className="grid grid-cols-10 gap-1.5 relative overflow-hidden rounded-md">
+                              {/* Simulated Lighting Preview */}
+                              <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+                                {layers.filter(l => l.visible).map((layer, i) => (
+                                  <motion.div
+                                    key={layer.id}
+                                    initial={false}
+                                    animate={{ 
+                                      opacity: layer.opacity / 100,
+                                      x: layer.direction === 'Left' ? -20 : layer.direction === 'Right' ? 20 : 0,
+                                      y: layer.direction === 'Up' ? -20 : layer.direction === 'Down' ? 20 : 0,
+                                      scale: 1 + (layer.intensity / 200)
+                                    }}
+                                    transition={{ duration: 2, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+                                    className="absolute inset-0"
+                                    style={{ 
+                                      background: `radial-gradient(circle at center, ${layer.colorA}, transparent)`,
+                                      mixBlendMode: layer.blend === 'Add' ? 'screen' : layer.blend === 'Screen' ? 'lighten' : layer.blend === 'Multiply' ? 'multiply' : 'normal'
+                                    }}
+                                  />
+                                ))}
+                              </div>
+
+                              {Array.from({ length: 40 }).map((_, i) => {
+                                const highlighted = [2, 5, 14, 15, 16, 20, 23, 27, 34, 35].includes(i);
+                                return (
+                                  <div
+                                    key={i}
+                                    className={`aspect-square rounded-md border transition relative z-10 ${
+                                      highlighted
+                                        ? 'border-emerald-400/40 bg-emerald-400/10 shadow-[0_0_10px_rgba(52,211,153,0.2)]'
+                                        : 'border-white/5 bg-black/20'
+                                    }`}
+                                  />
+                                );
+                              })}
+                            </div>
+                          </div>
+                          <div className="col-span-3 flex flex-col gap-3">
+                            <div className="flex-1 rounded-[24px] border border-white/5 bg-[#121319] p-4 flex items-center justify-center relative overflow-hidden">
+                              <div className="absolute inset-0 z-0 pointer-events-none">
+                                {layers.filter(l => l.visible).map((layer) => (
+                                  <div 
+                                    key={layer.id}
+                                    className="absolute inset-0"
+                                    style={{ 
+                                      background: `radial-gradient(circle at center, ${layer.colorA}22, transparent)`,
+                                      opacity: layer.opacity / 100
+                                    }}
+                                  />
+                                ))}
+                              </div>
+                              <div className="h-24 w-12 rounded-[18px] border border-white/6 bg-gradient-to-b from-zinc-800 to-zinc-950 relative z-10" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Right Panel: Inspector */}
+        <aside className="border-l border-white/5 bg-[#0e0f12] p-5 overflow-y-auto custom-scrollbar space-y-4">
+          <SectionTitle title="Inspector" />
+          <div className="rounded-3xl border border-white/6 bg-[#111216] p-4 space-y-4">
+            <div className="flex items-center gap-3">
+              <div className="h-12 w-12 rounded-2xl border border-white/6 bg-[radial-gradient(circle_at_top_left,rgba(16,185,129,0.35),rgba(255,255,255,0.03))]" />
+              <div>
+                <div className="text-sm font-semibold uppercase tracking-wide">Keyboard</div>
+                <div className="text-xs text-zinc-500">FW v1.04.22</div>
+              </div>
+            </div>
+            <div className="space-y-2">
+              <div className="flex justify-between text-[10px] font-bold uppercase tracking-widest text-zinc-500">
+                <span>Battery</span>
+                <span className="text-emerald-300">77%</span>
+              </div>
+              <div className="h-1.5 rounded-full bg-zinc-800">
+                <div className="h-full rounded-full bg-emerald-400 w-[77%]" />
+              </div>
+            </div>
+          </div>
+
+          <div className="rounded-3xl border border-white/6 bg-[#111216] p-4">
+            <SectionTitle title="Quick Fixes" />
+            <ul className="mt-3 space-y-3 text-[11px] text-zinc-400">
+              <li className="flex gap-3"><span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400" />Layer reorder & visibility</li>
+              <li className="flex gap-3"><span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400" />Blend modes & opacity</li>
+              <li className="flex gap-3"><span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400" />Timeline scrubber</li>
+              <li className="flex gap-3"><span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400" />Live sync targeting</li>
+            </ul>
+          </div>
+        </aside>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 const DeviceView = ({ type }: { type: string }) => {
   const [activeSubTab, setActiveSubTab] = useState('Performance');
