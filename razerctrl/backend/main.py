@@ -4,10 +4,10 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import List, Optional
 
-from openrazer_service import OpenRazerService
-from inputremapper_service import InputRemapperService
-from profile_store import ProfileStore
-from macro_recorder import MacroRecorder
+from .openrazer_service import OpenRazerService
+from .inputremapper_service import InputRemapperService
+from .profile_store import ProfileStore
+from .macro_recorder import MacroRecorder
 
 app = FastAPI(title="RazerCtrl API")
 

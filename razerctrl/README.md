@@ -27,14 +27,10 @@ A complete, open-source Linux desktop application for configuring Razer (and oth
    ./install.sh
    ```
 3. Reboot your system.
-4. Start the backend:
+4. The backend starts automatically via systemd.
+5. Run the application:
    ```bash
-   systemctl --user start razerctrl-backend
-   ```
-5. Run the frontend in development mode:
-   ```bash
-   cd frontend
-   npm run dev
+   razerctrl
    ```
 
 ## Requirements

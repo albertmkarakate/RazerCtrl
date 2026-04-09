@@ -21,8 +21,8 @@ sudo gpasswd -a $USER plugdev
 sudo gpasswd -a $USER input
 
 # 3. Install Python dependencies
-echo "Installing backend dependencies..."
-pip3 install -r backend/requirements.txt
+echo "Installing RazerCtrl package and dependencies..."
+pip3 install -e .
 
 # 4. Install Frontend dependencies and build
 echo "Building frontend..."
@@ -41,8 +41,8 @@ After=network.target
 
 [Service]
 Type=simple
-WorkingDirectory=$(pwd)/backend
-ExecStart=/usr/bin/python3 -m uvicorn main:app --host 0.0.0.0 --port 8000
+WorkingDirectory=$(pwd)
+ExecStart=$(which razerctrl-api)
 Restart=always
 
 [Install]
