@@ -50,6 +50,29 @@ class ProfileRequest(BaseModel):
 
 # --- Endpoints ---
 
+@app.get("/set_color/{color_name}")
+async def set_color_simple(color_name: str):
+    """
+    Simple GET endpoint for external automation.
+    Sets all connected devices to a basic color.
+    """
+    colors = {
+        "green": "#00ff41",
+        "red": "#ff0000",
+        "blue": "#0000ff",
+        "white": "#ffffff",
+        "off": "#000000"
+    }
+    hex_color = colors.get(color_name.lower(), "#00ff41")
+    
+    devices = razer_service.get_devices()
+    results = []
+    for dev in devices:
+        res = razer_service.set_lighting(dev['id'], "matrix", "static", hex_color, 2, "right")
+        results.append({"device": dev['name'], "success": res})
+    
+    return {"status": "success", "color": color_name, "results": results}
+
 @app.get("/api/devices")
 async def get_devices():
     try:

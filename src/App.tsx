@@ -1,5 +1,6 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import { api, Device, DeviceState } from './api';
 import { 
   LayoutDashboard, 
   MousePointer2, 
@@ -118,52 +119,95 @@ const SidebarItem = ({ icon: Icon, label, active, onClick }: any) => (
 
 // --- Views ---
 
-const DashboardView = ({ onDeviceClick }: { onDeviceClick: (type: ViewType) => void }) => (
-  <div className="space-y-8 p-8">
-    <div className="flex justify-between items-end">
-      <div>
-        <h1 className="text-4xl font-display font-bold tracking-tight">DASHBOARD</h1>
-        <p className="text-white/40 text-sm mt-1">Manage your connected hardware ecosystem</p>
-      </div>
-      <div className="flex gap-4">
-        <button className="px-4 py-2 rounded-lg bg-surface border border-border text-xs font-bold uppercase tracking-widest hover:border-acid/50 transition-colors">Modules</button>
-        <button className="px-4 py-2 rounded-lg bg-surface border border-border text-xs font-bold uppercase tracking-widest hover:border-acid/50 transition-colors">Global Shortcuts</button>
-      </div>
-    </div>
+const DashboardView = ({ onDeviceClick }: { onDeviceClick: (type: ViewType) => void }) => {
+  const [devices, setDevices] = useState<Device[]>([]);
+  const [loading, setLoading] = useState(true);
 
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-      {CONNECTED_DEVICES.map((device) => (
-        <GlassCard key={device.id} onClick={() => onDeviceClick(device.type as ViewType)}>
-          <div className="flex justify-between items-start mb-4">
-            <div className="text-[10px] font-bold uppercase tracking-widest text-white/40">{device.type}</div>
-            <div className="flex items-center gap-2 text-[10px] font-mono text-acid">
-              <Battery size={12} />
-              {device.battery}%
-            </div>
-          </div>
-          <div className="aspect-square relative mb-6 overflow-hidden rounded-lg bg-charcoal/50 border border-white/5">
-            <img 
-              src={device.image} 
-              alt={device.name} 
-              className="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700"
-              referrerPolicy="no-referrer"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-charcoal to-transparent opacity-60" />
-          </div>
-          <h3 className="font-display font-bold text-lg tracking-wide group-hover:text-acid transition-colors">{device.name}</h3>
-          <div className="flex items-center gap-2 mt-2 text-[10px] font-bold text-white/20 uppercase tracking-widest">
-            <Wifi size={10} />
-            Wireless Mode Active
-          </div>
-        </GlassCard>
-      ))}
-      <button className="glass-card border-dashed border-white/10 flex flex-col items-center justify-center gap-4 text-white/20 hover:text-acid hover:border-acid/30 transition-all duration-300">
-        <div className="w-12 h-12 rounded-full border-2 border-current flex items-center justify-center">
-          <Plus size={24} />
+  useEffect(() => {
+    api.getDevices().then(data => {
+      setDevices(data);
+      setLoading(false);
+    }).catch(() => setLoading(false));
+  }, []);
+
+  return (
+    <div className="space-y-8 p-8">
+      <div className="flex justify-between items-end">
+        <div>
+          <h1 className="text-4xl font-display font-bold tracking-tight">DASHBOARD</h1>
+          <p className="text-white/40 text-sm mt-1">Manage your connected hardware ecosystem</p>
         </div>
-        <span className="text-xs font-bold uppercase tracking-widest">Add Device</span>
-      </button>
-    </div>
+        <div className="flex gap-4">
+          <button className="px-4 py-2 rounded-lg bg-surface border border-border text-xs font-bold uppercase tracking-widest hover:border-acid/50 transition-colors">Modules</button>
+          <button className="px-4 py-2 rounded-lg bg-surface border border-border text-xs font-bold uppercase tracking-widest hover:border-acid/50 transition-colors">Global Shortcuts</button>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {loading ? (
+          Array.from({ length: 4 }).map((_, i) => (
+            <div key={i} className="glass-card h-64 animate-pulse bg-white/5" />
+          ))
+        ) : devices.length > 0 ? (
+          devices.map((device) => (
+            <GlassCard key={device.id} onClick={() => onDeviceClick(device.type.charAt(0).toUpperCase() + device.type.slice(1) as ViewType)}>
+              <div className="flex justify-between items-start mb-4">
+                <div className="text-[10px] font-bold uppercase tracking-widest text-white/40">{device.type}</div>
+                <div className="flex items-center gap-2 text-[10px] font-mono text-acid">
+                  <Battery size={12} />
+                  --%
+                </div>
+              </div>
+              <div className="aspect-square relative mb-6 overflow-hidden rounded-lg bg-charcoal/50 border border-white/5">
+                <img 
+                  src={`https://picsum.photos/seed/${device.type}/400/400`} 
+                  alt={device.name} 
+                  className="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-charcoal to-transparent opacity-60" />
+              </div>
+              <h3 className="font-display font-bold text-lg tracking-wide group-hover:text-acid transition-colors">{device.name}</h3>
+              <div className="flex items-center gap-2 mt-2 text-[10px] font-bold text-white/20 uppercase tracking-widest">
+                <Wifi size={10} />
+                {device.id}
+              </div>
+            </GlassCard>
+          ))
+        ) : (
+          CONNECTED_DEVICES.map((device) => (
+            <GlassCard key={device.id} onClick={() => onDeviceClick(device.type as ViewType)}>
+              <div className="flex justify-between items-start mb-4">
+                <div className="text-[10px] font-bold uppercase tracking-widest text-white/40">{device.type}</div>
+                <div className="flex items-center gap-2 text-[10px] font-mono text-acid">
+                  <Battery size={12} />
+                  {device.battery}%
+                </div>
+              </div>
+              <div className="aspect-square relative mb-6 overflow-hidden rounded-lg bg-charcoal/50 border border-white/5">
+                <img 
+                  src={device.image} 
+                  alt={device.name} 
+                  className="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-charcoal to-transparent opacity-60" />
+              </div>
+              <h3 className="font-display font-bold text-lg tracking-wide group-hover:text-acid transition-colors">{device.name}</h3>
+              <div className="flex items-center gap-2 mt-2 text-[10px] font-bold text-white/20 uppercase tracking-widest">
+                <Wifi size={10} />
+                Wireless Mode Active
+              </div>
+            </GlassCard>
+          ))
+        )}
+        <button className="glass-card border-dashed border-white/10 flex flex-col items-center justify-center gap-4 text-white/20 hover:text-acid hover:border-acid/30 transition-all duration-300">
+          <div className="w-12 h-12 rounded-full border-2 border-current flex items-center justify-center">
+            <Plus size={24} />
+          </div>
+          <span className="text-xs font-bold uppercase tracking-widest">Add Device</span>
+        </button>
+      </div>
 
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
       <GlassCard className="lg:col-span-2">
@@ -207,6 +251,7 @@ const DashboardView = ({ onDeviceClick }: { onDeviceClick: (type: ViewType) => v
     </div>
   </div>
 );
+};
 
 const AudioView = () => (
   <div className="p-8 space-y-8">
@@ -660,11 +705,44 @@ const StudioView = () => {
   const [timeline, setTimeline] = useState(62);
   const [selectedZone, setSelectedZone] = useState<'Keyboard' | 'Mouse' | 'Headset'>('Keyboard');
   const [advancedMode, setAdvancedMode] = useState(false);
+  const [externalIp, setExternalIp] = useState('192.168.0.64');
+  const [syncToExternal, setSyncToExternal] = useState(false);
 
   const selectedLayer = useMemo(
     () => layers.find((l) => l.id === selectedLayerId) ?? layers[0],
     [layers, selectedLayerId]
   );
+
+  // Sync to hardware
+  useEffect(() => {
+    if (!liveSync) return;
+
+    const syncLighting = async () => {
+      // In a real app, we'd find the serial of the selected zone
+      const devices = await api.getDevices();
+      const target = devices.find(d => d.type.toLowerCase() === selectedZone.toLowerCase());
+      
+      if (target) {
+        await api.setLighting({
+          serial: target.id,
+          effect: selectedLayer.effect.toLowerCase(),
+          colour_hex: selectedLayer.colorA,
+          speed: Math.floor(selectedLayer.speed / 33) + 1, // map 0-100 to 1-3
+          direction: selectedLayer.direction.toLowerCase()
+        });
+      }
+
+      if (syncToExternal && externalIp) {
+        // Map color to name for the simple endpoint or just use hex if supported
+        // For the user's requested pattern: /set_color/green
+        const colorName = selectedLayer.colorA === '#18ff6d' ? 'green' : 'white';
+        api.setExternalColor(externalIp, colorName);
+      }
+    };
+
+    const timer = setTimeout(syncLighting, 100);
+    return () => clearTimeout(timer);
+  }, [selectedLayer, selectedZone, liveSync, syncToExternal, externalIp]);
 
   const updateLayer = (id: string, patch: Partial<Layer>) => {
     setLayers((prev) => prev.map((layer) => (layer.id === id ? { ...layer, ...patch } : layer)));
@@ -737,6 +815,9 @@ const StudioView = () => {
           <div className="flex gap-2">
             <PillButton active={liveSync} onClick={() => setLiveSync((v) => !v)} tone="green">
               {liveSync ? 'Live Sync On' : 'Live Sync Off'}
+            </PillButton>
+            <PillButton active={syncToExternal} onClick={() => setSyncToExternal((v) => !v)} tone={syncToExternal ? 'green' : 'neutral'}>
+              {syncToExternal ? 'External Sync On' : 'External Sync Off'}
             </PillButton>
             <PillButton active={advancedMode} onClick={() => setAdvancedMode((v) => !v)}>
               Advanced Mode
@@ -1058,6 +1139,25 @@ const StudioView = () => {
           </div>
 
           <div className="rounded-3xl border border-white/6 bg-[#111216] p-4">
+            <SectionTitle title="External Device" />
+            <div className="mt-3 space-y-3">
+              <div className="relative">
+                <input 
+                  type="text" 
+                  value={externalIp}
+                  onChange={(e) => setExternalIp(e.target.value)}
+                  placeholder="192.168.0.64"
+                  className="w-full bg-surface border border-border rounded-lg px-4 py-2 text-xs font-mono outline-none focus:border-acid/50 transition-colors"
+                />
+                <div className="absolute right-3 top-1/2 -translate-y-1/2 text-[10px] font-bold text-white/20 uppercase">Port 5000</div>
+              </div>
+              <p className="text-[10px] text-white/20 leading-relaxed">
+                Sync lighting with external IoT devices using simple GET requests.
+              </p>
+            </div>
+          </div>
+
+          <div className="rounded-3xl border border-white/6 bg-[#111216] p-4">
             <SectionTitle title="Quick Fixes" />
             <ul className="mt-3 space-y-3 text-[11px] text-zinc-400">
               <li className="flex gap-3"><span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400" />Layer reorder & visibility</li>
@@ -1077,6 +1177,43 @@ const DeviceView = ({ type }: { type: string }) => {
   const [dpi, setDpi] = useState(1800);
   const [brightness, setBrightness] = useState(50);
   const [pollingRate, setPollingRate] = useState('1000 Hz');
+  const [deviceState, setDeviceState] = useState<DeviceState | null>(null);
+
+  useEffect(() => {
+    const fetchState = async () => {
+      const devices = await api.getDevices();
+      const target = devices.find(d => d.type.toLowerCase() === type.toLowerCase());
+      if (target) {
+        const state = await api.getDeviceState(target.id);
+        setDeviceState(state);
+        if (state.dpi) setDpi(state.dpi[0]);
+        if (state.poll_rate) setPollingRate(`${state.poll_rate} Hz`);
+      }
+    };
+    fetchState();
+  }, [type]);
+
+  const handleDpiChange = async (newDpi: number) => {
+    setDpi(newDpi);
+    if (deviceState) {
+      await api.setPerformance({
+        serial: deviceState.serial,
+        dpi_x: newDpi,
+        dpi_y: newDpi
+      });
+    }
+  };
+
+  const handlePollRateChange = async (rate: string) => {
+    setPollingRate(rate);
+    const val = parseInt(rate);
+    if (deviceState) {
+      await api.setPerformance({
+        serial: deviceState.serial,
+        poll_rate: val
+      });
+    }
+  };
 
   return (
     <div className="flex-1 flex flex-col overflow-hidden">
@@ -1126,7 +1263,7 @@ const DeviceView = ({ type }: { type: string }) => {
                       </button>
                     ))}
                   </div>
-                  <AcidSlider label="Dots Per Inch (DPI)" value={(dpi / 20000) * 100} onChange={(v: number) => setDpi(Math.round((v / 100) * 20000))} />
+                  <AcidSlider label="Dots Per Inch (DPI)" value={(dpi / 20000) * 100} onChange={(v: number) => handleDpiChange(Math.round((v / 100) * 20000))} />
                 </div>
 
                 <div className="space-y-6 pt-8 border-t border-border">
@@ -1136,7 +1273,7 @@ const DeviceView = ({ type }: { type: string }) => {
                       <label className="text-[10px] uppercase tracking-widest text-white/40 font-bold">Polling Rate</label>
                       <select 
                         value={pollingRate}
-                        onChange={(e) => setPollingRate(e.target.value)}
+                        onChange={(e) => handlePollRateChange(e.target.value)}
                         className="w-full bg-surface border border-border rounded-lg px-4 py-2 text-xs font-bold outline-none focus:border-acid/50 transition-colors"
                       >
                         <option>125 Hz</option>
@@ -1232,17 +1369,17 @@ const DeviceView = ({ type }: { type: string }) => {
                 <img src={`https://picsum.photos/seed/${type.toLowerCase()}/48/48`} className="w-8 h-8 object-contain" referrerPolicy="no-referrer" />
               </div>
               <div>
-                <div className="text-xs font-bold uppercase tracking-wider">{type}</div>
+                <div className="text-xs font-bold uppercase tracking-wider">{deviceState?.name || type}</div>
                 <div className="text-[10px] text-white/40 font-mono">FW: v1.04.22</div>
               </div>
             </div>
             <div className="space-y-2">
               <div className="flex justify-between text-[10px] font-bold uppercase tracking-widest text-white/40">
                 <span>Battery</span>
-                <span className="text-acid">77%</span>
+                <span className="text-acid">{deviceState?.battery ?? 77}%</span>
               </div>
               <div className="h-1 bg-border rounded-full overflow-hidden">
-                <div className="h-full bg-acid w-[77%]" />
+                <div className="h-full bg-acid" style={{ width: `${deviceState?.battery ?? 77}%` }} />
               </div>
             </div>
           </div>
