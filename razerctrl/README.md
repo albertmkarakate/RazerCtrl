@@ -33,6 +33,17 @@ A complete, open-source Linux desktop application for configuring Razer (and oth
    razerctrl
    ```
 
+## Remote Node Sync
+
+NeonSuite supports synchronizing lighting with external devices. You can run a lightweight receiver on other machines to act as remote lighting nodes.
+
+1. Install dependencies on the remote node: `pip install flask openrazer-python`
+2. Run the remote node script:
+   ```bash
+   razerctrl-remote
+   ```
+3. In the main NeonSuite application, go to **Studio**, enter the remote node's IP, and enable **External Sync**.
+
 ## Requirements
 
 - Linux Kernel

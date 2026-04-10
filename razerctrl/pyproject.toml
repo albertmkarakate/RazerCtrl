@@ -18,12 +18,14 @@ dependencies = [
     "evdev",
     "distro",
     "PyQt6",
-    "websockets"
+    "websockets",
+    "flask"
 ]
 
 [project.scripts]
 razerctrl = "razerctrl.main:main"
 razerctrl-api = "uvicorn razerctrl.backend.main:app --host 0.0.0.0 --port 8000"
+razerctrl-remote = "python razerctrl/remote_node.py"
 
 [tool.setuptools]
 packages = ["razerctrl", "razerctrl.backend", "razerctrl.core", "razerctrl.ui", "razerctrl.utils"]
