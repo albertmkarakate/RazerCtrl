@@ -139,33 +139,6 @@ async def delete_profile(name: str):
         return {"status": "success"}
     raise HTTPException(status_code=404, detail="Profile not found")
 
-@app.post("/api/profiles/{name}/apply")
-async def apply_profile(name: str):
-    profile_data = profile_store.get_profile(name)
-    if not profile_data:
-        raise HTTPException(status_code=404, detail="Profile not found")
-    
-    if "lighting" in profile_data:
-        for dev in razer_service.get_devices():
-            razer_service.set_lighting(
-                dev['id'], "matrix",
-                profile_data["lighting"].get("effect", "static"),
-                profile_data["lighting"].get("colour_hex", "#00ff41"),
-                profile_data["lighting"].get("speed", 2),
-                profile_data["lighting"].get("direction", "right")
-            )
-    
-    if "performance" in profile_data:
-        for dev in razer_service.get_devices():
-            razer_service.set_performance(
-                dev['id'],
-                profile_data["performance"].get("dpi_x"),
-                profile_data["performance"].get("dpi_y"),
-                profile_data["performance"].get("poll_rate")
-            )
-    
-    return {"status": "success", "profile": name}
-
 # --- Macro WebSocket ---
 
 @app.websocket("/ws/macro-record")

@@ -1,39 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
-  <defs>
-    <linearGradient id="headset-body" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#1a1a1a"/>
-      <stop offset="100%" style="stop-color:#0d0d0d"/>
-    </linearGradient>
-    <linearGradient id="ear-cushion" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#111"/>
-      <stop offset="50%" style="stop-color:#222"/>
-      <stop offset="100%" style="stop-color:#111"/>
-    </linearGradient>
-  </defs>
-  
-  <path d="M 80 150 Q 80 60 200 60 Q 320 60 320 150" fill="none" stroke="#1a1a1a" stroke-width="20"/>
-  
-  <path d="M 80 150 Q 80 60 200 60 Q 320 60 320 150" fill="none" stroke="#333" stroke-width="12"/>
-  
-  <ellipse cx="80" cy="200" rx="45" ry="70" fill="url(#ear-cushion)" stroke="#333" stroke-width="2"/>
-  <ellipse cx="320" cy="200" rx="45" ry="70" fill="url(#ear-cushion)" stroke="#333" stroke-width="2"/>
-  
-  <ellipse cx="80" cy="200" rx="30" ry="50" fill="#111" stroke="#00ff41" stroke-width="1" opacity="0.5"/>
-  <ellipse cx="320" cy="200" rx="30" ry="50" fill="#111" stroke="#00ff41" stroke-width="1" opacity="0.5"/>
-  
-  <rect x="190" y="50" width="20" height="20" rx="4" fill="#222" stroke="#333" stroke-width="1"/>
-  
-  <path d="M 80 270 Q 60 320 40 350 L 70 355 Q 85 320 95 275" fill="#1a1a1a" stroke="#333" stroke-width="2"/>
-  <circle cx="55" cy="355" r="8" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
-  
-  <path d="M 320 270 Q 340 320 360 350 L 330 355 Q 315 320 305 275" fill="#1a1a1a" stroke="#333" stroke-width="2"/>
-  <circle cx="345" cy="355" r="8" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
-  
-  <rect x="45" y="340" width="20" height="8" rx="2" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
-  <rect x="335" y="340" width="20" height="8" rx="2" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
-  
-  <circle cx="200" cy="380" r="15" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
-  <circle cx="200" cy="380" r="8" fill="#111" stroke="#00ff41" stroke-width="0.5"/>
-  
-  <text x="200" y="30" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">Kraken V3 Pro</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none" stroke="currentColor">
+  <path d="M 100 200 C 100 50 300 50 300 200" stroke-width="20" stroke-linecap="round"/>
+  <ellipse cx="100" cy="250" rx="40" ry="80" stroke-width="2"/>
+  <ellipse cx="300" cy="250" rx="40" ry="80" stroke-width="2"/>
+  <path d="M 100 330 L 150 350" stroke-width="4"/>
+  <circle cx="150" cy="350" r="10" stroke-width="2"/>
 </svg>

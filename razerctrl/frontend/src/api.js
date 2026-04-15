@@ -64,10 +64,3 @@ export const deleteProfile = async (name) => {
   });
   return res.json();
 };
-
-export const applyProfile = async (name) => {
-  const res = await fetch(`${API_URL}/api/profiles/${name}/apply`, {
-    method: 'POST',
-  });
-  return res.json();
-};
