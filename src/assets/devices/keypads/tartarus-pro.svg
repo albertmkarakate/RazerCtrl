@@ -1,6 +1,62 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400" fill="none" stroke="currentColor">
-  <path d="M 50 50 L 250 50 L 280 200 L 250 350 L 50 350 Z" stroke-width="1.5"/>
-  <rect x="70" y="70" width="160" height="160" rx="5" stroke-width="0.75"/>
-  <circle cx="260" cy="250" r="20" stroke-width="2"/>
-  <path d="M 100 300 C 100 280 200 280 200 300 C 200 350 100 350 100 300 Z" stroke-width="1.5"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420">
+  <defs>
+    <linearGradient id="keypad-body" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a1a"/>
+      <stop offset="100%" style="stop-color:#0d0d0d"/>
+    </linearGradient>
+    <linearGradient id="key-cap" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#333"/>
+      <stop offset="100%" style="stop-color:#1a1a1a"/>
+    </linearGradient>
+  </defs>
+  
+  <path d="M 40 40 L 240 40 L 280 180 L 260 360 L 80 360 L 40 320 Z" fill="url(#keypad-body)" stroke="#333" stroke-width="2"/>
+  
+  <path d="M 50 50 L 230 50 L 260 175 L 245 340 L 95 340 L 55 290 Z" fill="#111" stroke="#222" stroke-width="1"/>
+  
+  <g fill="url(#key-cap)" stroke="#222" stroke-width="0.5">
+    <rect x="65" y="60" width="35" height="28" rx="3"/>
+    <rect x="110" y="60" width="35" height="28" rx="3"/>
+    <rect x="155" y="60" width="35" height="28" rx="3"/>
+    <rect x="200" y="60" width="35" height="28" rx="3"/>
+    
+    <rect x="65" y="98" width="35" height="28" rx="3"/>
+    <rect x="110" y="98" width="35" height="28" rx="3"/>
+    <rect x="155" y="98" width="35" height="28" rx="3"/>
+    <rect x="200" y="98" width="35" height="28" rx="3"/>
+    
+    <rect x="65" y="136" width="35" height="28" rx="3"/>
+    <rect x="110" y="136" width="35" height="28" rx="3"/>
+    <rect x="155" y="136" width="35" height="28" rx="3"/>
+    <rect x="200" y="136" width="35" height="28" rx="3"/>
+    
+    <rect x="65" y="174" width="35" height="28" rx="3"/>
+    <rect x="110" y="174" width="35" height="28" rx="3"/>
+    <rect x="155" y="174" width="35" height="28" rx="3"/>
+    <rect x="200" y="174" width="35" height="28" rx="3"/>
+    
+    <rect x="65" y="212" width="35" height="28" rx="3"/>
+    <rect x="110" y="212" width="35" height="28" rx="3"/>
+    <rect x="155" y="212" width="35" height="28" rx="3"/>
+    <rect x="200" y="212" width="35" height="28" rx="3"/>
+    
+    <rect x="65" y="250" width="35" height="28" rx="3"/>
+    <rect x="110" y="250" width="35" height="28" rx="3"/>
+    <rect x="155" y="250" width="35" height="28" rx="3"/>
+    <rect x="200" y="250" width="35" height="28" rx="3"/>
+  </g>
+  
+  <ellipse cx="225" cy="300" rx="25" ry="25" fill="#111" stroke="#333" stroke-width="1"/>
+  <ellipse cx="225" cy="300" rx="18" ry="18" fill="#1a1a1a" stroke="#00ff41" stroke-width="1"/>
+  <ellipse cx="225" cy="300" rx="10" ry="10" fill="#111"/>
+  
+  <path d="M 150 340 Q 180 350 210 340 Q 220 355 210 370 Q 180 380 150 370 Q 140 355 150 340" fill="#111" stroke="#333" stroke-width="1"/>
+  
+  <rect x="55" y="300" width="30" height="20" rx="3" fill="#222" stroke="#333" stroke-width="0.5"/>
+  <rect x="90" y="300" width="30" height="20" rx="3" fill="#222" stroke="#333" stroke-width="0.5"/>
+  
+  <circle cx="70" cy="350" r="4" fill="#00ff41" opacity="0.6"/>
+  <circle cx="105" cy="350" r="4" fill="#00ff41" opacity="0.6"/>
+  
+  <text x="150" y="400" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">Tartarus Pro</text>
 </svg>

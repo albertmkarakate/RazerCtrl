@@ -12,7 +12,6 @@
   </defs>
   
   <path d="M 80 150 Q 80 60 200 60 Q 320 60 320 150" fill="none" stroke="#1a1a1a" stroke-width="20"/>
-  
   <path d="M 80 150 Q 80 60 200 60 Q 320 60 320 150" fill="none" stroke="#333" stroke-width="12"/>
   
   <ellipse cx="80" cy="200" rx="45" ry="70" fill="url(#ear-cushion)" stroke="#333" stroke-width="2"/>
@@ -29,11 +28,8 @@
   <path d="M 320 270 Q 340 320 360 350 L 330 355 Q 315 320 305 275" fill="#1a1a1a" stroke="#333" stroke-width="2"/>
   <circle cx="345" cy="355" r="8" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
   
-  <rect x="45" y="340" width="20" height="8" rx="2" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
-  <rect x="335" y="340" width="20" height="8" rx="2" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
-  
   <circle cx="200" cy="380" r="15" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
   <circle cx="200" cy="380" r="8" fill="#111" stroke="#00ff41" stroke-width="0.5"/>
   
-  <text x="200" y="30" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">Kraken V3 Pro</text>
+  <text x="200" y="30" text-anchor="middle" font-family="Arial" font-size="14" fill="#00ff41" font-weight="bold">HEADSET</text>
 </svg>

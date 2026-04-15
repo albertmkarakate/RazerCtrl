@@ -73,7 +73,6 @@
   </g>
   
   <rect x="620" y="40" width="150" height="220" rx="8" fill="#111" stroke="#222" stroke-width="1"/>
-  
   <rect x="630" y="50" width="130" height="35" rx="4" fill="#222" stroke="#333" stroke-width="0.5"/>
   <rect x="630" y="95" width="130" height="35" rx="4" fill="#222" stroke="#333" stroke-width="0.5"/>
   <rect x="630" y="140" width="60" height="30" rx="4" fill="#222" stroke="#333" stroke-width="0.5"/>
@@ -81,11 +80,6 @@
   <rect x="630" y="180" width="130" height="60" rx="4" fill="#222" stroke="#333" stroke-width="0.5"/>
   
   <circle cx="680" cy="60" r="12" fill="#1a1a1a" stroke="#00ff41" stroke-width="1"/>
-  <rect x="665" y="35" width="30" height="10" rx="2" fill="#00ff41" opacity="0.5"/>
   
-  <rect x="20" y="40" width="25" height="25" rx="4" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
-  <rect x="20" y="75" width="25" height="25" rx="4" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
-  <rect x="20" y="110" width="25" height="25" rx="4" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
-  
-  <text x="400" y="305" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">BlackWidow V4 Pro</text>
+  <text x="400" y="305" text-anchor="middle" font-family="Arial" font-size="14" fill="#00ff41" font-weight="bold">KEYBOARD</text>
 </svg>

@@ -1,17 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 320">
   <defs>
-    <linearGradient id="da-elite-body" x1="0%" y1="0%" x2="0%" y2="100%">
+    <linearGradient id="mouse-body" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" style="stop-color:#1a1a1a"/>
       <stop offset="50%" style="stop-color:#2d2d2d"/>
       <stop offset="100%" style="stop-color:#1a1a1a"/>
     </linearGradient>
   </defs>
   
-  <ellipse cx="110" cy="160" rx="85" ry="140" fill="url(#da-elite-body)" stroke="#444" stroke-width="1"/>
+  <ellipse cx="110" cy="160" rx="85" ry="140" fill="url(#mouse-body)" stroke="#444" stroke-width="1"/>
   
   <path d="M 45 80 Q 70 30 110 30 Q 150 30 175 80 L 175 240 Q 175 280 110 280 Q 45 280 45 240 Z" fill="#1f1f1f" stroke="#333" stroke-width="1"/>
   
-  <path d="M 55 70 Q 80 45 110 45 Q 140 45 165 70" fill="#111" stroke="#00ff41" stroke-width="1" opacity="0.4"/>
+  <path d="M 55 70 Q 80 45 110 45 Q 140 45 165 70" fill="#111" stroke="#00ff41" stroke-width="1" opacity="0.3"/>
   
   <rect x="100" y="35" width="20" height="38" rx="10" fill="#0a0a0a" stroke="#333" stroke-width="1"/>
   <rect x="102" y="40" width="16" height="10" rx="3" fill="#111"/>
@@ -19,14 +19,12 @@
   
   <rect x="65" y="95" width="90" height="7" rx="3.5" fill="#0d0d0d" stroke="#333" stroke-width="0.5"/>
   <rect x="65" y="110" width="90" height="7" rx="3.5" fill="#0d0d0d" stroke="#333" stroke-width="0.5"/>
-  <rect x="65" y="125" width="90" height="7" rx="3.5" fill="#0d0d0d" stroke="#333" stroke-width="0.5"/>
   
   <ellipse cx="110" cy="245" rx="28" ry="9" fill="#111" stroke="#333" stroke-width="1"/>
   
   <circle cx="60" cy="145" r="4" fill="#00ff41" opacity="0.8"/>
   <circle cx="60" cy="170" r="4" fill="#00ff41" opacity="0.8"/>
   <circle cx="60" cy="195" r="4" fill="#00ff41" opacity="0.8"/>
-  <circle cx="60" cy="220" r="4" fill="#00ff41" opacity="0.8"/>
   
-  <text x="110" y="310" text-anchor="middle" font-family="Arial" font-size="10" fill="#666">DeathAdder Elite</text>
+  <text x="110" y="310" text-anchor="middle" font-family="Arial" font-size="14" fill="#00ff41" font-weight="bold">MOUSE</text>
 </svg>
