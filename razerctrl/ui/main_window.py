@@ -7,6 +7,7 @@ from PyQt6.QtGui import QIcon
 
 from .dashboard import DashboardPage
 from .device_page import DevicePage
+from .device_workspace import DeviceWorkspacePage
 from .input_mapper import InputMapperPage
 from .profiles import ProfilesPage
 from .settings import SettingsPage
@@ -125,6 +126,7 @@ class MainWindow(QMainWindow):
         self.stack = QStackedWidget()
         self.pages = {
             "dashboard": DashboardPage(self.device_manager),
+            "devices": DeviceWorkspacePage(self.device_manager),
             "input_mapper": InputMapperPage(self.input_manager),
             "profiles": ProfilesPage(self.profile_manager),
             "settings": SettingsPage(self.device_manager)
@@ -148,16 +150,13 @@ class MainWindow(QMainWindow):
     def setup_connections(self):
         """Sets up signals and slots."""
         self.btn_apply.clicked.connect(self.apply_current_profile)
+        self.pages["dashboard"].device_selected.connect(self.show_device_page)
+        self.pages["devices"].device_selected.connect(self.show_device_page)
 
     def switch_page(self, key: str):
         """Switches the visible page in the stacked widget."""
         if key == "devices":
-            # If we click devices, we might want to show the first device if available
-            if self.device_manager.devices:
-                self.show_device_page(self.device_manager.devices[0])
-            else:
-                self.stack.setCurrentWidget(self.pages["dashboard"])
-            return
+            self.pages["devices"].refresh_devices()
 
         if key in self.pages:
             self.stack.setCurrentWidget(self.pages[key])
