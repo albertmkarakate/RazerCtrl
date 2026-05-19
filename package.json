@@ -1,16 +1,14 @@
 {
-  "name": "react-example",
+  "name": "neon-desk-control",
+  "version": "1.0.0",
   "private": true,
-  "version": "0.0.0",
-  "type": "module",
   "scripts": {
-    "dev": "vite --port=3000 --host=0.0.0.0",
-    "dev:vite": "vite --port=3000 --host=0.0.0.0",
+    "dev": "tsx server.ts",
+    "start": "node server.ts",
+    "build": "vite build frontend",
+    "preview": "vite preview frontend",
+    "lint": "tsc --project frontend/tsconfig.json --noEmit",
     "dev:fake": "bash scripts/setup_fake_openrazer.sh",
-    "build": "vite build",
-    "preview": "vite preview",
-    "clean": "rm -rf dist",
-    "lint": "tsc --noEmit",
     "lint:python": "bash scripts/ci/check-formatting.sh && bash scripts/ci/check-pylint.sh && bash scripts/ci/test-vermin.sh && bash scripts/ci/test-hex-casing.sh"
   },
   "dependencies": {
@@ -31,7 +29,6 @@
     "autoprefixer": "^10.4.21",
     "tailwindcss": "^4.1.14",
     "tsx": "^4.21.0",
-    "typescript": "~5.8.2",
-    "vite": "^6.2.0"
+    "typescript": "~5.8.2"
   }
 }

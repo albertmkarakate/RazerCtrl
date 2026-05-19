@@ -27,15 +27,22 @@ A complete, open-source Linux desktop application for configuring Razer (and oth
    ./install.sh
    ```
 3. Reboot your system.
-4. Start the backend:
+4. The backend starts automatically via systemd.
+5. Run the application:
    ```bash
-   systemctl --user start razerctrl-backend
+   razerctrl
    ```
-5. Run the frontend in development mode:
+
+## Remote Node Sync
+
+NeonSuite supports synchronizing lighting with external devices. You can run a lightweight receiver on other machines to act as remote lighting nodes.
+
+1. Install dependencies on the remote node: `pip install flask openrazer-python`
+2. Run the remote node script:
    ```bash
-   cd frontend
-   npm run dev
+   razerctrl-remote
    ```
+3. In the main NeonSuite application, go to **Studio**, enter the remote node's IP, and enable **External Sync**.
 
 ## Requirements
 

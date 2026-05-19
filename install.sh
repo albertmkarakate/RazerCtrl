@@ -22,7 +22,7 @@ sudo gpasswd -a $USER input
 
 # 3. Install Python dependencies
 echo "Installing RazerCtrl package and dependencies..."
-pip3 install -e .
+pip3 install -e backend/razerctrl
 
 # 4. Install Frontend dependencies and build
 echo "Building frontend..."
@@ -41,7 +41,7 @@ After=network.target
 
 [Service]
 Type=simple
-WorkingDirectory=$(pwd)
+WorkingDirectory=$(pwd)/backend/razerctrl
 ExecStart=$(which razerctrl-api)
 Restart=always
 
