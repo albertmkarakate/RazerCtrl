@@ -1,0 +1,84 @@
+.sidebar {
+  width: 280px;
+  background-color: #1a1a1a;
+  border-right: 1px solid #2a2a2a;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  padding: 24px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #555;
+}
+
+.deviceList {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.deviceItem {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 16px 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-left: 3px solid transparent;
+  transition: all 0.2s ease;
+  gap: 16px;
+  text-align: left;
+}
+
+.deviceItem:hover {
+  background-color: #222;
+}
+
+.selected {
+  background-color: #222;
+  border-left-color: #00ff41;
+}
+
+.iconWrapper {
+  position: relative;
+}
+
+.pulseDot {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 8px;
+  height: 8px;
+  background-color: #00ff41;
+  border-radius: 50%;
+  border: 2px solid #1a1a1a;
+}
+
+.deviceInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-weight: 600;
+  color: #f0f0f0;
+  font-size: 0.9rem;
+}
+
+.type {
+  font-size: 0.7rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.empty {
+  padding: 24px;
+  color: #555;
+  font-style: italic;
+  text-align: center;
+}

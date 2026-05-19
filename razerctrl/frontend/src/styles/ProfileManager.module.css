@@ -1,0 +1,105 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h3 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #555;
+  margin: 0;
+}
+
+.importBtn {
+  background: none;
+  border: 1px solid #2a2a2a;
+  color: #888;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.profileGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.profileCard {
+  background-color: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  padding: 24px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.profileInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.profileName {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #f0f0f0;
+}
+
+.profileMeta {
+  font-size: 0.7rem;
+  color: #555;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+}
+
+.applyBtn {
+  flex: 1;
+  background-color: #2a2a2a;
+  color: #f0f0f0;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.applyBtn:hover {
+  background-color: #333;
+}
+
+.deleteBtn {
+  background: none;
+  border: 1px solid #ff4444;
+  color: #ff4444;
+  padding: 10px;
+  border-radius: 4px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.deleteBtn:hover {
+  background-color: rgba(255, 68, 68, 0.1);
+}
+
+.empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 64px;
+  color: #444;
+  font-style: italic;
+}

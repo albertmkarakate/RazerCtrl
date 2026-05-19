@@ -1,0 +1,6 @@
+fastapi>=0.100.0
+uvicorn>=0.23.0
+openrazer>=3.0
+evdev>=1.6
+websockets>=11.0
+pydantic>=2.0

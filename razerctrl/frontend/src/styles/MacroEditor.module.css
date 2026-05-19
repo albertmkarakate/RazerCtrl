@@ -1,0 +1,137 @@
+.container {
+  display: flex;
+  height: 100%;
+  gap: 32px;
+}
+
+.sidebar {
+  width: 240px;
+  background-color: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar h3 {
+  padding: 16px 24px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #555;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.macroList {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.macroItem {
+  padding: 12px 24px;
+  font-weight: 600;
+  color: #888;
+  cursor: pointer;
+  border-bottom: 1px solid #222;
+}
+
+.macroItem:hover {
+  background-color: #222;
+  color: #f0f0f0;
+}
+
+.empty {
+  padding: 24px;
+  color: #444;
+  font-style: italic;
+  font-size: 0.8rem;
+}
+
+.editor {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.controls {
+  display: flex;
+  gap: 16px;
+}
+
+.recordBtn {
+  background-color: #ff4444;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.stopBtn {
+  background-color: #00ff41;
+  color: #0d0d0d;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.timeline {
+  flex: 1;
+  background-color: #111;
+  border: 1px solid #2a2a2a;
+  border-radius: 12px;
+  padding: 32px;
+  overflow-y: auto;
+}
+
+.timelineEmpty {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #444;
+  font-weight: 600;
+}
+
+.eventStream {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.eventChip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 4px;
+  min-width: 60px;
+}
+
+.keyDown {
+  background-color: rgba(0, 255, 65, 0.1);
+  border: 1px solid #00ff41;
+  color: #00ff41;
+}
+
+.keyUp {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid #333;
+  color: #666;
+}
+
+.keyCode {
+  font-weight: 800;
+  font-size: 0.9rem;
+}
+
+.keyAction {
+  font-size: 0.6rem;
+  font-weight: 700;
+}
