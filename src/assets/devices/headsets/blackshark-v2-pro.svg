@@ -1,7 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none" stroke="currentColor">
-  <path d="M 100 200 C 100 50 300 50 300 200" stroke-width="20" stroke-linecap="round"/>
-  <ellipse cx="100" cy="250" rx="40" ry="80" stroke-width="2"/>
-  <ellipse cx="300" cy="250" rx="40" ry="80" stroke-width="2"/>
-  <path d="M 100 330 L 150 350" stroke-width="4"/>
-  <circle cx="150" cy="350" r="10" stroke-width="2"/>
-</svg>
+<svg viewBox="0 0 900 500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Blackshark V2 Pro"><style>
+.outline{stroke:#00FF41;stroke-opacity:.22;stroke-width:1.5;fill:none}
+.detail{stroke:#00FF41;stroke-opacity:.18;stroke-width:.75;fill:none}
+.button{stroke:#00FF41;stroke-opacity:.28;stroke-width:2;fill:none}
+.hotspot{stroke:#00FF41;stroke-width:1.2;fill:none;pointer-events:all}
+</style>
+<path d="M220 250a230 230 0 0 1 460 0" class="outline"/><rect x="140" y="220" width="140" height="170" rx="50" class="outline"/>
+<rect x="620" y="220" width="140" height="170" rx="50" class="outline"/><path d="M280 280h340" class="detail"/>
+<circle cx="200" cy="300" r="10" class="hotspot" data-button="vol-up"/><circle cx="200" cy="335" r="10" class="hotspot" data-button="vol-down"/></svg>

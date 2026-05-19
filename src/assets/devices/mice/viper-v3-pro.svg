@@ -1,8 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300" fill="none" stroke="currentColor">
-  <path d="M 60 280 C 30 280 30 230 30 180 C 30 120 40 60 50 30 C 60 15 80 10 100 10 C 120 10 140 15 150 30 C 160 60 170 120 170 180 C 170 230 170 280 140 280 C 120 280 80 280 60 280 Z" stroke-width="1.5"/>
-  <path d="M 100 10 C 80 10 60 15 50 30 C 40 45 35 70 35 100 L 95 110 Z" stroke-width="2"/>
-  <path d="M 100 10 C 120 10 140 15 150 30 C 160 45 165 70 165 100 L 105 110 Z" stroke-width="2"/>
-  <rect x="92" y="30" width="16" height="40" rx="8" stroke-width="2"/>
-  <path d="M 35 100 C 50 140 150 140 165 100" stroke-width="0.75"/>
-  <circle cx="100" cy="220" r="15" stroke-width="0.75"/>
-</svg>
+<svg viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Viper V3 Pro"><style>
+.outline{stroke:#00FF41;stroke-opacity:.22;stroke-width:1.5;fill:none}
+.detail{stroke:#00FF41;stroke-opacity:.18;stroke-width:.75;fill:none}
+.button{stroke:#00FF41;stroke-opacity:.28;stroke-width:2;fill:none}
+.hotspot{stroke:#00FF41;stroke-width:1.2;fill:none;pointer-events:all}
+</style>
+<rect x="110" y="85" width="780" height="430" rx="210" class="outline"/>
+<path d="M500 90v415" class="detail"/><path d="M445 170h110v120H445z" class="button"/>
+<path d="M300 300h120" class="detail"/><path d="M580 300h120" class="detail"/>
+<circle cx="420" cy="200" r="10" class="hotspot" data-button="left-click"/><circle cx="580" cy="200" r="10" class="hotspot" data-button="right-click"/>
+<circle cx="500" cy="210" r="10" class="hotspot" data-button="scroll-click"/><circle cx="360" cy="320" r="10" class="hotspot" data-button="side-btn-1"/>
+<circle cx="360" cy="355" r="10" class="hotspot" data-button="side-btn-2"/></svg>

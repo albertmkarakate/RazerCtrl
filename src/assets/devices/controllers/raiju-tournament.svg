@@ -1,10 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 350" fill="none" stroke="currentColor">
-  <path d="M 100 100 C 150 50 350 50 400 100 C 450 150 450 250 400 300 C 350 350 300 250 250 250 C 200 250 150 350 100 300 C 50 250 50 150 100 100 Z" stroke-width="1.5"/>
-  <circle cx="150" cy="150" r="30" stroke-width="2"/>
-  <circle cx="350" cy="200" r="30" stroke-width="2"/>
-  <rect x="120" y="200" width="40" height="40" stroke-width="2"/>
-  <circle cx="350" cy="120" r="10" stroke-width="2"/>
-  <circle cx="380" cy="150" r="10" stroke-width="2"/>
-  <circle cx="320" cy="150" r="10" stroke-width="2"/>
-  <circle cx="350" cy="180" r="10" stroke-width="2"/>
-</svg>
+<svg viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Raiju Tournament"><style>
+.outline{stroke:#00FF41;stroke-opacity:.22;stroke-width:1.5;fill:none}
+.detail{stroke:#00FF41;stroke-opacity:.18;stroke-width:.75;fill:none}
+.button{stroke:#00FF41;stroke-opacity:.28;stroke-width:2;fill:none}
+.hotspot{stroke:#00FF41;stroke-width:1.2;fill:none;pointer-events:all}
+</style>
+<path d="M180 310c40-90 130-120 260-120h120c130 0 220 30 260 120l-80 70h-100l-60-55H460l-60 55H260z" class="outline"/>
+<circle cx="350" cy="290" r="45" class="detail"/><circle cx="650" cy="280" r="45" class="detail"/>
+<circle cx="760" cy="240" r="12" class="button"/><circle cx="790" cy="210" r="12" class="button"/><circle cx="730" cy="210" r="12" class="button"/><circle cx="760" cy="180" r="12" class="button"/>
+<circle cx="760" cy="240" r="8" class="hotspot" data-button="btn-a"/><circle cx="790" cy="210" r="8" class="hotspot" data-button="btn-b"/></svg>

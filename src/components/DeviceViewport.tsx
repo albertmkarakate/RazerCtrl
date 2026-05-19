@@ -1,47 +1,28 @@
-import React, { useEffect, useState } from 'react';
+import { Device } from './types';
 import { HotspotOverlay } from './HotspotOverlay';
 
 interface Props {
-  device: any;
+  device: Device;
+  selectedButton: string | null;
+  onSelectButton: (buttonId: string) => void;
   activeTab: string;
-  selectedHotspot: string | null;
-  onSelectHotspot: (id: string | null) => void;
+  onTabChange: (tab: string) => void;
 }
 
-export function DeviceViewport({ device, activeTab, selectedHotspot, onSelectHotspot }: Props) {
-  const [svgContent, setSvgContent] = useState<string>('');
+const tabs = ['Customize', 'Lighting', 'Performance', 'Macros', 'Profiles'];
 
-  useEffect(() => {
-    fetch(device.svgUrl)
-      .then(res => res.text())
-      .then(text => {
-        // We inject the SVG content directly to allow CSS styling of strokes
-        setSvgContent(text);
-      })
-      .catch(err => console.error("Failed to load SVG", err));
-  }, [device.svgUrl]);
-
+export function DeviceViewport({ device, selectedButton, onSelectButton, activeTab, onTabChange }: Props) {
   return (
-    <div className="flex-1 flex items-center justify-center p-12 relative">
-      <div className="relative w-full max-w-3xl aspect-video flex items-center justify-center">
-        {/* SVG Container */}
-        <div 
-          className="w-full h-full absolute inset-0 flex items-center justify-center pointer-events-none"
-          style={{
-            color: activeTab === 'Lighting' ? '#333' : 'rgba(0, 255, 65, 0.2)', // Idle state color
-          }}
-          dangerouslySetInnerHTML={{ __html: svgContent }}
-        />
-        
-        {/* Hotspots Overlay */}
-        {activeTab === 'Customize' && (
-          <HotspotOverlay 
-            hotspots={device.hotspots} 
-            selectedHotspot={selectedHotspot}
-            onSelectHotspot={onSelectHotspot}
-          />
-        )}
+    <section className="viewport panel">
+      <div className="tabs">
+        {tabs.map((tab) => (
+          <button key={tab} className={activeTab === tab ? 'tab active' : 'tab'} onClick={() => onTabChange(tab)}>{tab}</button>
+        ))}
       </div>
-    </div>
+      <div className="svg-stage">
+        <img src={device.asset} alt={device.name} className="device-svg" />
+        <HotspotOverlay hotspots={device.hotspots} selectedButton={selectedButton} onSelect={onSelectButton} />
+      </div>
+    </section>
   );
 }
