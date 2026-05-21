@@ -54,6 +54,10 @@ export const api = {
         ...data
       }),
     });
+    if (!res.ok) {
+      const error = await res.json().catch(() => ({ detail: 'Unknown error' }));
+      throw new Error(error.detail || 'Failed to set lighting');
+    }
     return res.json();
   },
 
@@ -68,6 +72,10 @@ export const api = {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
     });
+    if (!res.ok) {
+      const error = await res.json().catch(() => ({ detail: 'Unknown error' }));
+      throw new Error(error.detail || 'Failed to set performance');
+    }
     return res.json();
   },
 
